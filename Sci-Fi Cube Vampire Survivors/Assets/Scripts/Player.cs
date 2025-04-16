@@ -7,25 +7,25 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Variables
-    private float speed = 0.3f;
+    [SerializeField] private float speed = 0.3f;
     [HideInInspector] public Vector3 direction = Vector3.zero;
     [HideInInspector] public bool isDashing = false;
 
     // References
     [SerializeField] private TrailRenderer bashTrail;
 
-    // Start is called before the first frame update
     void Start()
     {
+        // Setting Trail Width
         bashTrail.startWidth = 10f;
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Movement
+        // Player Movement
         direction = Vector3.zero;
+        // Set Directions
         if (Input.GetKey(KeyCode.S))
         {
             direction.y -= 1f;
@@ -44,8 +44,11 @@ public class Player : MonoBehaviour
         }
         if (direction.magnitude != 0f)
         {
-            this.transform.parent.transform.position += (direction / direction.magnitude) * speed;
+            // Move Main Scene (Player + Camera)
+            this.transform.parent.position += (direction.normalized) * speed;
         }
+
+        // If Dashing (set by Bash) then turn on trail
         bashTrail.emitting = isDashing;
     }
 }

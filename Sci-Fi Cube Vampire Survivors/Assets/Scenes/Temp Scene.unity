@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 1693456479}
   - component: {fileID: 1693456480}
   m_Layer: 0
-  m_Name: Temp Player
+  m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5724e5f0f9f0f4390131e8635f934c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.3
   direction: {x: 0, y: 0, z: 0}
   isDashing: 0
   bashTrail: {fileID: 1979611592}
@@ -385,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b6eb8f155f63947a57755893858e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
+  fireRate: 3
 --- !u!96 &1979611592
 TrailRenderer:
   serializedVersion: 3
