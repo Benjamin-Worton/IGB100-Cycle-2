@@ -6,6 +6,7 @@ public class BashWeapon : Weapon
 {
     [SerializeField] private float bashDistance = 40f;
     [SerializeField] private float bashDuration = 0.2f;
+    private float TimeSinceBash = 0f;
 
     protected override void Attack()
     {
@@ -14,7 +15,17 @@ public class BashWeapon : Weapon
 
     private void Awake()
     {
-        // ADD FIRERATE WHEN PAST TESTING
+        // ADD FIRERATE WHEN PAST TESTING e.g. fireRate = 2f;
+    }
+
+    private void Update()
+    {
+        TimeSinceBash += Time.deltaTime;
+        Color PlayerSpriteColour = GetComponentInChildren<SpriteRenderer>().color;
+        Color.RGBToHSV(PlayerSpriteColour, out float h, out float s, out float v);
+        v = (TimeSinceBash / fireRate) * 0.6f + 0.4f;
+        PlayerSpriteColour = Color.HSVToRGB(h, s, v);
+        GetComponentInChildren<SpriteRenderer>().color = PlayerSpriteColour;
     }
 
     private IEnumerator Bash()
@@ -39,6 +50,7 @@ public class BashWeapon : Weapon
             elapsed += Time.deltaTime;
             yield return null;
         }
+        TimeSinceBash = 0f;
         // Set bashing to be false to disable the trail
         GetComponentInParent<Player>().isDashing = false;
         transform.position = this.transform.parent.position;
