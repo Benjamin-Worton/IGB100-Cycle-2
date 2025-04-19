@@ -8,8 +8,10 @@ public class Player : MonoBehaviour
 {
     // Variables
     [SerializeField] private float speed = 0.3f;
+    [SerializeField] public float damage = 1f;
     [HideInInspector] public Vector3 direction = Vector3.zero;
     [HideInInspector] public bool isDashing = false;
+    
 
     // References
     [SerializeField] private TrailRenderer bashTrail;
