@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-     private int round = 1;  // Starting round
+    private int round = 1;  // Starting round
     private int spawnedEnemies = 0;
     public float spawnInterval = 5f;
-    public int numberRandomPositions = 10; // Total number of enmies to spawn in a round
+    public int numberRandomPositions = 10; // Total number of enemies to spawn in a round
     private int enemiesRemaining; 
     private int scoreCounter;
 
