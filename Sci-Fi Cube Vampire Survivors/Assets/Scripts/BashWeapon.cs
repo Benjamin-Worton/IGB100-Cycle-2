@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class BashWeapon : Weapon
 {
-    [SerializeField] private float bashDistance = 40f;
+    [SerializeField] private float bashDistance = 0.25f;
     [SerializeField] private float bashDuration = 0.2f;
     private float TimeSinceBash = 0f;
 
@@ -15,7 +16,7 @@ public class BashWeapon : Weapon
 
     private void Awake()
     {
-        // ADD FIRERATE WHEN PAST TESTING e.g. fireRate = 2f;
+        fireRate = 2f;
     }
 
     private void Update()
@@ -23,7 +24,7 @@ public class BashWeapon : Weapon
         TimeSinceBash += Time.deltaTime;
         Color PlayerSpriteColour = GetComponentInChildren<SpriteRenderer>().color;
         Color.RGBToHSV(PlayerSpriteColour, out float h, out float s, out float v);
-        v = (TimeSinceBash / fireRate) * 0.6f + 0.4f;
+        v = (TimeSinceBash / fireRate) * 0.4f + 0.6f;
         PlayerSpriteColour = Color.HSVToRGB(h, s, v);
         GetComponentInChildren<SpriteRenderer>().color = PlayerSpriteColour;
     }
@@ -43,7 +44,7 @@ public class BashWeapon : Weapon
             float t = elapsed / bashDuration;
             float speed = Mathf.Sin(t * Mathf.PI * 2);
 
-            float step = speed * bashDistance * Time.deltaTime * 50;
+            float step = speed * bashDistance * Time.deltaTime;
 
             transform.position += bashDirection * step;
 
@@ -53,6 +54,10 @@ public class BashWeapon : Weapon
         TimeSinceBash = 0f;
         // Set bashing to be false to disable the trail
         GetComponentInParent<Player>().isDashing = false;
-        transform.position = this.transform.parent.position;
+    }
+
+    public override void Remove()
+    {
+        Destroy(this);
     }
 }

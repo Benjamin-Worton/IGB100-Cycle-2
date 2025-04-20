@@ -7,9 +7,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Variables
-    [SerializeField] private float speed = 0.3f;
     [HideInInspector] public Vector3 direction = Vector3.zero;
     [HideInInspector] public bool isDashing = false;
+
+    // Stats
+    public float health = 100f;
+    public float armour = 0f;
+    public float speed = 1f;
+
+
 
     // References
     [SerializeField] private TrailRenderer bashTrail;
@@ -17,7 +23,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         // Setting Trail Width
-        bashTrail.startWidth = 10f;
+        bashTrail.startWidth = 10/150f;
 
     }
 
@@ -44,11 +50,23 @@ public class Player : MonoBehaviour
         }
         if (direction.magnitude != 0f)
         {
+            HandleSpeed();
             // Move Main Scene (Player + Camera)
-            this.transform.parent.position += (direction.normalized) * speed;
+            this.transform.parent.position += (direction.normalized) * speed / 300f;
         }
+        
 
         // If Dashing (set by Bash) then turn on trail
         bashTrail.emitting = isDashing;
+    }
+
+    private void HandleSpeed()
+    {
+        speed = 1f;
+
+        if (gameObject.GetComponent<RoboticTracks>() != null)
+        {
+            speed = gameObject.GetComponent<RoboticTracks>().HandleSpeed(speed);
+        }
     }
 }

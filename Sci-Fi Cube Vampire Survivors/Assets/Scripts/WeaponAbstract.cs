@@ -27,4 +27,6 @@ public abstract class Weapon : MonoBehaviour
     }
 
     protected abstract void Attack();
+
+    public abstract void Remove();
 }
