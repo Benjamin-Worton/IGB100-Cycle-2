@@ -8,6 +8,7 @@ public class BashWeapon : Weapon
     [SerializeField] private float bashDistance = 0.25f;
     [SerializeField] private float bashDuration = 0.2f;
     private float TimeSinceBash = 0f;
+    public float damage = 10f;
 
     protected override void Attack()
     {

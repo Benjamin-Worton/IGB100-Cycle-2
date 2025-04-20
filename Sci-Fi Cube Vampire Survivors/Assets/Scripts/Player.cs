@@ -7,8 +7,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Variables
-    [HideInInspector] public Vector3 direction = Vector3.zero;
+    [HideInInspector] public Vector2 direction = Vector2.zero;
     [HideInInspector] public bool isDashing = false;
+    private Rigidbody2D rb;
 
     // Stats
     public float health = 100f;
@@ -24,42 +25,33 @@ public class Player : MonoBehaviour
     {
         // Setting Trail Width
         bashTrail.startWidth = 10/150f;
+        rb = GetComponent<Rigidbody2D>();
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (direction.magnitude != 0f)
+        {
+            HandleSpeed();
+            // Move Main Scene (Player + Camera)
+            rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
+        }
     }
 
     void Update()
     {
         // Player Movement
-        direction = Vector3.zero;
+        direction = Vector2.zero;
         // Set Directions
-        if (Input.GetKey(KeyCode.S))
-        {
-            direction.y -= 1f;
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            direction.y += 1f;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            direction.x -= 1f;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            direction.x += 1f;
-        }
-        if (direction.magnitude != 0f)
-        {
-            HandleSpeed();
-            // Move Main Scene (Player + Camera)
-            this.transform.parent.position += (direction.normalized) * speed / 300f;
-        }
-        
+        if (Input.GetKey(KeyCode.W)) direction.y += 1f;
+        if (Input.GetKey(KeyCode.S)) direction.y -= 1f;
+        if (Input.GetKey(KeyCode.A)) direction.x -= 1f;
+        if (Input.GetKey(KeyCode.D)) direction.x += 1f;
 
         // If Dashing (set by Bash) then turn on trail
         bashTrail.emitting = isDashing;
     }
-
     private void HandleSpeed()
     {
         speed = 1f;
@@ -68,5 +60,10 @@ public class Player : MonoBehaviour
         {
             speed = gameObject.GetComponent<RoboticTracks>().HandleSpeed(speed);
         }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
     }
 }

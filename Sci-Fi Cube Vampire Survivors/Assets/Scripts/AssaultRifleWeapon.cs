@@ -38,7 +38,10 @@ public class AssaultRifleWeapon : Weapon
 
         AssaultRifle.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        Instantiate(bulletPrefab, AssaultRifle.transform.GetChild(0).transform.position, AssaultRifle.transform.rotation);
+        GameObject Bullet = Instantiate(bulletPrefab, AssaultRifle.transform.GetChild(0).transform.position, AssaultRifle.transform.rotation);
+        Bullet.GetComponent<Bullet>().damage = 10f;
+        Bullet.GetComponent<Bullet>().destroyOnCollision = false;
+
     }
 
     private void Awake()

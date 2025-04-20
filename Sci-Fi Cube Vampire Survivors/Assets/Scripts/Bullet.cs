@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float damage = 10f;
+    public bool destroyOnCollision = false;
     // Update is called once per frame
     void Update()
     {

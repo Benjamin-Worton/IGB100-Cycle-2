@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour
 {
     // Stats
-    public float maxHealth = 1;
+    public float maxHealth = 1f;
     private float currentHealth;
-    public float speed = 5;
+    public float speed = 5f;
 
     public float pushBackForce = 100f;
+
+    public float damage = 10f;
 
     private GameObject target;
     private Rigidbody2D rb;
@@ -45,7 +48,7 @@ public class BasicEnemy : MonoBehaviour
         // They will face and go towards the Player
         if (canMove)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime / 300f);
 
             Vector3 direction = target.transform.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -55,17 +58,6 @@ public class BasicEnemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // If the enemy is hit with a collider labeled "Weapon", take damage
-        if (collision.gameObject.CompareTag("Weapon"))
-        {
-            currentHealth -= playerScript.damage;
-
-            if (currentHealth <= 0)
-            {
-                Destroy(gameObject); // Destroy enemy
-            }
-        }
-
         // If the collider is labeled as player, deal damage
         // and push back the enemy away from the player
         if (collision.gameObject.CompareTag("Player"))
@@ -73,12 +65,28 @@ public class BasicEnemy : MonoBehaviour
             // Disable movement while pushing the enemy
             canMove = false;
 
+            if (collision.gameObject.GetComponent<Player>().isDashing)
+            {
+                TakeDamage(collision.gameObject.GetComponent<BashWeapon>().damage);
+            }
+            else
+            {
+                collision.gameObject.GetComponent<Player>().TakeDamage(damage);
+            }
+
             // Calculate the direction to push the enemy away from the player
             Vector2 pushDirection = (transform.position - collision.transform.position).normalized;
             rb.velocity = pushDirection * pushBackForce; // Apply pushback force
 
             // Stop the pushback after a short delay
             StartCoroutine(StopMovementAfterDelay(0.5f)); // You can adjust the delay if needed
+        }
+        if (collision.gameObject.CompareTag("Weapon")) {
+            if (collision.gameObject.GetComponent<Bullet>() != null)
+            {
+                TakeDamage(collision.gameObject.GetComponent<Bullet>().damage);
+                if (collision.gameObject.GetComponent<Bullet>().destroyOnCollision) Destroy(collision.gameObject);
+            }
         }
     }
 
@@ -90,4 +98,15 @@ public class BasicEnemy : MonoBehaviour
         rb.velocity = Vector2.zero; // Stop the pushback velocity
         canMove = true; // Enable movement again
     }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
 }

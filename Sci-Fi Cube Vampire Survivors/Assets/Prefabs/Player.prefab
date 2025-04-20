@@ -188,8 +188,8 @@ GameObject:
   - component: {fileID: 3670684964129451145}
   - component: {fileID: 1219465812872592577}
   - component: {fileID: 1540785858351474514}
-  - component: {fileID: 5921805965156377430}
-  - component: {fileID: 8057124555201102855}
+  - component: {fileID: 1765200349187196042}
+  - component: {fileID: 4765688335883833316}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -227,10 +227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5724e5f0f9f0f4390131e8635f934c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.3
-  damage: 1
   direction: {x: 0, y: 0, z: 0}
   isDashing: 0
+  health: 100
+  armour: 0
+  speed: 0.3
   bashTrail: {fileID: 1540785858351474514}
 --- !u!114 &1219465812872592577
 MonoBehaviour:
@@ -247,6 +248,7 @@ MonoBehaviour:
   fireRate: 3
   bashDistance: 40
   bashDuration: 0.2
+  damage: 10
 --- !u!96 &1540785858351474514
 TrailRenderer:
   serializedVersion: 3
@@ -360,34 +362,7 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
---- !u!50 &5921805965156377430
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6709941521318432841}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
---- !u!61 &8057124555201102855
+--- !u!61 &1765200349187196042
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -430,8 +405,35 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.3}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &4765688335883833316
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709941521318432841}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &8029636039165498099
 GameObject:
   m_ObjectHideFlags: 0
