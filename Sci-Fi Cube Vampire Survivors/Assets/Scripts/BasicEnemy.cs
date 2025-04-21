@@ -20,6 +20,9 @@ public class BasicEnemy : MonoBehaviour
 
     private bool canMove = false;
 
+    private GameObject ScrapPrefab;
+    private int chanceOfDroppingScrap = 100; // In Percent %
+
     void Start()
     {
         // Get the Rigidbody component of the player
@@ -33,6 +36,9 @@ public class BasicEnemy : MonoBehaviour
         // Since the enemies can spawn anywhere around the player
         // Dont allow them to move to the player has a chance to react
         StartCoroutine(StopMovementAfterDelay(1f)); // Wait for 1 second
+
+        // Add the scrap prefab to the enemy for it to drop
+        ScrapPrefab = Resources.Load<GameObject>("Prefabs/Scrap");
     }
 
     // Update is called once per frame
@@ -104,6 +110,10 @@ public class BasicEnemy : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            if (Random.Range(1, 100) <= chanceOfDroppingScrap)
+            {
+                Instantiate(ScrapPrefab, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }

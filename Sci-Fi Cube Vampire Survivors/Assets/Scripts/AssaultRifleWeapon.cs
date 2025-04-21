@@ -46,6 +46,7 @@ public class AssaultRifleWeapon : Weapon
 
     private void Awake()
     {
+        
         // Set up weapon prefabs
         AssaultRiflePrefab = Resources.Load<GameObject>("Prefabs/AssaultRifle");
         bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");

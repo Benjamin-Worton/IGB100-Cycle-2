@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,12 +11,15 @@ public class Player : MonoBehaviour
     [HideInInspector] public Vector2 direction = Vector2.zero;
     [HideInInspector] public bool isDashing = false;
     private Rigidbody2D rb;
+    private float scrapSpeed = 0.05f;
 
     // Stats
     public float currentHealth;
     public float armour = 0f;
     public float speed = 1f;
     public float maxHealth = 100f;
+    public float pickupRange = 50f;
+    public int scrap = 0;
 
     // Outside objects
     public HealthBar healthBar;
@@ -42,6 +46,7 @@ public class Player : MonoBehaviour
             // Move Main Scene (Player + Camera)
             rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
         }
+        HandleScrap();
     }
 
     void Update()
@@ -71,5 +76,34 @@ public class Player : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0f)
+        {
+            Die();
+        }
     }
+
+    private void Die()
+    {
+        SceneManager.LoadScene("Lose Screen");
+    }
+
+    private void HandleScrap()
+    {
+        GameObject[] allScrap = GameObject.FindGameObjectsWithTag("Scrap");
+        foreach (GameObject scrapObject in allScrap)
+        {
+            float distanceToScrap = Vector2.Distance(transform.position, scrapObject.transform.position);
+            if (distanceToScrap < 0.1f)
+            {
+                Destroy(scrapObject);
+                scrap += 1;
+            }
+            if (distanceToScrap < pickupRange)
+            {
+                Vector2 velocity = new Vector2(transform.position.x - scrapObject.transform.position.x, transform.position.y - scrapObject.transform.position.y) * scrapSpeed;
+                scrapObject.GetComponent<Rigidbody2D>().velocity += velocity;
+            }
+        }
+    }
+
 }
