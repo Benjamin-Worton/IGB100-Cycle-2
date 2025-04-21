@@ -107,6 +107,4 @@ public class BasicEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }

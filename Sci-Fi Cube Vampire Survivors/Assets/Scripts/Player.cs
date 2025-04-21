@@ -12,17 +12,22 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
 
     // Stats
-    public float health = 100f;
+    public float currentHealth;
     public float armour = 0f;
     public float speed = 1f;
+    public float maxHealth = 100f;
 
-
+    // Outside objects
+    public HealthBar healthBar;
 
     // References
     [SerializeField] private TrailRenderer bashTrail;
 
     void Start()
     {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+
         // Setting Trail Width
         bashTrail.startWidth = 10/150f;
         rb = GetComponent<Rigidbody2D>();
@@ -64,6 +69,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 }
