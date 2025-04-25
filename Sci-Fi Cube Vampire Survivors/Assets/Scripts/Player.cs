@@ -11,10 +11,18 @@ public class Player : MonoBehaviour
     [HideInInspector] public Vector2 direction = Vector2.zero;
     [HideInInspector] public bool isDashing = false;
     private Rigidbody2D rb;
-    private float scrapSpeed = 0.05f;
+    private float scrapSpeed = 3f;
 
     // Stats
-    public float currentHealth;
+    private float currentHealth;
+    public float CurrentHealth {
+        get { return currentHealth; }
+        set { 
+            currentHealth = value;
+            healthBar.SetHealth(currentHealth);
+        }
+    }
+    public float regen = 0.1f; // Per Second
     public float armour = 0f;
     public float speed = 1f;
     public float maxHealth = 100f;
@@ -29,7 +37,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
         // Setting Trail Width
@@ -45,6 +53,14 @@ public class Player : MonoBehaviour
             HandleSpeed();
             // Move Main Scene (Player + Camera)
             rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
+        }
+        if (CurrentHealth < maxHealth)
+        {
+            CurrentHealth += regen / 60f;
+            if (CurrentHealth >= maxHealth)
+            {
+                CurrentHealth = maxHealth;
+            }
         }
         HandleScrap();
     }
@@ -74,9 +90,9 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-        if (currentHealth <= 0f)
+        CurrentHealth -= damage;
+        
+        if (CurrentHealth <= 0f)
         {
             Die();
         }
@@ -100,8 +116,17 @@ public class Player : MonoBehaviour
             }
             if (distanceToScrap < pickupRange)
             {
-                Vector2 velocity = new Vector2(transform.position.x - scrapObject.transform.position.x, transform.position.y - scrapObject.transform.position.y) * scrapSpeed;
-                scrapObject.GetComponent<Rigidbody2D>().velocity += velocity;
+                Rigidbody2D scrapRB = scrapObject.GetComponent<Rigidbody2D>();
+                Vector2 direction = (transform.position - scrapObject.transform.position).normalized;
+
+                Vector2 velocity = scrapRB.velocity;
+                if (velocity.magnitude == 0f)
+                {
+                    scrapRB.velocity = Vector2.up * scrapSpeed;
+                    velocity = direction * scrapSpeed;
+                }
+
+                scrapRB.velocity = direction * velocity.magnitude * 1.01f;
             }
         }
     }

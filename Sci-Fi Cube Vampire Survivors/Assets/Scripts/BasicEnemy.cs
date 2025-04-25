@@ -7,7 +7,7 @@ public class BasicEnemy : MonoBehaviour
 {
     // Stats
     public float maxHealth = 1f;
-    private float currentHealth;
+    private float CurrentHealth;
     public float speed = 5f;
 
     public float pushBackForce = 100f;
@@ -31,7 +31,7 @@ public class BasicEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         // Set the enemy to spawn with max health when spawned in
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
 
         // Since the enemies can spawn anywhere around the player
         // Dont allow them to move to the player has a chance to react
@@ -107,8 +107,8 @@ public class BasicEnemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        CurrentHealth -= damage;
+        if (CurrentHealth <= 0)
         {
             if (Random.Range(1, 100) <= chanceOfDroppingScrap)
             {
