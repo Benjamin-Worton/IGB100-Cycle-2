@@ -962,7 +962,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'A basic but reliable combat rifle that fires at the closest target. '
+  m_text: A set of tracks designed for robotic use, provides fast movement in cardinal
+    directions however waas not designed for fast turns.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1526,6 +1527,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc558378cf012dd47a062bee76603e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1109301076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9140686604256225250, guid: ae49b7e97b96ace449995d23dc1218d4, type: 3}
+  m_PrefabInstance: {fileID: 1889484660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109301079 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6693411926071488522, guid: ae49b7e97b96ace449995d23dc1218d4, type: 3}
+  m_PrefabInstance: {fileID: 1889484660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109301076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1109301080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109301076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5cfe8c0b7c5c243a7547dbdd89c0be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 1109301079}
 --- !u!1 &1247405315 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6709941521318432841, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
@@ -2141,6 +2172,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1749563336}
+--- !u!1001 &1762526606
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1882289931951361443, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_Name
+      value: Crate
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863974107540393985, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.8121033
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863974107540393985, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.016531
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863974107540393985, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863974107540393985, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863974107540393985, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863974107540393985, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863974107540393985, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863974107540393985, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863974107540393985, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863974107540393985, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
 --- !u!114 &1834913124 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6538060394215314275, guid: ae49b7e97b96ace449995d23dc1218d4, type: 3}
@@ -2403,7 +2491,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 205.77277
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8044459927439937116, guid: ae49b7e97b96ace449995d23dc1218d4, type: 3}
+    - {fileID: 4954491693123873764, guid: ae49b7e97b96ace449995d23dc1218d4, type: 3}
+    - {fileID: 6438031829646130259, guid: ae49b7e97b96ace449995d23dc1218d4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2413,6 +2504,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4691763139294484479, guid: ae49b7e97b96ace449995d23dc1218d4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1749563337}
+    - targetCorrespondingSourceObject: {fileID: 9140686604256225250, guid: ae49b7e97b96ace449995d23dc1218d4, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1109301080}
   m_SourcePrefab: {fileID: 100100000, guid: ae49b7e97b96ace449995d23dc1218d4, type: 3}
 --- !u!1 &1967570494
 GameObject:
@@ -2471,7 +2565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ASSAULT RIFLE
+  m_text: ROBOTIC TRACKS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2628,6 +2722,10 @@ PrefabInstance:
       propertyPath: roundText
       value: 
       objectReference: {fileID: 1834913124}
+    - target: {fileID: 621682479240573094, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
+      propertyPath: cratePrefab
+      value: 
+      objectReference: {fileID: 1882289931951361443, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
     - target: {fileID: 621682479240573094, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: enemiesRemainingSlider
       value: 
@@ -3252,3 +3350,4 @@ SceneRoots:
   - {fileID: 1889484660}
   - {fileID: 395898836}
   - {fileID: 6375669566516713832}
+  - {fileID: 1762526606}

@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   speed: 150
+  points: 200
   pushBackForce: 1000
   damage: 5
 --- !u!50 &2434365912085781012

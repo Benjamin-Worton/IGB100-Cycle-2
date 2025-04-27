@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     private float scrapSpeed = 3f;
 
     // Stats
-    private float currentHealth;
+    public float currentHealth;
     public float CurrentHealth {
         get { return currentHealth; }
         set { 
@@ -128,6 +128,21 @@ public class Player : MonoBehaviour
 
                 scrapRB.velocity = direction * velocity.magnitude * 1.01f;
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Health"))
+        {
+            ScoreManager.instance.AddScore(200);
+            currentHealth *= 1.25f;
+            if (currentHealth >= maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            healthBar.SetHealth(currentHealth);
+            Destroy(collision.gameObject);
         }
     }
 

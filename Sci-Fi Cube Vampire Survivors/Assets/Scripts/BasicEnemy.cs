@@ -9,6 +9,7 @@ public class BasicEnemy : MonoBehaviour
     public float maxHealth = 1f;
     private float CurrentHealth;
     public float speed = 5f;
+    public int points = 100;
 
     public float pushBackForce = 1000f;
 
@@ -114,6 +115,7 @@ public class BasicEnemy : MonoBehaviour
             {
                 Instantiate(ScrapPrefab, transform.position, Quaternion.identity);
             }
+            ScoreManager.instance.AddScore(points);
             Destroy(gameObject);
         }
     }

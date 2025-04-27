@@ -16,6 +16,8 @@ public class Spawner : MonoBehaviour
 
     // New: Array of different enemy prefabs
     public GameObject[] enemyPrefabs;  // Array of possible enemy prefabs to spawn
+    public GameObject cratePrefab;
+
     private GameObject player;
     public CircleCollider2D circleCollider;
     private Player playerScript;
@@ -66,6 +68,13 @@ public class Spawner : MonoBehaviour
 
                 spawnedEnemies++;
                 enemiesRemaining--;
+
+                // Spawn crates randomly alongside enemies
+                if (Random.Range(0f, 1f) <= 0.1f) // Adjust probability (e.g., 30% chance of spawning a crate)
+                {
+                    Vector2 crateSpawnPos = RandomPointInCircle(circleCollider);  // Random spawn position for crate
+                    Instantiate(cratePrefab, crateSpawnPos, Quaternion.identity);
+                }
 
                 yield return new WaitForSeconds(spawnInterval);
             }
