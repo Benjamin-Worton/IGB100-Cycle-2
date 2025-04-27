@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     public float speed = 1f;
     public float maxHealth = 100f;
     public float pickupRange = 50f;
-    public int scrap = 0;
+    public int scrap = 10;
 
     // Outside objects
     public HealthBar healthBar;

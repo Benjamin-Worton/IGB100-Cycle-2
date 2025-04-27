@@ -10,7 +10,7 @@ public class BasicEnemy : MonoBehaviour
     private float CurrentHealth;
     public float speed = 5f;
 
-    public float pushBackForce = 100f;
+    public float pushBackForce = 1000f;
 
     public float damage = 10f;
 
@@ -55,10 +55,6 @@ public class BasicEnemy : MonoBehaviour
         if (canMove)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime / 300f);
-
-            Vector3 direction = target.transform.position - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
 
@@ -82,11 +78,15 @@ public class BasicEnemy : MonoBehaviour
 
             // Calculate the direction to push the enemy away from the player
             Vector2 pushDirection = (transform.position - collision.transform.position).normalized;
-            rb.velocity = pushDirection * pushBackForce; // Apply pushback force
+
+            // Apply pushback force
+            rb.velocity = Vector2.zero; // Clear any existing velocity first
+            rb.AddForce(pushDirection * pushBackForce, ForceMode2D.Impulse); // Use impulse for immediate pushback
 
             // Stop the pushback after a short delay
             StartCoroutine(StopMovementAfterDelay(0.5f)); // You can adjust the delay if needed
         }
+        
         if (collision.gameObject.CompareTag("Weapon")) {
             if (collision.gameObject.GetComponent<Bullet>() != null)
             {

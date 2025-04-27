@@ -29,4 +29,10 @@ public class ShoulderLasers : Weapon
     {
         Destroy(this);
     }
+
+    // Method to upgrade fire rate (called by UpgradeMenu)
+    public void UpgradeFireRate()
+    {
+        fireRate /= 1.5f;  // Increase fire rate (faster firing)
+    }
 }

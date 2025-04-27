@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.40f1 (cbdda657d2f0) revision 13360550'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'en' Physical Memory: 32702 MB
+OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'en' Physical Memory: 32693 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.40f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/benst/OneDrive/Documents/___UNI WORK/IGB100/Cycle 2/IGB100-Cycle-2/Sci-Fi Cube Vampire Survivors
+D:/Sci-Fi Cube Vampire Survivors
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52099
-Successfully changed project path to: C:/Users/benst/OneDrive/Documents/___UNI WORK/IGB100/Cycle 2/IGB100-Cycle-2/Sci-Fi Cube Vampire Survivors
-C:/Users/benst/OneDrive/Documents/___UNI WORK/IGB100/Cycle 2/IGB100-Cycle-2/Sci-Fi Cube Vampire Survivors
+57122
+Successfully changed project path to: D:/Sci-Fi Cube Vampire Survivors
+D:/Sci-Fi Cube Vampire Survivors
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,67 +49,67 @@ C:/Users/benst/OneDrive/Documents/___UNI WORK/IGB100/Cycle 2/IGB100-Cycle-2/Sci-
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [13824]  Target information:
+Player connection [48692]  Target information:
 
-Player connection [13824]  * "[IP] 192.168.0.50 [Port] 0 [Flags] 2 [Guid] 4259884929 [EditorId] 4259884929 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-S5E0HGA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [48692]  * "[IP] 172.24.39.33 [Port] 0 [Flags] 2 [Guid] 3452653689 [EditorId] 3452653689 [Version] 1048832 [Id] WindowsEditor(7,Joshua-Gaming-PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [13824] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [13824] Host joined alternative multi-casting on [225.0.0.222:34997]...
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-Refreshing native plugins compatible for Editor in 19.56 ms, found 4 plugins.
+Player connection [48692] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [48692] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Refreshing native plugins compatible for Editor in 11.89 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.40f1 (cbdda657d2f0)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.40f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/benst/OneDrive/Documents/___UNI WORK/IGB100/Cycle 2/IGB100-Cycle-2/Sci-Fi Cube Vampire Survivors/Assets
+[Subsystems] Discovering subsystems at path D:/Sci-Fi Cube Vampire Survivors/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 4060 (ID=0x2882)
+    Renderer: NVIDIA GeForce RTX 4060 Ti (ID=0x2788)
     Vendor:   NVIDIA
-    VRAM:     7957 MB
-    Driver:   32.0.15.6094
+    VRAM:     7949 MB
+    Driver:   32.0.15.7242
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.40f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.40f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.40f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56124
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56496
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.011891 seconds.
-- Loaded All Assemblies, in  0.400 seconds
+Registered in 0.007428 seconds.
+- Loaded All Assemblies, in  0.314 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.279 seconds
-Domain Reload Profiling: 676ms
-	BeginReloadAssembly (123ms)
+- Finished resetting the current domain, in  0.224 seconds
+Domain Reload Profiling: 537ms
+	BeginReloadAssembly (97ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (69ms)
-	LoadAllAssembliesAndSetupDomain (151ms)
-		LoadAssemblies (119ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (127ms)
+		LoadAssemblies (93ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (149ms)
-			TypeCache.Refresh (147ms)
-				TypeCache.ScanAssembly (133ms)
+		AnalyzeDomain (125ms)
+			TypeCache.Refresh (124ms)
+				TypeCache.ScanAssembly (113ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (280ms)
+	FinalizeReload (225ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (230ms)
+		SetupLoadedEditorAssemblies (186ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (13ms)
-			SetLoadedEditorAssemblies (8ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (157ms)
-			ProcessInitializeOnLoadMethodAttributes (50ms)
+			ProcessInitializeOnLoadAttributes (121ms)
+			ProcessInitializeOnLoadMethodAttributes (47ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,50 +118,50 @@ Domain Reload Profiling: 676ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.728 seconds
+- Loaded All Assemblies, in  0.578 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.863 seconds
-Domain Reload Profiling: 1585ms
-	BeginReloadAssembly (161ms)
+- Finished resetting the current domain, in  0.580 seconds
+Domain Reload Profiling: 1156ms
+	BeginReloadAssembly (148ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (25ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (54ms)
-	LoadAllAssembliesAndSetupDomain (457ms)
-		LoadAssemblies (358ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (43ms)
+	LoadAllAssembliesAndSetupDomain (343ms)
+		LoadAssemblies (278ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (194ms)
-			TypeCache.Refresh (164ms)
-				TypeCache.ScanAssembly (147ms)
-			ScanForSourceGeneratedMonoScriptInfo (21ms)
+		AnalyzeDomain (146ms)
+			TypeCache.Refresh (119ms)
+				TypeCache.ScanAssembly (106ms)
+			ScanForSourceGeneratedMonoScriptInfo (19ms)
 			ResolveRequiredComponents (6ms)
-	FinalizeReload (864ms)
+	FinalizeReload (581ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (686ms)
+		SetupLoadedEditorAssemblies (433ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (88ms)
-			ProcessInitializeOnLoadAttributes (530ms)
-			ProcessInitializeOnLoadMethodAttributes (43ms)
-			AfterProcessingInitializeOnLoad (12ms)
+			BeforeProcessingInitializeOnLoad (71ms)
+			ProcessInitializeOnLoadAttributes (305ms)
+			ProcessInitializeOnLoadMethodAttributes (38ms)
+			AfterProcessingInitializeOnLoad (8ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 9.07 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 7.53 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4086 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 32 unused Assets / (57.5 KB). Loaded Objects now: 4557.
-Memory consumption went from 145.4 MB to 145.4 MB.
-Total: 4.292400 ms (FindLiveObjects: 0.311300 ms CreateObjectMapping: 0.290100 ms MarkObjects: 3.589900 ms  DeleteObjects: 0.099800 ms)
+Unloading 32 unused Assets / (57.7 KB). Loaded Objects now: 4558.
+Memory consumption went from 145.6 MB to 145.6 MB.
+Total: 3.290900 ms (FindLiveObjects: 0.258100 ms CreateObjectMapping: 0.105500 ms MarkObjects: 2.821000 ms  DeleteObjects: 0.105600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -179,35 +179,743 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 13695.263404 seconds.
-  path: Assets/Scripts/AssaultRifleWeapon.cs
-  artifactKey: Guid(55c4bfb7bef550d4a923821ecff4bf8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/AssaultRifleWeapon.cs using Guid(55c4bfb7bef550d4a923821ecff4bf8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '6b186d5963c0719ef08385de3e3e7abc') in 0.003875 seconds
+  Time since last request: 178815.586086 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(ed88f367cd24fb9429abb4ff77e8e436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(ed88f367cd24fb9429abb4ff77e8e436) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5ab50b02b66211f93d3a6181edf12fbd') in 0.086784 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 22
+========================================================================
+Received Import Request.
+  Time since last request: 93.557063 seconds.
+  path: Assets/Textures/enemy3.png
+  artifactKey: Guid(028355ebbfa10b1458010aef5df9b778) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/enemy3.png using Guid(028355ebbfa10b1458010aef5df9b778) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0eae35330a7a6a344dbe0e6a0d37ca84') in 0.031511 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 38.885064 seconds.
+  path: Assets/Textures/enemy2.png
+  artifactKey: Guid(8abdc18f8358ca94ebacf31d56d33e32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/enemy2.png using Guid(8abdc18f8358ca94ebacf31d56d33e32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '80529bed4ded902e3adde48896757239') in 0.015274 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 4.181170 seconds.
+  path: Assets/Textures/enemy3.png
+  artifactKey: Guid(028355ebbfa10b1458010aef5df9b778) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/enemy3.png using Guid(028355ebbfa10b1458010aef5df9b778) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ccedef1feb1cfe3f1264ad999491b1df') in 0.015609 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 115.678963 seconds.
+  path: Assets/Prefabs/Basic Enemy.prefab
+  artifactKey: Guid(44e506d602ebb114994148db81bdc411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Basic Enemy.prefab using Guid(44e506d602ebb114994148db81bdc411) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0d592ed7a4e08cfec1ad2cc08425a05c') in 0.039509 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 40.641935 seconds.
+  path: Assets/Textures/enemy4.png
+  artifactKey: Guid(8854431c98ddfd940a06c8c705708268) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/enemy4.png using Guid(8854431c98ddfd940a06c8c705708268) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a761a68eb0f9b1001f94581464af9f39') in 0.017240 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 135.870710 seconds.
+  path: Assets/Prefabs/Basic Enemy 2.prefab
+  artifactKey: Guid(0ab7cf977996c8944831ebd11c33bf9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Basic Enemy 2.prefab using Guid(0ab7cf977996c8944831ebd11c33bf9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f6f7e19659e958d1597333951adec840') in 0.012778 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.829 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.566 seconds
+Domain Reload Profiling: 1395ms
+	BeginReloadAssembly (558ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (421ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (204ms)
+		LoadAssemblies (268ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (10ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (566ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (402ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (71ms)
+			ProcessInitializeOnLoadAttributes (281ms)
+			ProcessInitializeOnLoadMethodAttributes (28ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 9.81 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4061 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (32.1 KB). Loaded Objects now: 4578.
+Memory consumption went from 144.7 MB to 144.6 MB.
+Total: 5.516300 ms (FindLiveObjects: 0.646600 ms CreateObjectMapping: 0.334300 ms MarkObjects: 4.479700 ms  DeleteObjects: 0.054200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 88.902898 seconds.
+  path: Assets/Resources
+  artifactKey: Guid(8be5c7be15749ec43b59b0523ad8881e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources using Guid(8be5c7be15749ec43b59b0523ad8881e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cc27ea5ef0d8fb6caf9850ee6159c9a1') in 0.002410 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 2.010799 seconds.
-  path: Assets/Prefabs/Basic Enemy.prefab
-  artifactKey: Guid(44e506d602ebb114994148db81bdc411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Basic Enemy.prefab using Guid(44e506d602ebb114994148db81bdc411) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '08a5d92f6cac61196b4b2d4160d36629') in 0.105988 seconds
+  Time since last request: 67.615443 seconds.
+  path: Assets/Textures/image.png
+  artifactKey: Guid(83df67b4974759246aa394005c6ce955) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/image.png using Guid(83df67b4974759246aa394005c6ce955) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '31154ead755126b7270747a66b980c64') in 0.068167 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 17
+Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 2.541523 seconds.
-  path: Assets/Resources/Prefabs/Bullet.prefab
-  artifactKey: Guid(7015f07e4b7e39049a9b0d536a725ca1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Prefabs/Bullet.prefab using Guid(7015f07e4b7e39049a9b0d536a725ca1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'ec112204df83e720960c6238e3c28045') in 0.026729 seconds
+  Time since last request: 85.352930 seconds.
+  path: Assets/Textures/image.png
+  artifactKey: Guid(83df67b4974759246aa394005c6ce955) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/image.png using Guid(83df67b4974759246aa394005c6ce955) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '20174c6f4c722de7995595d5054555df') in 0.015107 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.373 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.945 seconds
+Domain Reload Profiling: 1316ms
+	BeginReloadAssembly (136ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (176ms)
+		LoadAssemblies (236ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (10ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (945ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (374ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (65ms)
+			ProcessInitializeOnLoadAttributes (262ms)
+			ProcessInitializeOnLoadMethodAttributes (29ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 9.63 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4061 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.2 KB). Loaded Objects now: 4583.
+Memory consumption went from 144.7 MB to 144.7 MB.
+Total: 4.192300 ms (FindLiveObjects: 0.296300 ms CreateObjectMapping: 0.131500 ms MarkObjects: 3.698700 ms  DeleteObjects: 0.064700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 75.401469 seconds.
+  path: Assets/Textures/32floortile2_-_Copy.png
+  artifactKey: Guid(eb3dbcafa0085ef45a4dfdc584ea93a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/32floortile2_-_Copy.png using Guid(eb3dbcafa0085ef45a4dfdc584ea93a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '558403f3ab1066b07331dc5ac6495480') in 0.080678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 142.691310 seconds.
+  path: Assets/Textures/Rectangular Palette.prefab
+  artifactKey: Guid(3aa1ee488001a5747a995791db5b757b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Rectangular Palette.prefab using Guid(3aa1ee488001a5747a995791db5b757b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6dd0659b538fc5f6d4a84efdd52504e2') in 0.026671 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 10
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+========================================================================
+Received Import Request.
+  Time since last request: 86.771617 seconds.
+  path: Assets/Textures/Rectangular Palette 1.prefab
+  artifactKey: Guid(5b36c1f052fed51408b5aa2797838ddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Rectangular Palette 1.prefab using Guid(5b36c1f052fed51408b5aa2797838ddc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '86cfbc66e9c1d7acfa2b32d129139fc8') in 0.017666 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 98.702800 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '55f323ebf3c734be3e56acd8a30477b8') in 0.000507 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.445 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.894 seconds
+Domain Reload Profiling: 1336ms
+	BeginReloadAssembly (179ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (20ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (31ms)
+	LoadAllAssembliesAndSetupDomain (190ms)
+		LoadAssemblies (253ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (9ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (895ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (346ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (59ms)
+			ProcessInitializeOnLoadAttributes (239ms)
+			ProcessInitializeOnLoadMethodAttributes (30ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 9.23 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4062 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.1 KB). Loaded Objects now: 4591.
+Memory consumption went from 144.7 MB to 144.7 MB.
+Total: 4.499200 ms (FindLiveObjects: 0.336100 ms CreateObjectMapping: 0.283200 ms MarkObjects: 3.815900 ms  DeleteObjects: 0.062700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Background.cs: f6a0093f60546c867f1f521fbd422b88 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: fe4150fdbd38c4db2231bca712c66793 -> 6fbe92632f2975ad208740e5647f1bdd
+========================================================================
+Received Import Request.
+  Time since last request: 7.242744 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.002941 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.001562 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000399 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006682 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000505 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006805 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000666 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006602 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000446 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006214 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000405 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.007091 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000590 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.008448 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000408 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.007428 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000528 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.007151 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000423 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006473 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000436 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.005406 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000354 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006351 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000475 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.005537 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000401 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006131 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000552 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006383 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000444 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.005630 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000383 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.007179 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000356 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006057 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000409 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006483 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000491 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.006980 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000421 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.009680 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00000000000000000000000000000000') in 0.000497 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+  ERROR: Build asset version error: assets/scripts/background.cs in SourceAssetDB has modification time of '2025-04-27T08:24:29.660085Z' while content on disk has modification time of '2025-04-27T08:24:36.4104602Z'
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.386 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.876 seconds
+Domain Reload Profiling: 1259ms
+	BeginReloadAssembly (132ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (188ms)
+		LoadAssemblies (231ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (9ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (877ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (338ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (60ms)
+			ProcessInitializeOnLoadAttributes (234ms)
+			ProcessInitializeOnLoadMethodAttributes (26ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Refreshing native plugins compatible for Editor in 8.09 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4062 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.1 KB). Loaded Objects now: 4595.
+Memory consumption went from 144.7 MB to 144.7 MB.
+Total: 4.023800 ms (FindLiveObjects: 0.317800 ms CreateObjectMapping: 0.116800 ms MarkObjects: 3.542200 ms  DeleteObjects: 0.046200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Background.cs: b37cf8ea828f21bc444a00e810788bd8 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 73459ec0b311abc050f55cd47fc50c8f -> 6fbe92632f2975ad208740e5647f1bdd
+========================================================================
+Received Import Request.
+  Time since last request: 4.416921 seconds.
+  path: Assets/Scripts/Background.cs
+  artifactKey: Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Background.cs using Guid(7ef19c7d0fd0e0340b5014dfc338972b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6e7d7ec639bda7de0a971c05c0bbbf0b') in 0.002146 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.472 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.013 seconds
+Domain Reload Profiling: 1482ms
+	BeginReloadAssembly (169ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (15ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (34ms)
+	LoadAllAssembliesAndSetupDomain (219ms)
+		LoadAssemblies (292ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (1013ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (401ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (76ms)
+			ProcessInitializeOnLoadAttributes (273ms)
+			ProcessInitializeOnLoadMethodAttributes (32ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 7.06 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4062 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (31.1 KB). Loaded Objects now: 4599.
+Memory consumption went from 144.7 MB to 144.7 MB.
+Total: 6.534000 ms (FindLiveObjects: 0.592400 ms CreateObjectMapping: 0.359800 ms MarkObjects: 5.513900 ms  DeleteObjects: 0.067000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/Background.cs: b37cf8ea828f21bc444a00e810788bd8 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/precompiled-assembly-types:Assembly-CSharp: 73459ec0b311abc050f55cd47fc50c8f -> 6fbe92632f2975ad208740e5647f1bdd
+========================================================================
+Received Import Request.
+  Time since last request: 301.565902 seconds.
+  path: Assets/Scripts/Rectangular Palette.prefab
+  artifactKey: Guid(87ac24d0cef4e6b4fbc51c6181e8a5b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Rectangular Palette.prefab using Guid(87ac24d0cef4e6b4fbc51c6181e8a5b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1cd79f4b3266d3b19fcfa211b3de2675') in 0.052642 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10

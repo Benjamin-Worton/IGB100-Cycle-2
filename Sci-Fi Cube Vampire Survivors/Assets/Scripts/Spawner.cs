@@ -14,10 +14,10 @@ public class Spawner : MonoBehaviour
     private int enemiesRemaining; 
     private int scoreCounter;
 
-    public GameObject enemyPrefab;
+    // New: Array of different enemy prefabs
+    public GameObject[] enemyPrefabs;  // Array of possible enemy prefabs to spawn
     private GameObject player;
     public CircleCollider2D circleCollider;
-    private BasicEnemy enemyScript;
     private Player playerScript;
     public TMP_Text roundText;
     public Slider enemiesRemainingSlider;
@@ -46,6 +46,9 @@ public class Spawner : MonoBehaviour
             while (spawnedEnemies < numberRandomPositions)
             {
                 Vector2 spawnPos = RandomPointInCircle(circleCollider);
+
+                // Randomly select an enemy prefab from the list
+                GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
                 GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
 
                 BasicEnemy enemyScript = enemy.GetComponent<BasicEnemy>();
