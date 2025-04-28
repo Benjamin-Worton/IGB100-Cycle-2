@@ -1,33 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class RepeatBackground : MonoBehaviour
+public class Background : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    private Camera camera;
-    private float width;
+    public Transform player;
+    public Transform[] quads;
 
-    void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        camera = Camera.main;
-        width = spriteRenderer.bounds.size.x; // Get the width of the background image
-    }
+    public float tileSize = 15f;
 
     void Update()
     {
-        // Calculate the camera's horizontal position
-        float cameraPositionX = camera.transform.position.x;
+        // Get the bottom left tile position based on player's location
+        Vector2 playerPos = player.position;
+        int centerX = Mathf.RoundToInt(playerPos.x / tileSize);
+        int centerY = Mathf.RoundToInt(playerPos.y / tileSize);
 
-        // Move the background to the left
-        if (cameraPositionX > transform.position.x + width / 2)
+        // Arrange 4 tiles around the player
+        int[,] offsets = new int[4, 2]
         {
-            transform.position = new Vector3(transform.position.x + width, transform.position.y, transform.position.z);
-        }
+            { 0,  0 }, // center tile
+            { 1,  0 }, // right
+            { 0,  1 }, // top
+            { 1,  1 }  // top-right
+        };
 
-        // If background goes out of screen, move it to the other side to repeat
-        if (cameraPositionX < transform.position.x - width / 2)
+        for (int i = 0; i < quads.Length; i++)
         {
-            transform.position = new Vector3(transform.position.x - width, transform.position.y, transform.position.z);
+            int offsetX = offsets[i, 0];
+            int offsetY = offsets[i, 1];
+
+            float x = (centerX + offsetX) * tileSize;
+            float y = (centerY + offsetY) * tileSize;
+
+            quads[i].position = new Vector3(x-tileSize/2, y- tileSize / 2, quads[i].position.z);
         }
     }
 }
