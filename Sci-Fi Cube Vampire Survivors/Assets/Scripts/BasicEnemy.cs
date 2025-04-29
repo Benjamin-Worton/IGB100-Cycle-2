@@ -19,6 +19,8 @@ public class BasicEnemy : MonoBehaviour
     private Rigidbody2D rb;
     private Player playerScript;
 
+    private ScoreManager scoreManager;
+
     private bool canMove = false;
 
     private GameObject ScrapPrefab;
