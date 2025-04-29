@@ -70,7 +70,7 @@ public class Spawner : MonoBehaviour
                 enemiesRemaining--;
 
                 // Spawn crates randomly alongside enemies
-                if (Random.Range(0f, 1f) <= 0.1f) // Adjust probability (e.g., 30% chance of spawning a crate)
+                if (Random.Range(0f, 1f) <= 0.1f) // Adjust probability (e.g., 10% chance of spawning a crate)
                 {
                     Vector2 crateSpawnPos = RandomPointInCircle(circleCollider);  // Random spawn position for crate
                     Instantiate(cratePrefab, crateSpawnPos, Quaternion.identity);

@@ -107,6 +107,7 @@ public class UpgradeMenu : MonoBehaviour
             {
                 // Player can afford the assault rifle
                 playerScript.scrap -= assaultRifleCost; // Subtract scrap
+                ScrapCounter.instance.SetScrap(playerScript.scrap);
                 hasAssaultRifle = true;
                 ChangeButtonText(assaultRifleButtonText, "UPGRADE FOR " + assaultRifleUpgradeCost + " SCRAP");
                 EnableScript("AssaultRifleWeapon"); // Enable weapon or upgrade
@@ -115,6 +116,7 @@ public class UpgradeMenu : MonoBehaviour
             {
                 // Player can afford the fire rate upgrade
                 playerScript.scrap -= assaultRifleUpgradeCost; // Subtract scrap
+                ScrapCounter.instance.SetScrap(playerScript.scrap);
 
                 // Get the AssaultRifleWeapon component
                 assaultRifleScript = player.GetComponent<AssaultRifleWeapon>();
@@ -140,6 +142,7 @@ public class UpgradeMenu : MonoBehaviour
             {
                 // Player can afford the assault rifle
                 playerScript.scrap -= shoulderCost; // Subtract scrap
+                ScrapCounter.instance.SetScrap(playerScript.scrap);
                 hasShoulder = true;
                 ChangeButtonText(ShoulderButtonText,"UPGRADE FOR " + shoulderUpgradeCost + " SCRAP");
                 EnableScript("ShoulderLasers"); // Enable weapon or upgrade
@@ -148,6 +151,7 @@ public class UpgradeMenu : MonoBehaviour
             {
                 // Player can afford the fire rate upgrade
                 playerScript.scrap -= shoulderUpgradeCost; // Subtract scrap
+                ScrapCounter.instance.SetScrap(playerScript.scrap);
 
                 // Get the AssaultRifleWeapon component
                 shoulderScript = player.GetComponent<ShoulderLasers>();
@@ -173,6 +177,7 @@ public class UpgradeMenu : MonoBehaviour
             {
                 // Player can afford the assault rifle
                 playerScript.scrap -= roboticCost; // Subtract scrap
+                ScrapCounter.instance.SetScrap(playerScript.scrap);
                 hasRobotic = true;
                 ChangeButtonText(RoboticButtonText,"BROUGHT");
                 EnableScript("RoboticTracks"); // Enable weapon or upgrade

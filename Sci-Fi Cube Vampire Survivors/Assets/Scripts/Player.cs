@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private float scrapSpeed = 3f;
 
+
     // Stats
     public float currentHealth;
     public float CurrentHealth {
@@ -27,7 +28,7 @@ public class Player : MonoBehaviour
     public float speed = 1f;
     public float maxHealth = 100f;
     public float pickupRange = 50f;
-    public int scrap = 10;
+    public int scrap = 0;
 
     // Outside objects
     public HealthBar healthBar;
@@ -113,6 +114,7 @@ public class Player : MonoBehaviour
             {
                 Destroy(scrapObject);
                 scrap += 1;
+                ScrapCounter.instance.AddScrap(1);
             }
             if (distanceToScrap < pickupRange)
             {
@@ -145,5 +147,4 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-
 }
