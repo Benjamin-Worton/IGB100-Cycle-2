@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60167607f89cca4b8fc1bb775f4e7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScrapPrefab: {fileID: 4060324187705972658, guid: d95fd98062ed240279858ae2c010bff6, type: 3}
   points: 500
 --- !u!58 &2153129207545856752
 CircleCollider2D:

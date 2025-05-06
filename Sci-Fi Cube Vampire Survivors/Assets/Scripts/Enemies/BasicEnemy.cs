@@ -10,6 +10,10 @@ public class BasicEnemy : MonoBehaviour
     public float speed = 5f;
     public int points = 100;
 
+    public GameObject normalSprite;
+    public GameObject whiteSprite;
+    public float flashDuration = 1f;
+
     public float pushBackForce = 1000f;
     public float damage = 10f;
 
@@ -21,7 +25,6 @@ public class BasicEnemy : MonoBehaviour
 
     public GameObject ScrapPrefab;
     private int chanceOfDroppingScrap = 100; // In Percent %
-    public float spawnHeight = 2f;
 
     void Start()
     {
@@ -29,6 +32,9 @@ public class BasicEnemy : MonoBehaviour
         playerScript = target.GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         CurrentHealth = maxHealth;
+
+        normalSprite.SetActive(true);
+        whiteSprite.SetActive(false);
 
         StartCoroutine(StopMovementAfterDelay(1f));
     }
@@ -89,9 +95,11 @@ public class BasicEnemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         CurrentHealth -= damage;
+        StartCoroutine(DamageFlash());
+
         if (CurrentHealth <= 0)
         {
-            if (Random.Range(1, 101) <= chanceOfDroppingScrap)
+            if (Random.Range(1, 100) <= chanceOfDroppingScrap)
             {
                 StartCoroutine(SpawnScrapAndDie());
             }
@@ -101,6 +109,17 @@ public class BasicEnemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    private IEnumerator DamageFlash()
+    {
+        normalSprite.SetActive(false);
+        whiteSprite.SetActive(true);
+
+        yield return new WaitForSeconds(flashDuration);
+
+        normalSprite.SetActive(true);
+        whiteSprite.SetActive(false);
     }
 
     private IEnumerator SpawnScrapAndDie()
