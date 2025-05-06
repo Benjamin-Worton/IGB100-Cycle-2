@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
     public float maxHealth = 100f;
     public float pickupRange = 50f;
     public int scrap = 0;
-    private float scrapSpeed = 3f;
 
     // Outside objects
     public HealthBar healthBar;
@@ -76,7 +75,6 @@ public class Player : MonoBehaviour
                 CurrentHealth = maxHealth;
             }
         }
-        HandleScrap();
     }
 
     void Update()
@@ -115,35 +113,6 @@ public class Player : MonoBehaviour
     private void Die()
     {
         SceneManager.LoadScene("Lose Screen");
-    }
-
-    private void HandleScrap()
-    {
-        GameObject[] allScrap = GameObject.FindGameObjectsWithTag("Scrap");
-        foreach (GameObject scrapObject in allScrap)
-        {
-            float distanceToScrap = Vector2.Distance(transform.position, scrapObject.transform.position);
-            if (distanceToScrap < 0.1f)
-            {
-                Destroy(scrapObject);
-                scrap += 1;
-                ScrapCounter.instance.AddScrap(1);
-            }
-            if (distanceToScrap < pickupRange)
-            {
-                Rigidbody2D scrapRB = scrapObject.GetComponent<Rigidbody2D>();
-                Vector2 direction = (transform.position - scrapObject.transform.position).normalized;
-
-                Vector2 velocity = scrapRB.velocity;
-                if (velocity.magnitude == 0f)
-                {
-                    scrapRB.velocity = Vector2.up * scrapSpeed;
-                    velocity = direction * scrapSpeed;
-                }
-
-                scrapRB.velocity = direction * velocity.magnitude * 1.01f;
-            }
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

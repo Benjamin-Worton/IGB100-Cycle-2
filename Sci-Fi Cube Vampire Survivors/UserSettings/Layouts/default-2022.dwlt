@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1512
     height: 848
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 95
+  controlID: 49
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 0
-  controlID: 96
+  controlID: 50
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 97
+  controlID: 51
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 368
     height: 798
-  m_MinSize: {x: 275, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -709,9 +709,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 266.28476, y: -119.62407, z: 0}
+    m_Target: {x: -0.42869648, y: -0.6890263, z: -0.090597786}
     speed: 2
-    m_Value: {x: 266.28476, y: -119.62407, z: 0}
+    m_Value: {x: -0.43176687, y: -0.6884687, z: -0.09066604}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -761,9 +761,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 0.30528098
+    m_Target: 9.093983
     speed: 2
-    m_Value: 0.30528098
+    m_Value: 9.100808
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -825,20 +825,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 12420000
       m_LastClickedID: 0
-      m_ExpandedIDs: 52a7feffa2c9feffd0cafeff
+      m_ExpandedIDs: dc96feff1abefeff66c9feffa6cafeff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: enemy2-hurt
-        m_OriginalName: enemy2-hurt
+        m_Name: Scrap(Clone)
+        m_OriginalName: Scrap(Clone)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -83798
+        m_UserData: -98534
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -1064,7 +1064,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1072,16 +1072,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/ethanallcock/Documents/GitHub/IGB321-Assignment2-Project/IGB100-Cycle-2/Sci-Fi
     Cube Vampire Survivors
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d4060000
-    m_LastClickedID: 1748
+    scrollPos: {x: 0, y: 81.5}
+    m_SelectedIDs: 4c060000
+    m_LastClickedID: 1612
     m_ExpandedIDs: 00000000040600004c06000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

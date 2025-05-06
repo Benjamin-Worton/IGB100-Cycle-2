@@ -221,7 +221,7 @@ MonoBehaviour:
   points: 100
   normalSprite: {fileID: 4877363017930903073}
   whiteSprite: {fileID: 5303853676268324632}
-  flashDuration: 0.1
+  flashDuration: 0.5
   pushBackForce: 300
   damage: 10
   ScrapPrefab: {fileID: 4060324187705972658, guid: d95fd98062ed240279858ae2c010bff6, type: 3}
@@ -295,5 +295,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.7, y: 1.3}
+  m_Size: {x: 2, y: 1.62}
   m_EdgeRadius: 0

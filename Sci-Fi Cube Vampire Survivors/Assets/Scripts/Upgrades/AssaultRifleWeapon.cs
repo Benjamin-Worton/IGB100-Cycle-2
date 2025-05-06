@@ -46,6 +46,8 @@ public class AssaultRifleWeapon : Weapon
         GameObject Bullet = Instantiate(bulletPrefab, AssaultRifle.transform.GetChild(0).transform.position, AssaultRifle.transform.rotation);
         Bullet.GetComponent<Bullet>().damage = 10f;
         Bullet.GetComponent<Bullet>().destroyOnCollision = false;
+
+        Destroy(Bullet, 0.2f);
     }
 
     private void Awake()

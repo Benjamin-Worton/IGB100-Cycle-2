@@ -12,7 +12,7 @@ public class BasicEnemy : MonoBehaviour
 
     public GameObject normalSprite;
     public GameObject whiteSprite;
-    public float flashDuration = 1f;
+    public float flashDuration = 2f;
 
     public float pushBackForce = 1000f;
     public float damage = 10f;
@@ -159,5 +159,7 @@ public class BasicEnemy : MonoBehaviour
         }
         // Applying Spin on scrap
         scrapRb.AddTorque(Random.Range(-10f, 10f), ForceMode2D.Impulse);
+
+        Destroy(scrap, 0.5f);
     }
 }
