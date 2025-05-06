@@ -11,8 +11,20 @@ public class Player : MonoBehaviour
     [HideInInspector] public Vector2 direction = Vector2.zero;
     [HideInInspector] public bool isDashing = false;
     private Rigidbody2D rb;
-    private float scrapSpeed = 3f;
+    public static Player instance; // Singleton pattern for easy access
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Keep across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Prevent duplicates
+        }
+    }
 
     // Stats
     public float currentHealth;
@@ -29,6 +41,7 @@ public class Player : MonoBehaviour
     public float maxHealth = 100f;
     public float pickupRange = 50f;
     public int scrap = 0;
+    private float scrapSpeed = 3f;
 
     // Outside objects
     public HealthBar healthBar;

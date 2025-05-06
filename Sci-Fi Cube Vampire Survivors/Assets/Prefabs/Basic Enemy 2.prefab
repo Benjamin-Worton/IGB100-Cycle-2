@@ -136,6 +136,8 @@ MonoBehaviour:
   points: 300
   pushBackForce: 300
   damage: 15
+  ScrapPrefab: {fileID: 4060324187705972658, guid: d95fd98062ed240279858ae2c010bff6, type: 3}
+  spawnHeight: 2
 --- !u!50 &2434365912085781012
 Rigidbody2D:
   serializedVersion: 4

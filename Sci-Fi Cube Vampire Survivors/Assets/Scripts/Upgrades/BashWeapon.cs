@@ -43,7 +43,7 @@ public class BashWeapon : Weapon
         while (elapsed < bashDuration)
         {
             float t = elapsed / bashDuration;
-            float speed = Mathf.Sin(t * Mathf.PI * 2);
+            float speed = Mathf.Sin(t * Mathf.PI);
 
             float step = speed * bashDistance * Time.deltaTime;
 
