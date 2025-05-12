@@ -101,11 +101,19 @@ public class Player : MonoBehaviour
         {
             speed = gameObject.GetComponent<RoboticTracks>().HandleSpeed(speed);
         }
+        if (gameObject.GetComponent<HoverPad>() != null)
+        {
+            speed = gameObject.GetComponent<HoverPad>().HandleSpeed(speed);
+        }
     }
 
     public void TakeDamage(float damage)
     {
-        CurrentHealth -= damage;
+        if (damage <= armour)
+        {
+            return;
+        }
+        CurrentHealth -= damage - armour;
         
         if (CurrentHealth <= 0f)
         {

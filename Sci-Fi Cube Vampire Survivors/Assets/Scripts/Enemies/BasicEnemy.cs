@@ -65,6 +65,10 @@ public class BasicEnemy : MonoBehaviour
             else
             {
                 collision.gameObject.GetComponent<Player>().TakeDamage(damage);
+                if (collision.gameObject.GetComponent<PlasmaShell>() != null)
+                {
+                    TakeDamage(collision.gameObject.GetComponent<PlasmaShell>().damage);
+                }
             }
 
             Vector2 pushDirection = (transform.position - collision.transform.position).normalized;
@@ -85,7 +89,7 @@ public class BasicEnemy : MonoBehaviour
         }
     }
 
-    IEnumerator StopMovementAfterDelay(float delay)
+    private IEnumerator StopMovementAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         rb.velocity = Vector2.zero;
@@ -96,6 +100,11 @@ public class BasicEnemy : MonoBehaviour
     {
         CurrentHealth -= damage;
         StartCoroutine(DamageFlash());
+
+        if (target.GetComponent<SteelEaters>() != null)
+        {
+            target.GetComponent<SteelEaters>().GiveHealth(damage);
+        }
 
         if (CurrentHealth <= 0)
         {
@@ -138,7 +147,7 @@ public class BasicEnemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void SpawnScrap()
+    private void SpawnScrap()
     {
         // Spawn just above the enemy
         Vector3 spawnPosition = transform.position + Vector3.up * 0.5f;
@@ -160,5 +169,20 @@ public class BasicEnemy : MonoBehaviour
         scrapRb.AddTorque(Random.Range(-10f, 10f), ForceMode2D.Impulse);
 
         Destroy(scrap, 0.5f);
+    }
+
+    public void Stun(int Seconds)
+    {
+        if (canMove)
+        {
+            canMove = false;
+            StartCoroutine(RemoveStun(Seconds));
+        }
+    }
+
+    private IEnumerator RemoveStun(int Seconds)
+    {
+        yield return new WaitForSeconds(Seconds);
+        canMove = true;
     }
 }

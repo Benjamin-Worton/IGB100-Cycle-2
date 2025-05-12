@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
-  speed: 150
+  speed: 300
   points: 200
   normalSprite: {fileID: 2726708508836307034}
   whiteSprite: {fileID: 5561042625746381363}

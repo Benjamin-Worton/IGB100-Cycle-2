@@ -1801,6 +1801,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 0
   SpeedMultiplier: 1.5
+--- !u!114 &1247405335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247405315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5913b27c25bf724cb93da4441ca5666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0
+  bonusArmour: 0
+  damage: 10
 --- !u!114 &1322260279 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5035712840814737150, guid: bafc146b408dcdb40ba1a11ea15758cd, type: 3}
@@ -2891,6 +2906,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.005671233
       objectReference: {fileID: 0}
+    - target: {fileID: 1765200349187196042, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2728502580841112357, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -3030,6 +3049,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6709941521318432841, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1247405327}
+    - targetCorrespondingSourceObject: {fileID: 6709941521318432841, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1247405335}
   m_SourcePrefab: {fileID: 100100000, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
 --- !u!114 &56597097045465385
 MonoBehaviour:

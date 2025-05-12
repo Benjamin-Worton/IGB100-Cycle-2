@@ -10,6 +10,7 @@ public class AssaultRifleWeapon : Weapon
     private GameObject AssaultRifle;
 
     private float fireRateTimer = 0f;  // Timer to manage fire rate delay
+    protected float damage = 5f;
 
     // Method to attack or fire bullets
     protected override void Attack()
@@ -44,7 +45,7 @@ public class AssaultRifleWeapon : Weapon
 
         // Instantiate the bullet
         GameObject Bullet = Instantiate(bulletPrefab, AssaultRifle.transform.GetChild(0).transform.position, AssaultRifle.transform.rotation);
-        Bullet.GetComponent<Bullet>().damage = 10f;
+        Bullet.GetComponent<Bullet>().damage = damage;
         Bullet.GetComponent<Bullet>().destroyOnCollision = false;
 
         Destroy(Bullet, 0.2f);

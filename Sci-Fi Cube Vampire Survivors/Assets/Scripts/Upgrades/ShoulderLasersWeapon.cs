@@ -6,14 +6,15 @@ public class ShoulderLasers : Weapon
 {
     private GameObject laserPrefab;
     private float DistanceFromPlayer = 0.2f;
+    [SerializeField] private float damage = 10f;
 
     protected override void Attack()
     {
         GameObject RightLaser = Instantiate(laserPrefab, transform.position + Vector3.right * DistanceFromPlayer, Quaternion.identity);
         GameObject LeftLaser = Instantiate(laserPrefab, transform.position + Vector3.right * -DistanceFromPlayer, Quaternion.identity);
         LeftLaser.transform.Rotate(0, 180f, 0);
-        RightLaser.GetComponent<Bullet>().damage = 5f;
-        LeftLaser.GetComponent<Bullet>().damage = 5f;
+        RightLaser.GetComponent<Bullet>().damage = damage;
+        LeftLaser.GetComponent<Bullet>().damage = damage;
         RightLaser.GetComponent<Bullet>().destroyOnCollision = true;
         LeftLaser.GetComponent<Bullet>().destroyOnCollision = true;
     }
@@ -22,7 +23,7 @@ public class ShoulderLasers : Weapon
     void Awake()
     {
         laserPrefab = Resources.Load<GameObject>("Prefabs/Laser");
-        fireRate = 3f;
+        fireRate = 0.5f;
     }
 
     public override void Remove()
