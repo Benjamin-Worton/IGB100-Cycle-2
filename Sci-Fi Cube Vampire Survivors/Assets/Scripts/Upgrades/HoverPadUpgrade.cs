@@ -19,12 +19,7 @@ public class HoverPad : Weapon
     // Update is called once per frame
     public float HandleSpeed(float speed)
     {
-        Vector3 direction = gameObject.GetComponent<Player>().direction;
-
-        if (direction.x == 0 || direction.y == 0)
-        {
-            speed = speed * SpeedMultiplier;
-        }
+        speed = speed * SpeedMultiplier;
         return speed;
     }
 

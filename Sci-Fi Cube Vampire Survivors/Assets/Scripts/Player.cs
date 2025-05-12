@@ -13,18 +13,6 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     public static Player instance; // Singleton pattern for easy access
 
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // Keep across scenes
-        }
-        else
-        {
-            Destroy(gameObject); // Prevent duplicates
-        }
-    }
 
     // Stats
     public int level = 1;
