@@ -92,6 +92,11 @@ public class Spawner : MonoBehaviour
 
             round++;
             roundText.text = "Round: " + round.ToString();  // Update the text component to show the current round
+
+            if (playerScript != null)
+            {
+                playerScript.LevelUp();
+            }
         }   
     }
 

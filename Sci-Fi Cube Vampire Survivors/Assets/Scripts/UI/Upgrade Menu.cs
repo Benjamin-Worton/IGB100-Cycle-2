@@ -19,14 +19,19 @@ public class UpgradeMenu : MonoBehaviour
     bool hasAssaultRifle = false;
     public int assaultRifleCost = 10;
     public int assaultRifleUpgradeCost = 5;
+    public int assaultRifleInventorySpace = 2;
 
     bool hasShoulder = false;
     public int shoulderCost = 10;
     public int shoulderUpgradeCost = 5;
+    public int ShoulderInventorySpace = 1;
 
     bool hasRobotic = false;
     public int roboticCost = 10;
     public int roboticUpgradeCost = 5;
+    public int roboticInventorySpace = 1;
+
+    public int spentInventory;
 
     void Start()
     {
@@ -103,33 +108,39 @@ public class UpgradeMenu : MonoBehaviour
     {
         if (playerScript != null)
         {
-            if (!hasAssaultRifle && playerScript.scrap >= assaultRifleCost)
+            if (!hasAssaultRifle)
             {
-                // Player can afford the assault rifle
-                playerScript.scrap -= assaultRifleCost; // Subtract scrap
-                ScrapCounter.instance.SetScrap(playerScript.scrap);
-                hasAssaultRifle = true;
-                ChangeButtonText(assaultRifleButtonText, "UPGRADE FOR " + assaultRifleUpgradeCost + " SCRAP");
-                EnableScript("AssaultRifleWeapon"); // Enable weapon or upgrade
+                if (playerScript.scrap >= assaultRifleCost && playerScript.currentInventorySpace >= assaultRifleInventorySpace)
+                {
+                    // Buy Assault Rifle
+                    playerScript.scrap -= assaultRifleCost;
+                    ScrapCounter.instance.SetScrap(playerScript.scrap);
+                    hasAssaultRifle = true;
+
+                    // Reduce player's available inventory space
+                    playerScript.currentInventorySpace -= assaultRifleInventorySpace;
+
+                    ChangeButtonText(assaultRifleButtonText, "UPGRADE FOR " + assaultRifleUpgradeCost + " SCRAP");
+                    EnableScript("AssaultRifleWeapon");
+                }
+                else
+                {
+                    ChangeButtonText(assaultRifleButtonText, "NOT ENOUGH SCRAP OR SPACE!");
+                }
             }
             else if (hasAssaultRifle && playerScript.scrap >= assaultRifleUpgradeCost)
             {
-                // Player can afford the fire rate upgrade
-                playerScript.scrap -= assaultRifleUpgradeCost; // Subtract scrap
+                // Upgrade
+                playerScript.scrap -= assaultRifleUpgradeCost;
                 ScrapCounter.instance.SetScrap(playerScript.scrap);
-
-                // Get the AssaultRifleWeapon component
                 assaultRifleScript = player.GetComponent<AssaultRifleWeapon>();
-
-                assaultRifleScript.UpgradeFireRate();  // Upgrade fire rate
+                assaultRifleScript.UpgradeFireRate();
             }
             else
             {
-                // Not enough scrap
                 ChangeButtonText(assaultRifleButtonText, "NOT ENOUGH SCRAP!");
             }
 
-            // Start the coroutine to revert the button text after 0.1 seconds
             StartCoroutine(RevertButtonText(0.1f));
         }
     }
