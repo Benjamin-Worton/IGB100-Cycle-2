@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     }
 
     // Stats
+    public int level = 1;
     public float currentHealth;
     public float CurrentHealth {
         get { return currentHealth; }
@@ -41,6 +42,8 @@ public class Player : MonoBehaviour
     public float maxHealth = 100f;
     public float pickupRange = 50f;
     public int scrap = 0;
+    public int maxInventorySpace = 1;
+    public int currentInventorySpace = 1;
 
     // Outside objects
     public HealthBar healthBar;
@@ -128,5 +131,33 @@ public class Player : MonoBehaviour
             healthBar.SetHealth(currentHealth);
             Destroy(collision.gameObject);
         }
+    }
+
+    public void LevelUp()
+    {
+        level++;
+
+        // Inventory space progression
+        switch (level)
+        {
+            case 2:
+                maxInventorySpace = 2;
+                break;
+            case 3:
+                maxInventorySpace = 4;
+                break;
+            case 4:
+                maxInventorySpace = 8;
+                break;
+            case 5:
+                maxInventorySpace = 9;
+                break;
+            default:
+                break;
+        }
+
+        currentInventorySpace = maxInventorySpace;
+
+        Debug.Log("Player leveled up to level " + level);
     }
 }

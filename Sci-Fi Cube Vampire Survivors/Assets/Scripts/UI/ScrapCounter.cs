@@ -2,27 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using static UnityEngine.GraphicsBuffer;
 
 public class ScrapCounter : MonoBehaviour
 {
     public static ScrapCounter instance; // Singleton pattern for easy access
     public TextMeshProUGUI scrapText; // Reference to the UI text component
-    private int totalScrap = 0; // Track total scrap
+    private Player playerScript;
 
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // Keep across scenes
-        }
-        else
-        {
-            Destroy(gameObject); // Prevent duplicates
-        }
-    }
 
     void Start()
+    {
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        UpdateScrapText();
+    }
+
+    private void Update()
     {
         UpdateScrapText();
     }
@@ -30,7 +25,7 @@ public class ScrapCounter : MonoBehaviour
     // Method to add scrap
     public void AddScrap(int amount)
     {
-        totalScrap += amount;
+        playerScript.scrap += amount;
         UpdateScrapText();
     }
 
@@ -39,19 +34,19 @@ public class ScrapCounter : MonoBehaviour
     {
         if (scrapText != null)
         {
-            scrapText.text = "Scrap: " + totalScrap.ToString();
+            scrapText.text = "Scrap: " + playerScript.scrap.ToString();
         }
     }
 
     // Optional: Accessor for total scrap
     public int GetTotalScrap()
     {
-        return totalScrap;
+        return playerScript.scrap;
     }
 
     public void SetScrap(int amount)
     {
-        totalScrap = amount;
+        playerScript.scrap = amount;
         UpdateScrapText();
     }
-    }
+}

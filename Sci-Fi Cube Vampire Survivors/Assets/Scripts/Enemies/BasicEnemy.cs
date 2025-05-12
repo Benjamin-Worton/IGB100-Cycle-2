@@ -132,8 +132,7 @@ public class BasicEnemy : MonoBehaviour
             SpawnScrap();
             yield return new WaitForSeconds(delayBetweenSpawns);
         }
-        Player.instance.scrap += scrapCount;
-        ScrapCounter.instance.AddScrap(scrapCount);
+        playerScript.scrap += scrapCount;
 
         ScoreManager.instance.AddScore(points);
         Destroy(gameObject);

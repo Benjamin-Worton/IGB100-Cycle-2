@@ -1017,7 +1017,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 634994979}
-  - {fileID: 1247405321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &634994979 stripped
@@ -1730,7 +1729,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1679340313}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1239479511
 GameObject:
@@ -2406,9 +2405,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2048080617}
-  - {fileID: 1233207332}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1749563336 stripped
@@ -2836,7 +2833,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1679340313}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2078937807
 PrefabInstance:
@@ -2844,7 +2841,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 589924961}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 621682479240573094, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: roundText
@@ -2908,11 +2905,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2728502580841112357, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -266.28476
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2728502580841112357, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 119.62407
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2728502580841112357, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3475,10 +3472,14 @@ MonoBehaviour:
   RoboticButtonText: {fileID: 1403451759}
   assaultRifleCost: 10
   assaultRifleUpgradeCost: 5
+  assaultRifleInventorySpace: 2
   shoulderCost: 10
   shoulderUpgradeCost: 5
+  ShoulderInventorySpace: 1
   roboticCost: 10
   roboticUpgradeCost: 5
+  roboticInventorySpace: 1
+  spentInventory: 0
 --- !u!114 &6685278449711773076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3536,6 +3537,9 @@ Canvas:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 2048080617}
+  - {fileID: 1233207332}
   - {fileID: 1679340313}
   - {fileID: 589924961}
+  - {fileID: 2078937807}
   - {fileID: 1210061823}
