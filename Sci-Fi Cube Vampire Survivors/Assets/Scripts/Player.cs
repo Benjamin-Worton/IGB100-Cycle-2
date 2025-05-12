@@ -11,9 +11,23 @@ public class Player : MonoBehaviour
     [HideInInspector] public Vector2 direction = Vector2.zero;
     [HideInInspector] public bool isDashing = false;
     private Rigidbody2D rb;
-    private float scrapSpeed = 3f;
+    public static Player instance; // Singleton pattern for easy access
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Keep across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Prevent duplicates
+        }
+    }
 
     // Stats
+    public int level = 1;
     public float currentHealth;
     public float CurrentHealth {
         get { return currentHealth; }
@@ -27,7 +41,9 @@ public class Player : MonoBehaviour
     public float speed = 1f;
     public float maxHealth = 100f;
     public float pickupRange = 50f;
-    public int scrap = 10;
+    public int scrap = 0;
+    public int maxInventorySpace = 1;
+    public int currentInventorySpace = 1;
 
     // Outside objects
     public HealthBar healthBar;
@@ -62,7 +78,6 @@ public class Player : MonoBehaviour
                 CurrentHealth = maxHealth;
             }
         }
-        HandleScrap();
     }
 
     void Update()
@@ -103,34 +118,6 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("Lose Screen");
     }
 
-    private void HandleScrap()
-    {
-        GameObject[] allScrap = GameObject.FindGameObjectsWithTag("Scrap");
-        foreach (GameObject scrapObject in allScrap)
-        {
-            float distanceToScrap = Vector2.Distance(transform.position, scrapObject.transform.position);
-            if (distanceToScrap < 0.1f)
-            {
-                Destroy(scrapObject);
-                scrap += 1;
-            }
-            if (distanceToScrap < pickupRange)
-            {
-                Rigidbody2D scrapRB = scrapObject.GetComponent<Rigidbody2D>();
-                Vector2 direction = (transform.position - scrapObject.transform.position).normalized;
-
-                Vector2 velocity = scrapRB.velocity;
-                if (velocity.magnitude == 0f)
-                {
-                    scrapRB.velocity = Vector2.up * scrapSpeed;
-                    velocity = direction * scrapSpeed;
-                }
-
-                scrapRB.velocity = direction * velocity.magnitude * 1.01f;
-            }
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Health"))
@@ -146,4 +133,31 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void LevelUp()
+    {
+        level ++;
+
+        // Inventory space progression
+        switch (level)
+        {
+            case 2:
+                maxInventorySpace = 2;
+                break;
+            case 3:
+                maxInventorySpace = 4;
+                break;
+            case 4:
+                maxInventorySpace = 8;
+                break;
+            case 5:
+                maxInventorySpace = 9;
+                break;
+            default:
+                break;
+        }
+
+        currentInventorySpace = maxInventorySpace;
+
+        Debug.Log("Player leveled up to level " + level);
+    }
 }

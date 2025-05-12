@@ -8,6 +8,7 @@ TagManager:
   - Weapon
   - Scrap
   - Health
+  - ScoreManager
   layers:
   - Default
   - TransparentFX
