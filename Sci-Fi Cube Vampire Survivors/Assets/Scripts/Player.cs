@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     [HideInInspector] public Vector2 direction = Vector2.zero;
     [HideInInspector] public bool isDashing = false;
     private Rigidbody2D rb;
-    public static Player instance; // Singleton pattern for easy access
 
 
     // Stats

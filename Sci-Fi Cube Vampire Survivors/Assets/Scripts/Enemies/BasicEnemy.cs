@@ -36,7 +36,7 @@ public class BasicEnemy : MonoBehaviour
         normalSprite.SetActive(true);
         whiteSprite.SetActive(false);
 
-        StartCoroutine(StopMovementAfterDelay(1f));
+        StartCoroutine(StopMovementAfterDelay(0.01f));
     }
 
     void Update()
@@ -98,25 +98,28 @@ public class BasicEnemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        CurrentHealth -= damage;
+        CurrentHealth -= damage * playerScript.damageMultiplier;
         StartCoroutine(DamageFlash());
 
         if (target.GetComponent<SteelEaters>() != null)
         {
             target.GetComponent<SteelEaters>().GiveHealth(damage);
         }
-
-        if (CurrentHealth <= 0)
+        if (target.GetComponent<EMPRounds>() != null)
         {
+            Stun(target.GetComponent<EMPRounds>().StunDuration);
+        }
+
+        if (CurrentHealth <= 0 && CurrentHealth != -0.01f)
+        {
+            CurrentHealth = 0.01f;
             if (Random.Range(1, 100) <= chanceOfDroppingScrap)
             {
-                StartCoroutine(SpawnScrapAndDie());
+                StartCoroutine(RandomScrap());
             }
-            else
-            {
-                ScoreManager.instance.AddScore(points);
-                Destroy(gameObject);
-            }
+            ScoreManager.instance.AddScore(points);
+            canMove = false;
+            StartCoroutine(DieAfterDelay());
         }
     }
 
@@ -131,19 +134,21 @@ public class BasicEnemy : MonoBehaviour
         whiteSprite.SetActive(false);
     }
 
-    private IEnumerator SpawnScrapAndDie()
+    private IEnumerator RandomScrap()
     {
         int scrapCount = Random.Range(0, 3);
-        float delayBetweenSpawns = 0.3f;
-
+        float delayBetweenSpawns = 0.1f;
         for (int i = 0; i < scrapCount; i++)
         {
             SpawnScrap();
             yield return new WaitForSeconds(delayBetweenSpawns);
         }
         playerScript.scrap += scrapCount;
+    }
 
-        ScoreManager.instance.AddScore(points);
+    private IEnumerator DieAfterDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 
@@ -171,16 +176,14 @@ public class BasicEnemy : MonoBehaviour
         Destroy(scrap, 0.5f);
     }
 
-    public void Stun(int Seconds)
+    public void Stun(float Seconds)
     {
-        if (canMove)
-        {
-            canMove = false;
-            StartCoroutine(RemoveStun(Seconds));
-        }
+        if (!canMove) { return; }
+        canMove = false;
+        StartCoroutine(RemoveStun(Seconds));
     }
 
-    private IEnumerator RemoveStun(int Seconds)
+    private IEnumerator RemoveStun(float Seconds)
     {
         yield return new WaitForSeconds(Seconds);
         canMove = true;

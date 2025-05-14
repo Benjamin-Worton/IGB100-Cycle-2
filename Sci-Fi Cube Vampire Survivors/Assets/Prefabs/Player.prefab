@@ -186,7 +186,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2728502580841112357}
   - component: {fileID: 3670684964129451145}
-  - component: {fileID: 1219465812872592577}
   - component: {fileID: 1540785858351474514}
   - component: {fileID: 1765200349187196042}
   - component: {fileID: 4765688335883833316}
@@ -227,28 +226,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db5724e5f0f9f0f4390131e8635f934c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0}
   isDashing: 0
-  health: 100
+  level: 1
+  currentHealth: 0
+  regen: 0.1
   armour: 0
+  damageMultiplier: 1
   speed: 0.3
+  maxHealth: 100
+  pickupRange: 50
+  scrap: 0
+  maxInventorySpace: 1
+  currentInventorySpace: 1
+  healthBar: {fileID: 0}
   bashTrail: {fileID: 1540785858351474514}
---- !u!114 &1219465812872592577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6709941521318432841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71b6eb8f155f63947a57755893858e3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireRate: 3
-  bashDistance: 40
-  bashDuration: 0.2
-  damage: 10
 --- !u!96 &1540785858351474514
 TrailRenderer:
   serializedVersion: 3
@@ -515,6 +507,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 5
+  minimumSpawnInterval: 0.5
   numberRandomPositions: 10
-  enemyPrefab: {fileID: 7793272152296475226, guid: 44e506d602ebb114994148db81bdc411, type: 3}
+  enemyPrefabs: []
+  cratePrefab: {fileID: 0}
   circleCollider: {fileID: 5187792468595694085}
+  roundText: {fileID: 0}
+  enemiesRemainingSlider: {fileID: 0}

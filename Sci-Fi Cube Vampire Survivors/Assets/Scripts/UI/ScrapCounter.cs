@@ -6,7 +6,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ScrapCounter : MonoBehaviour
 {
-    public static ScrapCounter instance; // Singleton pattern for easy access
     public TextMeshProUGUI scrapText; // Reference to the UI text component
     private Player playerScript;
 

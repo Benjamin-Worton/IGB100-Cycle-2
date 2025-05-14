@@ -6,20 +6,18 @@ using UnityEngine;
 public class RepulseBeacon : Weapon
 {
     private GameObject repulsePrefab;
-    [SerializeField] private float DistanceFromPlayer = 3f;
+    [SerializeField] private float range = 3f;
 
     protected override void Attack()
     {
-        //GameObject RepulseEffect = Instantiate(repulsePrefab, transform.position + Vector3.right * DistanceFromPlayer, Quaternion.identity);
+        //GameObject RepulseEffect = Instantiate(repulsePrefab, transform.position, Quaternion.identity);
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (allEnemies.Length != 0)
+        if (allEnemies.Length == 0) { return; }
+        foreach (GameObject enemy in allEnemies)
         {
-            foreach (GameObject enemy in allEnemies)
+            if (Vector2.Distance(this.transform.position, enemy.transform.position) < range) // Move all nearby enemies further away
             {
-                if (Vector2.Distance(this.transform.position, enemy.transform.position) < DistanceFromPlayer) // Move all nearby enemies further away
-                {
-                    StartCoroutine(RepelEnemy(enemy.transform, transform.position + (enemy.transform.position - transform.position).normalized * DistanceFromPlayer));
-                }
+                StartCoroutine(RepelEnemy(enemy.transform, transform.position + (enemy.transform.position - transform.position).normalized * range));
             }
         }
     }
@@ -28,7 +26,7 @@ public class RepulseBeacon : Weapon
     void Awake()
     {
         //repulsePrefab = Resources.Load<GameObject>("Prefabs/Laser");
-        fireRate = 3f;
+        fireRate = 8f;
     }
 
     public override void Remove()

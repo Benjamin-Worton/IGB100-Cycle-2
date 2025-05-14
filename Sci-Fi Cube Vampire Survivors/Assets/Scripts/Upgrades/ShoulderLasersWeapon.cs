@@ -5,8 +5,10 @@ using UnityEngine;
 public class ShoulderLasers : Weapon
 {
     private GameObject laserPrefab;
-    private float DistanceFromPlayer = 0.2f;
+    private readonly float DistanceFromPlayer = 0.2f;
     [SerializeField] private float damage = 10f;
+    [SerializeField] private float range = 7f;
+
 
     protected override void Attack()
     {
@@ -17,13 +19,15 @@ public class ShoulderLasers : Weapon
         LeftLaser.GetComponent<Bullet>().damage = damage;
         RightLaser.GetComponent<Bullet>().destroyOnCollision = true;
         LeftLaser.GetComponent<Bullet>().destroyOnCollision = true;
+        RightLaser.GetComponent<Bullet>().range = range;
+        LeftLaser.GetComponent<Bullet>().range = range;
     }
 
     // Start is called before the first frame update
     void Awake()
     {
+        fireRate = 1f; // Default fire rate
         laserPrefab = Resources.Load<GameObject>("Prefabs/Laser");
-        fireRate = 0.5f;
     }
 
     public override void Remove()

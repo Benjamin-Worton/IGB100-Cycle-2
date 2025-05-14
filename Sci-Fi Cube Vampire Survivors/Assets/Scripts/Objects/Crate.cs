@@ -79,7 +79,6 @@ public class Crate : MonoBehaviour
             yield return new WaitForSeconds(delayBetweenSpawns);
         }
         playerScript.scrap += scrapCount;
-        ScrapCounter.instance.AddScrap(scrapCount);
 
         ScoreManager.instance.AddScore(points);
         Destroy(gameObject);

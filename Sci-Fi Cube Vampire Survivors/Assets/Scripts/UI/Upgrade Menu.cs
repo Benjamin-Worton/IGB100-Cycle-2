@@ -147,6 +147,8 @@ public class UpgradeMenu : MonoBehaviour
             // Player can afford the assault rifle
             playerScript.scrap -= shoulderCost; // Subtract scrap
             hasShoulder = true;
+            player.AddComponent<ShoulderLasers>();
+
             ChangeButtonText(ShoulderButtonText,"UPGRADE FOR " + shoulderUpgradeCost + " SCRAP");
             EnableScript("ShoulderLasers"); // Enable weapon or upgrade
         }
@@ -178,6 +180,8 @@ public class UpgradeMenu : MonoBehaviour
             // Player can afford the assault rifle
             playerScript.scrap -= roboticCost; // Subtract scrap
             hasRobotic = true;
+            player.AddComponent<RoboticTracks>();
+
             ChangeButtonText(RoboticButtonText,"BROUGHT");
             EnableScript("RoboticTracks"); // Enable weapon or upgrade
         }

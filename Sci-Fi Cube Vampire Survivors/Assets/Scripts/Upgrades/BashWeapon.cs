@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BashWeapon : Weapon
 {
-    [SerializeField] private float bashDistance = 0.25f;
+    [SerializeField] private float bashDistance = 5f;
     [SerializeField] private float bashDuration = 0.2f;
     private float TimeSinceBash = 0f;
     public float damage = 10f;
@@ -45,7 +45,7 @@ public class BashWeapon : Weapon
             float t = elapsed / bashDuration;
             float speed = Mathf.Sin(t * Mathf.PI);
 
-            float step = speed * bashDistance * Time.deltaTime;
+            float step = speed * bashDistance * Time.deltaTime * 4;
 
             transform.position += bashDirection * step;
 
