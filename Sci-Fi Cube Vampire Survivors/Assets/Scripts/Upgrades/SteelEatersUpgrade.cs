@@ -5,6 +5,8 @@ using UnityEngine;
 public class SteelEaters : Weapon
 {
     [SerializeField] private float LifeSteal = 0.1f;
+    [SerializeField] private float BonusDamage = 0.2f;
+
     protected override void Attack()
     {
         return;
@@ -14,16 +16,18 @@ public class SteelEaters : Weapon
     void Awake()
     {
         fireRate = 0;
+        GetComponent<Player>().damageMultiplier += BonusDamage;
     }
 
     // Update is called once per frame
     public void GiveHealth(float damage)
     {
-        this.GetComponent<Player>().TakeDamage(-damage * LifeSteal);
+        GetComponent<Player>().TakeDamage(-damage * LifeSteal);
     }
 
     public override void Remove()
     {
+        GetComponent<Player>().damageMultiplier -= BonusDamage;
         Destroy(this);
     }
 }

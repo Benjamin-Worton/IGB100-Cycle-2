@@ -9,46 +9,17 @@ public class AssaultRifleWeapon : Weapon
     private GameObject AssaultRiflePrefab;
     private GameObject AssaultRifle;
 
-    private float fireRateTimer = 0f;  // Timer to manage fire rate delay
-    protected float damage = 5f;
-
+    
+    [SerializeField] protected float damage = 5f;
+    [SerializeField] private float range = 3.5f;
     // Method to attack or fire bullets
     protected override void Attack()
     {
-        // Find nearest enemy, if you know of a better way to do this, please do
-        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (allEnemies.Length == 0) { return; }
-
-        // Get nearest enemy
-        GameObject nearestEnemy = allEnemies[0];
-        float distanceToNearest = Vector2.Distance(this.transform.position, nearestEnemy.transform.position);
-
-        for (int enemy = 0; enemy < allEnemies.Length; enemy++)
-        {
-            float distanceToCurrent = Vector2.Distance(this.transform.position, allEnemies[enemy].transform.position);
-            if (distanceToCurrent < distanceToNearest)
-            {
-                nearestEnemy = allEnemies[enemy];
-                distanceToNearest = distanceToCurrent;
-            }
-        }
-
-        // Set direction and rotation for the assault rifle
-        Vector3 direction = nearestEnemy.transform.position - AssaultRifle.transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        Vector3 scale = AssaultRifle.transform.localScale;
-        scale.y = direction.x < 0 ? -Mathf.Abs(scale.y) : Mathf.Abs(scale.y);
-        AssaultRifle.transform.localScale = scale;
-
-        AssaultRifle.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-
-        // Instantiate the bullet
-        GameObject Bullet = Instantiate(bulletPrefab, AssaultRifle.transform.GetChild(0).transform.position, AssaultRifle.transform.rotation);
-        Bullet.GetComponent<Bullet>().damage = damage;
-        Bullet.GetComponent<Bullet>().destroyOnCollision = false;
-
-        Destroy(Bullet, 0.2f);
+#nullable enable
+        GameObject? nearestEnemy = FindNearestEnemy();
+        if (nearestEnemy == null) return;
+#nullable disable
+        Shoot(nearestEnemy);
     }
 
     private void Awake()
@@ -66,13 +37,7 @@ public class AssaultRifleWeapon : Weapon
         // Keep assault rifle locked to player
         AssaultRifle.transform.position = this.transform.position + Vector3.up * 0.5f;
 
-        // Fire based on the fire rate
-        fireRateTimer += Time.deltaTime;
-        if (fireRateTimer >= 1f / fireRate)
-        {
-            Attack();  // Call attack method to fire
-            fireRateTimer = 0f;  // Reset fireRate timer
-        }
+       
     }
 
     public override void Remove()
@@ -85,5 +50,51 @@ public class AssaultRifleWeapon : Weapon
     public void UpgradeFireRate()
     {
         fireRate *= 1.5f;  // Increase fire rate (faster firing)
+    }
+#nullable enable
+    private GameObject? FindNearestEnemy()
+    {
+        // Find nearest enemy, if you know of a better way to do this, please do
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (allEnemies.Length == 0) { return null; }
+
+        // Set first enemy as nearest
+        GameObject nearestEnemy = allEnemies[0];
+        float distanceToNearest = Vector2.Distance(AssaultRifle.transform.position, nearestEnemy.transform.position);
+
+        // Test all other enemies if they are closer
+        for (int enemy = 0; enemy < allEnemies.Length; enemy++)
+        {
+            float distanceToCurrent = Vector2.Distance(AssaultRifle.transform.position, allEnemies[enemy].transform.position);
+            if (distanceToCurrent < distanceToNearest)
+            {
+                nearestEnemy = allEnemies[enemy];
+                distanceToNearest = distanceToCurrent;
+            }
+        }
+
+        if (Vector2.Distance(transform.position, nearestEnemy.transform.position) > range) { return null; }
+
+        return nearestEnemy;
+    }
+#nullable disable
+    private void Shoot(GameObject target)
+    {
+        // Set direction and rotation for the assault rifle
+        Vector3 direction = target.transform.position - AssaultRifle.transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        AssaultRifle.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        // Flip Assault Rifle if necessary
+        Vector3 scale = AssaultRifle.transform.localScale;
+        scale.y = direction.x < 0 ? -Mathf.Abs(scale.y) : Mathf.Abs(scale.y);
+        AssaultRifle.transform.localScale = scale;
+
+        // Instantiate the bullet and it's stats
+        GameObject Bullet = Instantiate(bulletPrefab, AssaultRifle.transform.GetChild(0).transform.position, AssaultRifle.transform.rotation);
+        Bullet bulletScript = Bullet.GetComponent<Bullet>();
+        bulletScript.damage = damage;
+        bulletScript.destroyOnCollision = false;
+        bulletScript.range = range;
     }
 }

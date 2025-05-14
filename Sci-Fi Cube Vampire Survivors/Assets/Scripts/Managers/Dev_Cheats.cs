@@ -15,8 +15,7 @@ public class Dev_Cheats : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Player.instance.scrap += 10;
-            ScrapCounter.instance.AddScrap(10);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().scrap += 10;
         }
     }
 }

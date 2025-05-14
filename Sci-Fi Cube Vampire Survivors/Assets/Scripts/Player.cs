@@ -25,7 +25,8 @@ public class Player : MonoBehaviour
         }
     }
     public float regen = 0.1f; // Per Second
-    public float armour = 0f;
+    public float armour = 0f; // Percent Reduction
+    public float damageMultiplier = 1f;
     public float speed = 1f;
     public float maxHealth = 100f;
     public float pickupRange = 50f;
@@ -97,11 +98,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if (damage <= armour)
-        {
-            return;
-        }
-        CurrentHealth -= damage - armour;
+        CurrentHealth -= damage * (1f - armour);
         
         if (CurrentHealth <= 0f)
         {

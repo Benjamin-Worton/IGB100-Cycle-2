@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlasmaShell : Weapon
+public class MK1Plates : Weapon
 {
     [SerializeField] private float Armour = 0f;
-    public float damage = 10f;
     protected override void Attack()
     {
         return;
@@ -15,22 +14,23 @@ public class PlasmaShell : Weapon
     void Awake()
     {
         fireRate = 0;
-        Armour += 0.05f;
-        this.GetComponent<Player>().armour += Armour;
-        
+        Armour = 0.1f;
+        GetComponent<Player>().armour += Armour;
+        GetComponent<Player>().maxHealth += 50;
+
     }
 
     public override void Remove()
     {
-        this.GetComponent<Player>().armour -= Armour;
+        GetComponent<Player>().armour -= Armour;
+        GetComponent<Player>().maxHealth -= 50;
         Destroy(this);
     }
 
     public void UpgradeArmour()
     {
         GetComponent<Player>().armour -= Armour;
-        Armour += (1f - Armour) * 0.05f;  // Increase armour
+        Armour += (1f - Armour) * 0.1f;  // Increase armour
         GetComponent<Player>().armour += Armour;
     }
-
 }

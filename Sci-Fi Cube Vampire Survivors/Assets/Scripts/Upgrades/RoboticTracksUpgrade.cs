@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class RoboticTracks : Weapon
 {
-    [SerializeField] private float SpeedMultiplier = 1.5f;
+    [SerializeField] private float SpeedIncrease = 2f;
+    [SerializeField] private float SpeedDecrease = 0.5f;
+
     protected override void Attack()
     {
         return;
@@ -24,7 +26,10 @@ public class RoboticTracks : Weapon
 
         if (direction.x == 0 || direction.y == 0)
         {
-            speed = speed * SpeedMultiplier;
+            speed *= 1f + SpeedIncrease;
+        } else
+        {
+            speed *= 1f - SpeedDecrease;
         }
         return speed;
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HoverPad : Weapon
 {
-    [SerializeField] private float SpeedMultiplier = 1.2f;
+    [SerializeField] private float SpeedIncrease = 1f;
     protected override void Attack()
     {
         return;
@@ -19,7 +19,7 @@ public class HoverPad : Weapon
     // Update is called once per frame
     public float HandleSpeed(float speed)
     {
-        speed = speed * SpeedMultiplier;
+        speed *= 1f + SpeedIncrease;
         return speed;
     }
 

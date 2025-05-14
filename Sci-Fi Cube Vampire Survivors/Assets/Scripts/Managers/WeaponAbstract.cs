@@ -7,6 +7,7 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
     // Variables For All Weapons
+    [Header("Stats")]
     [SerializeField] protected float fireRate;
 
     void Start()

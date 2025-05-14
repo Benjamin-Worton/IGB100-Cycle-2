@@ -61,14 +61,14 @@ public class Crate : MonoBehaviour
     {
             if (Random.Range(1, 100) <= chanceOfDroppingScrap)
             {
-                StartCoroutine(SpawnScrapAndDie());
+                StartCoroutine(RandomScrap());
             }
             Instantiate(healthPrefab, transform.position, Quaternion.identity);
             ScoreManager.instance.AddScore(points);
             Destroy(gameObject);
     }
 
-    private IEnumerator SpawnScrapAndDie()
+    private IEnumerator RandomScrap()
     {
         int scrapCount = Random.Range(0, 3);
         float delayBetweenSpawns = 0.3f;
@@ -78,7 +78,7 @@ public class Crate : MonoBehaviour
             SpawnScrap();
             yield return new WaitForSeconds(delayBetweenSpawns);
         }
-        Player.instance.scrap += scrapCount;
+        playerScript.scrap += scrapCount;
         ScrapCounter.instance.AddScrap(scrapCount);
 
         ScoreManager.instance.AddScore(points);
