@@ -21,7 +21,7 @@ public abstract class Weapon : MonoBehaviour
         // Loop the waiting for attack, then attacking.
         while (true)
         {
-            yield return new WaitForSeconds(fireRate);
+            yield return new WaitForSeconds(fireRate * gameObject.GetComponent<Player>().cooldownMultiplier);
             Attack(); 
             if (fireRate == 0) break; // FireRate set to 0 means that it is a onetime attack that does not need to be retriggered
         }

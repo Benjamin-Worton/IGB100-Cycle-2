@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public Vector2 direction = Vector2.zero;
     [HideInInspector] public bool isDashing = false;
     private Rigidbody2D rb;
+    [HideInInspector] public Vector2 lastKnownDirection = Vector2.zero;
 
 
     // Stats
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     public float speed = 1f;
     public float maxHealth = 100f;
     public float pickupRange = 50f;
+    public float cooldownMultiplier = 1f; // Percent, AVOID 0% MOST LIKELY WILL BREAK GAME
     public int scrap = 0;
     public int maxInventorySpace = 1;
     public int currentInventorySpace = 1;
@@ -57,10 +59,11 @@ public class Player : MonoBehaviour
             HandleSpeed();
             // Move Main Scene (Player + Camera)
             rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
+            lastKnownDirection = direction;
         }
         if (CurrentHealth < maxHealth)
         {
-            CurrentHealth += regen / 60f;
+            CurrentHealth += regen / 50f;
             if (CurrentHealth >= maxHealth)
             {
                 CurrentHealth = maxHealth;

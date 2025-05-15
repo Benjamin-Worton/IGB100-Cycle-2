@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-public class BashWeapon : Weapon
+public class Bash : Weapon
 {
     [SerializeField] private float bashDistance = 5f;
     [SerializeField] private float bashDuration = 0.2f;
@@ -12,7 +12,7 @@ public class BashWeapon : Weapon
 
     protected override void Attack()
     {
-        StartCoroutine(Bash()); // Bash must be a Coroutine so call it instead of using Attack
+        StartCoroutine(BashAttack()); // Bash must be a Coroutine so call it instead of using Attack
     }
 
     private void Awake()
@@ -30,7 +30,7 @@ public class BashWeapon : Weapon
         GetComponentInChildren<SpriteRenderer>().color = PlayerSpriteColour;
     }
 
-    private IEnumerator Bash()
+    private IEnumerator BashAttack()
     {
         // Set bashing to be true to enable the trail
         GetComponentInParent<Player>().isDashing = true;

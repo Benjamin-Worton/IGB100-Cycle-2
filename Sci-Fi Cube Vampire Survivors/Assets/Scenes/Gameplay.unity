@@ -1787,7 +1787,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2728502580841112357, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
   m_PrefabInstance: {fileID: 2078937807}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1247405327
+--- !u!114 &1247405334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1796,26 +1796,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1247405315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 075ded523d38fc54e8f65458f776ec87, type: 3}
+  m_Script: {fileID: 11500000, guid: 32a5588e4395a6645874eef472318042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0
-  damage: 10
-  range: 3.5
---- !u!114 &1247405328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247405315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 733e42463c130064ab44e7f6e2b05cca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireRate: 0
-  StunDuration: 1
+  SpeedIncrease: 2
+  SpeedDecrease: 0.5
 --- !u!114 &1322260279 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5035712840814737150, guid: bafc146b408dcdb40ba1a11ea15758cd, type: 3}
@@ -2976,7 +2962,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4765688335883833316, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: m_Mass
-      value: 100000
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765688335883833316, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4765688335883833316, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: m_Constraints
@@ -3048,10 +3038,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6709941521318432841, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1247405327}
-    - targetCorrespondingSourceObject: {fileID: 6709941521318432841, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1247405328}
+      addedObject: {fileID: 1247405334}
   m_SourcePrefab: {fileID: 100100000, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
 --- !u!114 &56597097045465385
 MonoBehaviour:

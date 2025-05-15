@@ -60,7 +60,7 @@ public class BasicEnemy : MonoBehaviour
 
             if (collision.gameObject.GetComponent<Player>().isDashing)
             {
-                TakeDamage(collision.gameObject.GetComponent<BashWeapon>().damage);
+                TakeDamage(collision.gameObject.GetComponent<Bash>().damage);
             }
             else
             {
@@ -80,12 +80,21 @@ public class BasicEnemy : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Weapon"))
         {
-            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+#nullable enable
+            Bullet? bullet;
+            collision.gameObject.TryGetComponent<Bullet>(out bullet);
             if (bullet != null)
             {
                 TakeDamage(bullet.damage);
                 if (bullet.destroyOnCollision) Destroy(collision.gameObject);
             }
+            IonLaserObject? ionLaser;
+            collision.gameObject.TryGetComponent<IonLaserObject>(out ionLaser);
+            if (ionLaser != null)
+            {
+                TakeDamage(ionLaser.damage);
+            }
+#nullable disable
         }
     }
 

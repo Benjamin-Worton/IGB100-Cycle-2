@@ -10,7 +10,7 @@ public class AssaultRifleWeapon : Weapon
     private GameObject AssaultRifleObject;
 
     
-    [SerializeField] protected float damage = 5f;
+    [SerializeField] private float damage = 5f;
     [SerializeField] private float range = 3.5f;
     // Method to attack or fire bullets
     protected override void Attack()
