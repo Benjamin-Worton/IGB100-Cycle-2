@@ -1,0 +1,6 @@
+m6x11
+
+A font by Daniel Linssen - https://managore.itch.io/m6x11
+
+use font size 16, 32, 48, etc for m6x11
+use font size 18, 36, 54, etc for m6x11plus
