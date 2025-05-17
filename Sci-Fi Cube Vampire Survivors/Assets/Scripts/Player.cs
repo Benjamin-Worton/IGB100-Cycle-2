@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.GraphicsBuffer;
 
 public class Player : MonoBehaviour
 {
@@ -27,13 +28,19 @@ public class Player : MonoBehaviour
     public float regen = 0.1f; // Per Second
     public float armour = 0f; // Percent Reduction
     public float damageMultiplier = 1f;
-    public float speed = 1f;
+    public float speed = 0.3f;
     public float maxHealth = 100f;
     public float pickupRange = 50f;
     public float cooldownMultiplier = 1f; // Percent, AVOID 0% MOST LIKELY WILL BREAK GAME
     public int scrap = 0;
     public int maxInventorySpace = 1;
     public int currentInventorySpace = 1;
+    public float critRate = 0f;
+    public float critDamageMultiplier = 1.5f;
+    public float critBlock = 0f;
+
+
+    private int mercilessStacks = 0;
 
     // Outside objects
     public HealthBar healthBar;
@@ -100,6 +107,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        damage = HandleDamageTaken(damage);
         CurrentHealth -= damage * (1f - armour);
         
         if (CurrentHealth <= 0f)
@@ -118,12 +126,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Health"))
         {
             ScoreManager.instance.AddScore(200);
-            currentHealth *= 1.25f;
-            if (currentHealth >= maxHealth)
-            {
-                currentHealth = maxHealth;
-            }
-            healthBar.SetHealth(currentHealth);
+            CurrentHealth *= 1.25f;
             Destroy(collision.gameObject);
         }
     }
@@ -154,5 +157,39 @@ public class Player : MonoBehaviour
         currentInventorySpace = maxInventorySpace;
 
         Debug.Log("Player leveled up to level " + level);
+    }
+
+    public void GiveMerciless()
+    {
+        if (mercilessStacks >= 3) { return; }
+        mercilessStacks++;
+        cooldownMultiplier -= 0.1f;
+        StartCoroutine(RemoveMerciless());
+    }
+
+    private IEnumerator RemoveMerciless()
+    {
+        yield return new WaitForSeconds(1);
+        cooldownMultiplier += 0.1f;
+        mercilessStacks--;
+    }
+
+    public float HandleDamageMultipliers(float damage)
+    {
+        if (Random.Range(1, 100) <= critRate * 100)
+        {
+            damage *= critDamageMultiplier;
+        }
+
+        return (damage * damageMultiplier);
+    }
+
+    private float HandleDamageTaken(float damage)
+    {
+        if (Random.Range(1, 100) <= critBlock * 100)
+        {
+            return 0;
+        }
+        return damage * (1f - armour);
     }
 }

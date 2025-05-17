@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6586192486398912937}
   - component: {fileID: 9018122191698106879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemy4-hurt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1573336930123283231}
   - component: {fileID: 2434365912085781012}
   - component: {fileID: 6851628862332795523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Basic Enemy 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8078271996965640621}
   - component: {fileID: 6226492715851539257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: enemy4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

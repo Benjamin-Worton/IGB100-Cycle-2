@@ -26,6 +26,8 @@ public class BasicEnemy : MonoBehaviour
     public GameObject ScrapPrefab;
     private int chanceOfDroppingScrap = 100; // In Percent %
 
+    private float burnTimeLeft = 0f;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -50,6 +52,8 @@ public class BasicEnemy : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime / 300f);
         }
+
+        if (burnTimeLeft > 0f) { TakeBurnDamage(); }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -107,28 +111,21 @@ public class BasicEnemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        CurrentHealth -= damage * playerScript.damageMultiplier;
+        damage = playerScript.HandleDamageMultipliers(damage);
+        CurrentHealth -= damage;
+
         StartCoroutine(DamageFlash());
 
-        if (target.GetComponent<SteelEaters>() != null)
-        {
-            target.GetComponent<SteelEaters>().GiveHealth(damage);
-        }
-        if (target.GetComponent<EMPRounds>() != null)
-        {
-            Stun(target.GetComponent<EMPRounds>().StunDuration);
-        }
+        HandleOnTakeDamageEffects(damage);
+
+        
 
         if (CurrentHealth <= 0 && CurrentHealth != -0.01f)
         {
-            CurrentHealth = 0.01f;
-            if (Random.Range(1, 100) <= chanceOfDroppingScrap)
-            {
-                StartCoroutine(RandomScrap());
-            }
-            ScoreManager.instance.AddScore(points);
-            canMove = false;
-            StartCoroutine(DieAfterDelay());
+            CurrentHealth = -0.01f; // Lock Health to prevent multiple deaths
+            HandleOnDeathEffects();
+            
+            
         }
     }
 
@@ -197,4 +194,58 @@ public class BasicEnemy : MonoBehaviour
         yield return new WaitForSeconds(Seconds);
         canMove = true;
     }
+
+
+    private void HandleOnTakeDamageEffects(float damage)
+    {
+        // SteelEaters (Lifesteal)
+        if (target.GetComponent<SteelEaters>() != null)
+        {
+            target.GetComponent<SteelEaters>().GiveHealth(damage);
+        }
+
+        // EMPRounds (Stun)
+        if (target.GetComponent<EMPRounds>() != null)
+        {
+            Stun(1f);
+        }
+
+        // Incendiary Rounds
+        if (target.GetComponent<IncendiaryRounds>() != null)
+        {
+            Ignite(5f);
+        }
+    }
+
+    private void HandleOnDeathEffects()
+    {
+        // Merciless Programming (Decrease Cooldown On Kill)
+        if (target.GetComponent<MercilessProgramming>() != null)
+        {
+            target.GetComponent<MercilessProgramming>().GiveMerciless();
+        }
+
+        // Handle Scrap Dropping
+        if (Random.Range(1, 100) <= chanceOfDroppingScrap)
+        {
+            StartCoroutine(RandomScrap());
+        }
+        ScoreManager.instance.AddScore(points);
+        canMove = false;
+        StartCoroutine(DieAfterDelay());
+    }
+
+    // Burn Functions
+    public void Ignite(float Seconds)
+    {
+        if (burnTimeLeft >= Seconds) { return; }
+        burnTimeLeft = Seconds;
+    }
+    private void TakeBurnDamage()
+    {
+        if (CurrentHealth <= 0f) { return; }
+        TakeDamage(Time.deltaTime * 10f);
+        burnTimeLeft -= Time.deltaTime;
+    }
+
 }
