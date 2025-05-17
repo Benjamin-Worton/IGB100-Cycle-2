@@ -12,7 +12,9 @@ public class AssaultRifleWeapon : WeaponAbstract
 
     
     [SerializeField] private float damage = 5f;
-    [SerializeField] private float range = 3.5f;
+    [SerializeField] private float range = 5f;
+    [SerializeField] private float DistanceFromPlayer = 1f;
+
 
     private void Awake()
     {
@@ -23,13 +25,13 @@ public class AssaultRifleWeapon : WeaponAbstract
         bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
 
         // Create Assault Rifle Object above player's head
-        AssaultRifleObject = Instantiate(AssaultRiflePrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        AssaultRifleObject = Instantiate(AssaultRiflePrefab, transform.position + Vector3.up * DistanceFromPlayer, Quaternion.identity);
     }
 
     void Update()
     {
         // Keep assault rifle locked to player
-        AssaultRifleObject.transform.position = this.transform.position + Vector3.up * 0.5f;
+        AssaultRifleObject.transform.position = this.transform.position + Vector3.up * DistanceFromPlayer;
     }
 
     public override void Remove()

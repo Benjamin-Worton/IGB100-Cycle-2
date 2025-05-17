@@ -9,7 +9,7 @@ public class EMP1Mines : WeaponAbstract
 
     protected override void Attack()
     {
-        GameObject Mine = Instantiate(minePrefab, transform.position, Quaternion.identity); // Creates Mine and sets damage
+        GameObject Mine = Instantiate(minePrefab, transform.position + Vector3.forward * 0.1f, Quaternion.identity); // Creates Mine and sets damage
         Mine.GetComponent<Mine>().damage = damage;
 
     }

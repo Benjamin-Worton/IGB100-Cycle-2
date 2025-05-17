@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShoulderLasers : WeaponAbstract
 {
     private GameObject laserPrefab;
-    private readonly float DistanceFromPlayer = 0.2f;
+    private readonly float DistanceFromPlayer = 0.4f;
     [SerializeField] private float damage = 10f;
     [SerializeField] private float range = 7f;
 

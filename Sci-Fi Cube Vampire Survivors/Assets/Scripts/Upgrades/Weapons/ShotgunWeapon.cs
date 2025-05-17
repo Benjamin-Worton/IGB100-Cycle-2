@@ -11,12 +11,14 @@ public class Shotgun : WeaponAbstract
     private GameObject ShotgunObject;
 
     [SerializeField] private float damage = 30f;
-    [SerializeField] private float range = 2f;
+    [SerializeField] private float range = 3.5f;
     [SerializeField] private int numOfBullets = 5;
     [SerializeField] private float spreadAngle = 60f;
+    [SerializeField] private float DistanceFromPlayer = 2f;
 
 
-    
+
+
 
     private void Awake()
     {
@@ -27,13 +29,13 @@ public class Shotgun : WeaponAbstract
         bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
 
         // Create Shotgun Object above player's head
-        ShotgunObject = Instantiate(ShotgunPrefab, transform.position + Vector3.right * 0.5f, Quaternion.identity);
+        ShotgunObject = Instantiate(ShotgunPrefab, transform.position + Vector3.right * DistanceFromPlayer, Quaternion.identity);
     }
 
     void Update()
     {
         // Keep shotgun locked to player
-        ShotgunObject.transform.position = transform.position + Vector3.right * 0.5f;
+        ShotgunObject.transform.position = transform.position + Vector3.right * DistanceFromPlayer;
 
 
     }

@@ -50,7 +50,21 @@ public class BasicEnemy : MonoBehaviour
 
         if (canMove)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime / 300f);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        }
+
+        if (target.transform.position.x + speed * Time.deltaTime < transform.position.x)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = -1;
+            transform.localScale = scale;
+        }
+
+        if (target.transform.position.x > transform.position.x + speed * Time.deltaTime)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = 1;
+            transform.localScale = scale;
         }
 
         if (burnTimeLeft > 0f) { TakeBurnDamage(); }

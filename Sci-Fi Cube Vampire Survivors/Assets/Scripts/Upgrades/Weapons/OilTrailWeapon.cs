@@ -20,7 +20,7 @@ public class OilTrail : WeaponAbstract
 
     void Awake()
     {
-        fireRate = 0.2f; // Default fire rate
+        fireRate = 0.1f; // Default fire rate
         oilPrefab = Resources.Load<GameObject>("Prefabs/Oil");
     }
 

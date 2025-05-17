@@ -6,7 +6,7 @@ using UnityEngine;
 public class Oil : MonoBehaviour
 {
     [HideInInspector] public float burnTime = 5f;
-    [HideInInspector] public float burnDistance = 1f;
+    [HideInInspector] public float burnDistance = 1.5f;
     private bool isIgnited = false;
 
     private void OnCollisionEnter2D(Collision2D collision)

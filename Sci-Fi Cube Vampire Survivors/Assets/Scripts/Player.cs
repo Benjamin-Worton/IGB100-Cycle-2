@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
         {
             HandleSpeed();
             // Move Main Scene (Player + Camera)
-            rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + direction.normalized * speed * Time.fixedDeltaTime / 0.6f);
             lastKnownDirection = direction;
         }
         if (CurrentHealth < maxHealth)

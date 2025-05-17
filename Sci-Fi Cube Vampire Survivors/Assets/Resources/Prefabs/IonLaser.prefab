@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.14, y: 0.14, z: 0.14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,18 +120,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.122837305}
+  m_Offset: {x: -0.03833866, y: 0.02307725}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 80.31681, y: 51.1}
+    oldSize: {x: 17.65625, y: 11.25}
     newSize: {x: 80.31681, y: 51.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 80.31681, y: 5.4049363}
+  m_Size: {x: 14.736544, y: 1.2150068}
   m_EdgeRadius: 0
 --- !u!61 &904548737428085737
 BoxCollider2D:
@@ -165,18 +165,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18425798, y: 0}
+  m_Offset: {x: -0.010925293, y: -0.06733918}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 80.31681, y: 51.1}
+    oldSize: {x: 17.65625, y: 11.25}
     newSize: {x: 80.31681, y: 51.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.7552633, y: 51.1}
+  m_Size: {x: 1.3496342, y: 8.547401}
   m_EdgeRadius: 0
 --- !u!114 &7090976232718852082
 MonoBehaviour:

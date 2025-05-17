@@ -7,7 +7,7 @@ public class SFDM : WeaponAbstract
 {
     private GameObject SFDMObjectPrefab;
     private GameObject SFDMObject;
-    [SerializeField] private float range = 3f;
+    [SerializeField] private float range = 4f;
     [SerializeField] private float damage = 5f;
 
 

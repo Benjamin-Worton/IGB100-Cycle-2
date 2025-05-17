@@ -6,7 +6,7 @@ using UnityEngine;
 public class RepulseBeacon : WeaponAbstract
 {
     private GameObject repulsePrefab;
-    [SerializeField] private float range = 3f;
+    [SerializeField] private float range = 4f;
 
     
 
