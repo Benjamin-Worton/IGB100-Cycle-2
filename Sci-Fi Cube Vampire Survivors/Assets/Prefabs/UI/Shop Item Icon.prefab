@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3526636863539805729}
   - component: {fileID: 8283806265372157789}
   - component: {fileID: 1327786545379720649}
-  - component: {fileID: 2177413907677713428}
+  - component: {fileID: -4447047257943495588}
   m_Layer: 0
-  m_Name: Shop Item Frame
+  m_Name: Shop Item Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2177413907677713428
+--- !u!114 &-4447047257943495588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,11 +85,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4629065436515275178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -105,10 +105,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 86d10627a56311a469685d121881983e, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: d2921396ec4aa3b448713e5f543486ab, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 2a1f65299e68c974796dd45e9460ce01, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 2a1f65299e68c974796dd45e9460ce01, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 0b77a597aad9e83438e910f2d6792f38, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -117,6 +117,10 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1327786545379720649}
-  m_OnClick:
+  toggleTransition: 1
+  graphic: {fileID: 401387672847476311, guid: cb6f277c84f60bb4486d9f11be0933f4, type: 3}
+  m_Group: {fileID: 0}
+  onValueChanged:
     m_PersistentCalls:
       m_Calls: []
+  m_IsOn: 0

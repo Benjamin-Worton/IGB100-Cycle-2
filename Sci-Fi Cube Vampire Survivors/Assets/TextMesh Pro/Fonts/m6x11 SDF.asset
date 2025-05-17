@@ -2552,7 +2552,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Ambient: 0.5
-    - _Bevel: 0.5
+    - _Bevel: 0
     - _BevelClamp: 0
     - _BevelOffset: 0
     - _BevelRoundness: 0
@@ -2568,7 +2568,7 @@ Material:
     - _GlowInner: 0.05
     - _GlowOffset: 0
     - _GlowOuter: 0.05
-    - _GlowPower: 0.75
+    - _GlowPower: 0.63
     - _GradientScale: 6
     - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
