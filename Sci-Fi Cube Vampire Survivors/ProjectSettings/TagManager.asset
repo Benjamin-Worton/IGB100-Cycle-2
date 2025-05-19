@@ -9,6 +9,7 @@ TagManager:
   - Scrap
   - Health
   - ScoreManager
+  - EXP
   layers:
   - Default
   - TransparentFX

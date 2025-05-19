@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -27,7 +28,6 @@ public class Player : MonoBehaviour
     }
 
     // Stats
-    public int level = 1;
     public float currentHealth;
     public float CurrentHealth {
         get { return currentHealth; }
@@ -45,8 +45,15 @@ public class Player : MonoBehaviour
     public int maxInventorySpace = 1;
     public int currentInventorySpace = 1;
 
+    public int exp = 0; 
+    public int expNeeded = 20;
+    public int level = 1;
+    public float expSpeed = 100;
+
     // Outside objects
     public HealthBar healthBar;
+    public EXPBar expBar;
+    public TextMeshProUGUI levelText;
 
     // References
     [SerializeField] private TrailRenderer bashTrail;
@@ -55,6 +62,10 @@ public class Player : MonoBehaviour
     {
         CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        exp = 0;
+        expBar.SetMaxEXP(expNeeded);
+        expBar.SetEXP(exp);
+        levelText.text = "Level " + level.ToString();
 
         // Setting Trail Width
         bashTrail.startWidth = 10/150f;
@@ -92,6 +103,8 @@ public class Player : MonoBehaviour
 
         // If Dashing (set by Bash) then turn on trail
         bashTrail.emitting = isDashing;
+
+        HandleExp();
     }
     private void HandleSpeed()
     {
@@ -144,6 +157,7 @@ public class Player : MonoBehaviour
     public void LevelUp()
     {
         level++;
+        levelText.text = "Level " + level.ToString();
 
         // Inventory space progression
         switch (level)
@@ -165,7 +179,46 @@ public class Player : MonoBehaviour
         }
 
         currentInventorySpace = maxInventorySpace;
+        expNeeded = expNeeded * 2;
+        exp = 0;
+        expBar.SetMaxEXP(expNeeded);
+        expBar.SetEXP(exp);
+        regen = regen * 2;
+        speed = speed * 1.5f;
 
         Debug.Log("Player leveled up to level " + level);
+    }
+
+    private void HandleExp()
+    {
+        GameObject[] allExp = GameObject.FindGameObjectsWithTag("EXP");
+        foreach (GameObject expObject in allExp)
+        {
+            float distanceToExp = Vector2.Distance(transform.position, expObject.transform.position);
+            if (distanceToExp < 0.1f)
+            {
+                Destroy(expObject);
+                exp += 1;
+                expBar.SetEXP(exp);
+            }
+            if (exp >= expNeeded)
+            {
+                LevelUp();
+            }
+            if (distanceToExp < pickupRange)
+            {
+                Rigidbody2D expRB = expObject.GetComponent<Rigidbody2D>();
+                Vector2 direction = (transform.position - expObject.transform.position).normalized;
+
+                Vector2 velocity = expRB.velocity;
+                if (velocity.magnitude == 0f)
+                {
+                    expRB.velocity = Vector2.up * expSpeed;
+                    velocity = direction * expSpeed;
+                }
+
+                expRB.velocity = direction * velocity.magnitude * 1.01f;
+            }
+        }
     }
 }

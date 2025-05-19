@@ -26,6 +26,8 @@ public class BasicEnemy : MonoBehaviour
     public GameObject ScrapPrefab;
     private int chanceOfDroppingScrap = 100; // In Percent %
 
+    public GameObject expPrefab;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -108,6 +110,10 @@ public class BasicEnemy : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
+            for (int i = 0; i < Random.Range(1, 6); i++)
+            {
+                SpawnExp();
+            }
             if (Random.Range(1, 100) <= chanceOfDroppingScrap)
             {
                 StartCoroutine(SpawnScrapAndDie());
@@ -169,6 +175,25 @@ public class BasicEnemy : MonoBehaviour
         scrapRb.AddTorque(Random.Range(-10f, 10f), ForceMode2D.Impulse);
 
         Destroy(scrap, 0.5f);
+    }
+
+    private void SpawnExp()
+    {
+        // You can spawn multiple EXP or just one. Here's one for now:
+        Vector3 spawnPosition = transform.position + Vector3.up * 0.2f;
+        GameObject exp = Instantiate(expPrefab, spawnPosition, Quaternion.identity);
+
+        Rigidbody2D rb = exp.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            Vector2 forceDir = new Vector2(Random.Range(-1f, 1f), 1f).normalized;
+            float forceMag = Random.Range(0.5f, 2f);
+            rb.AddForce(forceDir * forceMag, ForceMode2D.Impulse);
+            rb.AddTorque(Random.Range(-5f, 5f), ForceMode2D.Impulse);
+        }
+
+        // Optional: destroy the EXP pickup if not collected after some time
+        Destroy(exp, 5f);
     }
 
     public void Stun(int Seconds)

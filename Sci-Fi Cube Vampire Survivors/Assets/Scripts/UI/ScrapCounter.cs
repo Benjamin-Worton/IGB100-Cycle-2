@@ -6,10 +6,23 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ScrapCounter : MonoBehaviour
 {
-    public static ScrapCounter instance; // Singleton pattern for easy access
-    public TextMeshProUGUI scrapText; // Reference to the UI text component
+    public static ScrapCounter instance;
+    public TextMeshProUGUI scrapText;
     private Player playerScript;
 
+    void Awake()
+    {
+        // Set the static instance reference
+        if (instance == null)
+        {
+            instance = this;
+            // Optional: DontDestroyOnLoad(gameObject); if you want to persist between scenes
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject); // Prevent duplicates
+        }
+    }
 
     void Start()
     {
@@ -17,28 +30,17 @@ public class ScrapCounter : MonoBehaviour
         UpdateScrapText();
     }
 
-    private void Update()
+    void Update()
     {
         UpdateScrapText();
     }
 
-    // Method to add scrap
     public void AddScrap(int amount)
     {
         playerScript.scrap += amount;
         UpdateScrapText();
     }
 
-    // Update the UI text
-    private void UpdateScrapText()
-    {
-        if (scrapText != null)
-        {
-            scrapText.text = "Scrap: " + playerScript.scrap.ToString();
-        }
-    }
-
-    // Optional: Accessor for total scrap
     public int GetTotalScrap()
     {
         return playerScript.scrap;
@@ -48,5 +50,13 @@ public class ScrapCounter : MonoBehaviour
     {
         playerScript.scrap = amount;
         UpdateScrapText();
+    }
+
+    private void UpdateScrapText()
+    {
+        if (scrapText != null)
+        {
+            scrapText.text = "Scrap: " + playerScript.scrap.ToString();
+        }
     }
 }
