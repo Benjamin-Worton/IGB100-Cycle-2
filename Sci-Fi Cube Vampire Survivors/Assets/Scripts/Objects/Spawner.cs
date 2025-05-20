@@ -34,7 +34,6 @@ public class Spawner : MonoBehaviour
 
         StartCoroutine(SpawnEnemies());
         StartCoroutine(IncreaseSpawnRateOverTime()); // Start rate increase coroutine
-        StartCoroutine(DrainSliderOverTime());
         roundText.text = "Round: " + round.ToString();  // Update the text component to show the current round
     }
 
@@ -98,27 +97,6 @@ public class Spawner : MonoBehaviour
                 playerScript.LevelUp();
             }
         }   
-    }
-
-    IEnumerator DrainSliderOverTime()
-    {
-        while (true)
-        {
-            enemiesRemainingSlider.maxValue = 60f;
-            enemiesRemainingSlider.value = 60f;
-
-            float duration = 60f;
-            float elapsed = 0f;
-
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                enemiesRemainingSlider.value = Mathf.Lerp(60f, 0f, elapsed / duration);
-                yield return null;
-            }
-
-            enemiesRemainingSlider.value = 0f;
-        }
     }
 
     private Vector2 RandomPointInCircle(CircleCollider2D circle)

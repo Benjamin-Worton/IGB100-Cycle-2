@@ -1,4 +1,4 @@
-using System.Collections;
+	using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -8,13 +8,25 @@ public class UpgradeMenu : MonoBehaviour
     bool paused = false;
     public GameObject upgradeMenu;
     public GameObject player;
+
     public TMP_Text assaultRifleButtonText;
     public TMP_Text ShoulderButtonText;
     public TMP_Text RoboticButtonText;
+    public TMP_Text hoverButtonText;
+    public TMP_Text shellButtonText;
+    public TMP_Text minesButtonText;
+    public TMP_Text beaconButtonText;
+    public TMP_Text eaterButtonText;
+
     private Player playerScript;
     private AssaultRifleWeapon assaultRifleScript;
     private ShoulderLasers shoulderScript;
-    private RoboticTracks roboticScript; 
+    private RoboticTracks roboticScript;
+    private HoverPad hoverScript;
+    private PlasmaShell shellScript;
+    private EMP1Mines minesScript;
+    private RepulseBeacon beaconScript;
+    private SteelEaters eaterScript;
 
     bool hasAssaultRifle = false;
     public int assaultRifleCost = 10;
@@ -30,6 +42,31 @@ public class UpgradeMenu : MonoBehaviour
     public int roboticCost = 10;
     public int roboticUpgradeCost = 5;
     public int roboticInventorySpace = 1;
+
+    bool hasHover = false;
+    public int hoverCost = 10;
+    public int hoverUpgradeCost = 5;
+    public int hoverInventorySpace = 1;
+
+    bool hasShell = false;
+    public int shellCost = 10;
+    public int shellUpgradeCost = 5;
+    public int shellInventorySpace = 1;
+
+    bool hasMines = false;
+    public int minesCost = 10;
+    public int minesUpgradeCost = 5;
+    public int minesInventorySpace = 1;
+
+    bool hasBeacon = false;
+    public int beaconCost = 10;
+    public int beaconUpgradeCost = 5;
+    public int beaconInventorySpace = 1;
+
+    bool hasEater = false;
+    public int eaterCost = 10;
+    public int eaterUpgradeCost = 5;
+    public int eaterInventorySpace = 1;
 
     public int spentInventory;
 
@@ -104,36 +141,21 @@ public class UpgradeMenu : MonoBehaviour
     public void PurchaseAssaultRifleUpgrade()
     {
         if (playerScript == null) { return; }
-        if (!hasAssaultRifle)
+        if (playerScript.scrap < assaultRifleCost /*&& playerScript.currentInventorySpace < assaultRifleInventorySpace */)
         {
-            if (playerScript.scrap >= assaultRifleCost /*&& playerScript.currentInventorySpace >= assaultRifleInventorySpace */)
-            {
-                // Buy Assault Rifle
-                playerScript.scrap -= assaultRifleCost;
-                hasAssaultRifle = true;
-                player.AddComponent<AssaultRifleWeapon>();
-
-                // Reduce player's available inventory space
-                playerScript.currentInventorySpace -= assaultRifleInventorySpace;
-
-                ChangeButtonText(assaultRifleButtonText, "UPGRADE FOR " + assaultRifleUpgradeCost + " SCRAP");
-                EnableScript("AssaultRifleWeapon");
-            }
-            else
-            {
-                ChangeButtonText(assaultRifleButtonText, "NOT ENOUGH SCRAP OR SPACE!");
-            }
+            ChangeButtonText(assaultRifleButtonText, "NOT ENOUGH SCRAP OR SPACE!");
+            return;
         }
-        else if (hasAssaultRifle && playerScript.scrap >= assaultRifleUpgradeCost)
-        {
-            // Upgrade
-            playerScript.scrap -= assaultRifleUpgradeCost;
-            assaultRifleScript = player.GetComponent<AssaultRifleWeapon>();
-            assaultRifleScript.UpgradeFireRate();
-        }
-        else
-        {
-            ChangeButtonText(assaultRifleButtonText, "NOT ENOUGH SCRAP!");
+        // Buy Assault Rifle
+        playerScript.scrap -= assaultRifleCost;
+        hasAssaultRifle = true;
+        player.AddComponent<AssaultRifleWeapon>();
+
+        // Reduce player's available inventory space
+        playerScript.currentInventorySpace -= assaultRifleInventorySpace;
+
+        ChangeButtonText(assaultRifleButtonText, "UPGRADE FOR " + assaultRifleUpgradeCost + " SCRAP");
+        EnableScript("AssaultRifleWeapon");
         }
 
         StartCoroutine(RevertButtonText(0.1f));
@@ -194,6 +216,112 @@ public class UpgradeMenu : MonoBehaviour
         // Start the coroutine to revert the button text after 0.1 seconds
         StartCoroutine(RevertButtonText(0.1f));
     }
+
+   public void PurchaseHoverUpgrade()
+    {
+        if (playerScript != null)
+        {
+            if (!hasHover && playerScript.scrap >= hoverCost)
+            {
+                playerScript.scrap -= hoverCost;
+                ScrapCounter.instance.SetScrap(playerScript.scrap);
+                hasHover = true;
+                ChangeButtonText(hoverButtonText, "PURCHASED");
+                EnableScript("HoverPad");
+            }
+            else
+            {
+                ChangeButtonText(hoverButtonText, "NOT ENOUGH SCRAP!");
+            }
+
+            StartCoroutine(RevertButtonText(0.1f));
+        }
+    }
+
+    public void PurchaseShellUpgrade()
+    {
+        if (playerScript != null)
+        {
+            if (!hasShell && playerScript.scrap >= shellCost)
+            {
+                playerScript.scrap -= shellCost;
+                ScrapCounter.instance.SetScrap(playerScript.scrap);
+                hasShell = true;
+                ChangeButtonText(shellButtonText, "PURCHASED");
+                EnableScript("PlasmaShell");
+            }
+            else
+            {
+                ChangeButtonText(shellButtonText, "NOT ENOUGH SCRAP!");
+            }
+
+            StartCoroutine(RevertButtonText(0.1f));
+        }
+    }
+
+    public void PurchaseMinesUpgrade()
+    {
+        if (playerScript != null)
+        {
+            if (!hasMines && playerScript.scrap >= minesCost)
+            {
+                playerScript.scrap -= minesCost;
+                ScrapCounter.instance.SetScrap(playerScript.scrap);
+                hasMines = true;
+                ChangeButtonText(minesButtonText, "PURCHASED");
+                EnableScript("EMP1Mines");
+            }
+            else
+            {
+                ChangeButtonText(minesButtonText, "NOT ENOUGH SCRAP!");
+            }
+
+            StartCoroutine(RevertButtonText(0.1f));
+        }
+    }
+
+    public void PurchaseBeaconUpgrade()
+    {
+        if (playerScript != null)
+        {
+            if (!hasBeacon && playerScript.scrap >= beaconCost)
+            {
+                playerScript.scrap -= beaconCost;
+                ScrapCounter.instance.SetScrap(playerScript.scrap);
+                hasBeacon = true;
+                ChangeButtonText(beaconButtonText, "PURCHASED");
+                EnableScript("RepulseBeacon");
+            }
+            else
+            {
+                ChangeButtonText(beaconButtonText, "NOT ENOUGH SCRAP!");
+            }
+
+            StartCoroutine(RevertButtonText(0.1f));
+        }
+    }
+
+    public void PurchaseEaterUpgrade()
+    {
+        if (playerScript != null)
+        {
+            if (!hasEater && playerScript.scrap >= eaterCost)
+            {
+                playerScript.scrap -= eaterCost;
+                ScrapCounter.instance.SetScrap(playerScript.scrap);
+                hasEater = true;
+                ChangeButtonText(eaterButtonText, "PURCHASED");
+                EnableScript("SteelEaters");
+            }
+            else
+            {
+                ChangeButtonText(eaterButtonText, "NOT ENOUGH SCRAP!");
+            }
+
+            StartCoroutine(RevertButtonText(0.1f));
+        }
+    }
+
 
     public void ChangeButtonText(TMP_Text buttonText, string newText)
     {

@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -16,11 +17,10 @@ public class Player : MonoBehaviour
 
 
     // Stats
-    public int level = 1;
     public float currentHealth;
     public float CurrentHealth {
         get { return currentHealth; }
-        set { 
+        set {
             currentHealth = value;
             healthBar.SetHealth(currentHealth);
         }
@@ -42,8 +42,22 @@ public class Player : MonoBehaviour
 
     private int mercilessStacks = 0;
 
+    public int exp = 0;
+    public int EXP = 0 {
+        get { return exp; }
+        set {
+            exp = value;
+            expBar.SetEXP(exp)
+    }
+
+    public int expNeeded = 20;
+    public int level = 1;
+    public float expSpeed = 100;
+
     // Outside objects
     public HealthBar healthBar;
+    public EXPBar expBar;
+    public TextMeshProUGUI levelText;
 
     // References
     [SerializeField] private TrailRenderer bashTrail;
@@ -52,6 +66,9 @@ public class Player : MonoBehaviour
     {
         CurrentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        EXP = 0;
+        expBar.SetMaxEXP(expNeeded);
+        levelText.text = "Level " + level.ToString();
 
         // Setting Trail Width
         bashTrail.startWidth = 10/150f;
@@ -90,6 +107,8 @@ public class Player : MonoBehaviour
 
         // If Dashing (set by Bash) then turn on trail
         bashTrail.emitting = isDashing;
+
+        HandleExp();
     }
     private void HandleSpeed()
     {
@@ -134,6 +153,7 @@ public class Player : MonoBehaviour
     public void LevelUp()
     {
         level++;
+        levelText.text = "Level " + level.ToString();
 
         // Inventory space progression
         switch (level)
@@ -155,6 +175,11 @@ public class Player : MonoBehaviour
         }
 
         currentInventorySpace = maxInventorySpace;
+        expNeeded = expNeeded * 2;
+        EXP = 0;
+        expBar.SetMaxEXP(expNeeded);
+        regen = regen * 2;
+        speed = speed * 1.5f;
 
         Debug.Log("Player leveled up to level " + level);
     }
@@ -191,5 +216,37 @@ public class Player : MonoBehaviour
             return 0;
         }
         return damage * (1f - armour);
+
+    }
+    private void HandleExp()
+    {
+        GameObject[] allExp = GameObject.FindGameObjectsWithTag("EXP");
+        foreach (GameObject expObject in allExp)
+        {
+            float distanceToExp = Vector2.Distance(transform.position, expObject.transform.position);
+            if (distanceToExp < 0.1f)
+            {
+                Destroy(expObject);
+                EXP += 1;
+            }
+            if (EXP >= expNeeded)
+            {
+                LevelUp();
+            }
+            if (distanceToExp < pickupRange)
+            {
+                Rigidbody2D expRB = expObject.GetComponent<Rigidbody2D>();
+                Vector2 direction = (transform.position - expObject.transform.position).normalized;
+
+                Vector2 velocity = expRB.velocity;
+                if (velocity.magnitude == 0f)
+                {
+                    expRB.velocity = Vector2.up * expSpeed;
+                    velocity = direction * expSpeed;
+                }
+
+                expRB.velocity = direction * velocity.magnitude * 1.01f;
+            }
+        }
     }
 }

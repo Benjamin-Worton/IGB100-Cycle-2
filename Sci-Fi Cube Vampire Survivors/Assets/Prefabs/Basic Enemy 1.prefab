@@ -225,6 +225,7 @@ MonoBehaviour:
   pushBackForce: 300
   damage: 10
   ScrapPrefab: {fileID: 4060324187705972658, guid: d95fd98062ed240279858ae2c010bff6, type: 3}
+  expPrefab: {fileID: 6531682024602135149, guid: d2ecad7a7b4ae474ea05606bf02d4660, type: 3}
 --- !u!50 &2434365912085781012
 Rigidbody2D:
   serializedVersion: 4
