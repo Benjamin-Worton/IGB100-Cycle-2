@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 144587295093848221}
   - component: {fileID: 2153129207545856752}
   - component: {fileID: 8839914688797473289}
+  - component: {fileID: -3373878917637047809}
   m_Layer: 0
   m_Name: Crate
   m_TagString: Enemy
@@ -111,6 +112,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &-3373878917637047809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882289931951361443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3a2da315fad42a2b54fbe62cb4d028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DistanceFromEnemy: 1
+  floatAmplitude: 0.2
+  floatFrequency: 2
 --- !u!1 &8004868246104905032
 GameObject:
   m_ObjectHideFlags: 0

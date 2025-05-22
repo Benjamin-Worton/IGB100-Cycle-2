@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour
     public int numberRandomPositions = 10; // Total number of enemies to spawn in a round
     private int enemiesRemaining; 
     private int scoreCounter;
+    public float roundPause = 5f;
 
     // New: Array of different enemy prefabs
     public GameObject[] enemyPrefabs;  // Array of possible enemy prefabs to spawn
@@ -53,6 +54,12 @@ public class Spawner : MonoBehaviour
                 GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
                 GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
 
+                // gives a singlular enemy a 'target' 
+                if (spawnedEnemies == 0)
+                {
+                    enemy.AddComponent<Target>();
+                }
+
                 BasicEnemy enemyScript = enemy.GetComponent<BasicEnemy>();
                 if (enemyScript != null)
                 {
@@ -64,6 +71,12 @@ public class Spawner : MonoBehaviour
                     enemyScript.maxHealth *= healthMultiplier;
                     enemyScript.speed *= speedMultiplier;
                     enemyScript.damage *= damageMultiplier;
+                }
+
+                // gives time for new players to kill their first basic enemy before the swarm comes
+                if (spawnedEnemies == 0)
+                {
+                    yield return new WaitForSeconds(roundPause);
                 }
 
                 spawnedEnemies++;
