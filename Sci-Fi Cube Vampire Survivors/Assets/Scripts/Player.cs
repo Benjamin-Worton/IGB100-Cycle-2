@@ -43,11 +43,12 @@ public class Player : MonoBehaviour
     private int mercilessStacks = 0;
 
     public int exp = 0;
-    public int EXP = 0 {
+    public int EXP {
         get { return exp; }
         set {
             exp = value;
-            expBar.SetEXP(exp)
+            expBar.SetEXP(exp);
+        }
     }
 
     public int expNeeded = 20;

@@ -21,7 +21,6 @@ public class Spawner : MonoBehaviour
     private GameObject player;
     public CircleCollider2D circleCollider;
     private Player playerScript;
-    public TMP_Text roundText;
     public Slider enemiesRemainingSlider;
 
     void Start()
@@ -34,7 +33,6 @@ public class Spawner : MonoBehaviour
 
         StartCoroutine(SpawnEnemies());
         StartCoroutine(IncreaseSpawnRateOverTime()); // Start rate increase coroutine
-        roundText.text = "Round: " + round.ToString();  // Update the text component to show the current round
     }
 
     IEnumerator SpawnEnemies()
@@ -90,7 +88,6 @@ public class Spawner : MonoBehaviour
                 spawnInterval = minimumSpawnInterval;
 
             round++;
-            roundText.text = "Round: " + round.ToString();  // Update the text component to show the current round
 
             if (playerScript != null)
             {

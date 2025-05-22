@@ -28,7 +28,7 @@ public class UpgradeMenu : MonoBehaviour
     private RepulseBeacon beaconScript;
     private SteelEaters eaterScript;
 
-    bool hasAssaultRifle = false;
+    bool hasAssaultRifle = false; // We dont need these variables, please remove the hasWeapon variables
     public int assaultRifleCost = 10;
     public int assaultRifleUpgradeCost = 5;
     public int assaultRifleInventorySpace = 2;
@@ -156,9 +156,6 @@ public class UpgradeMenu : MonoBehaviour
 
         ChangeButtonText(assaultRifleButtonText, "UPGRADE FOR " + assaultRifleUpgradeCost + " SCRAP");
         EnableScript("AssaultRifleWeapon");
-        }
-
-        StartCoroutine(RevertButtonText(0.1f));
     }
 
     public void PurchaseShoulderUpgrade()
@@ -189,9 +186,6 @@ public class UpgradeMenu : MonoBehaviour
             // Not enough scrap
             ChangeButtonText(ShoulderButtonText, "NOT ENOUGH SCRAP!");
         }
-
-        // Start the coroutine to revert the button text after 0.1 seconds
-        StartCoroutine(RevertButtonText(0.1f));
     }
 
     public void PurchaseRoboticUpgrade()
@@ -212,9 +206,6 @@ public class UpgradeMenu : MonoBehaviour
             // Not enough scrap
             ChangeButtonText(RoboticButtonText, "NOT ENOUGH SCRAP!");
         }
-
-        // Start the coroutine to revert the button text after 0.1 seconds
-        StartCoroutine(RevertButtonText(0.1f));
     }
 
    public void PurchaseHoverUpgrade()
@@ -233,8 +224,6 @@ public class UpgradeMenu : MonoBehaviour
             {
                 ChangeButtonText(hoverButtonText, "NOT ENOUGH SCRAP!");
             }
-
-            StartCoroutine(RevertButtonText(0.1f));
         }
     }
 
@@ -254,8 +243,6 @@ public class UpgradeMenu : MonoBehaviour
             {
                 ChangeButtonText(shellButtonText, "NOT ENOUGH SCRAP!");
             }
-
-            StartCoroutine(RevertButtonText(0.1f));
         }
     }
 
@@ -275,8 +262,6 @@ public class UpgradeMenu : MonoBehaviour
             {
                 ChangeButtonText(minesButtonText, "NOT ENOUGH SCRAP!");
             }
-
-            StartCoroutine(RevertButtonText(0.1f));
         }
     }
 
@@ -296,8 +281,6 @@ public class UpgradeMenu : MonoBehaviour
             {
                 ChangeButtonText(beaconButtonText, "NOT ENOUGH SCRAP!");
             }
-
-            StartCoroutine(RevertButtonText(0.1f));
         }
     }
 
@@ -317,8 +300,6 @@ public class UpgradeMenu : MonoBehaviour
             {
                 ChangeButtonText(eaterButtonText, "NOT ENOUGH SCRAP!");
             }
-
-            StartCoroutine(RevertButtonText(0.1f));
         }
     }
 
@@ -329,11 +310,5 @@ public class UpgradeMenu : MonoBehaviour
         {
             buttonText.text = newText;
         }
-    }
-
-    // Coroutine to revert the button text after a delay
-    IEnumerator RevertButtonText(float delay)
-    {
-        yield return new WaitForSeconds(delay); // Wait for the specified time
     }
 }

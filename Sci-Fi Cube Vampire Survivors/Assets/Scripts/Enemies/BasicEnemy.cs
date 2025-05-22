@@ -148,13 +148,10 @@ public class BasicEnemy : MonoBehaviour
 
             if (Random.Range(1, 100) <= chanceOfDroppingScrap)
             {
-                StartCoroutine(SpawnScrapAndDie());
+                StartCoroutine(RandomScrap());
             }
-            else
-            {
-                ScoreManager.instance.AddScore(points);
-                Destroy(gameObject);
-            }
+            ScoreManager.instance.AddScore(points);
+            Destroy(gameObject);
         }
     }
 
