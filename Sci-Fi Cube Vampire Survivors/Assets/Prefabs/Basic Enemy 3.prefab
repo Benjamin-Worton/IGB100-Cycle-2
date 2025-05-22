@@ -141,6 +141,7 @@ MonoBehaviour:
   pushBackForce: 300
   damage: 15
   ScrapPrefab: {fileID: 4060324187705972658, guid: d95fd98062ed240279858ae2c010bff6, type: 3}
+  expPrefab: {fileID: 6531682024602135149, guid: d2ecad7a7b4ae474ea05606bf02d4660, type: 3}
 --- !u!50 &2434365912085781012
 Rigidbody2D:
   serializedVersion: 4
@@ -211,7 +212,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 1.5}
+  m_Size: {x: 0.7, y: 0.75}
   m_EdgeRadius: 0
 --- !u!1 &9214502799712488124
 GameObject:

@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
   isDashing: 0
-  level: 1
+  lastKnownDirection: {x: 0, y: 0}
   currentHealth: 0
   regen: 0.1
   armour: 0
@@ -236,10 +236,20 @@ MonoBehaviour:
   speed: 0.3
   maxHealth: 100
   pickupRange: 50
+  cooldownMultiplier: 1
   scrap: 0
   maxInventorySpace: 1
   currentInventorySpace: 1
+  critRate: 0
+  critDamageMultiplier: 1.5
+  critBlock: 0
+  exp: 0
+  expNeeded: 20
+  level: 1
+  expSpeed: 100
   healthBar: {fileID: 0}
+  expBar: {fileID: 0}
+  levelText: {fileID: 0}
   bashTrail: {fileID: 1540785858351474514}
 --- !u!96 &1540785858351474514
 TrailRenderer:
@@ -397,7 +407,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &4765688335883833316
 Rigidbody2D:
@@ -512,5 +522,4 @@ MonoBehaviour:
   enemyPrefabs: []
   cratePrefab: {fileID: 0}
   circleCollider: {fileID: 5187792468595694085}
-  roundText: {fileID: 0}
   enemiesRemainingSlider: {fileID: 0}
