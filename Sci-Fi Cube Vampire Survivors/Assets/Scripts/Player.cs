@@ -44,6 +44,11 @@ public class Player : MonoBehaviour
 
     // Outside objects
     public HealthBar healthBar;
+    public GameObject DamageScreen;
+
+    public GameObject normalSprite;
+    public GameObject whiteSprite;
+    public float flashDuration = 2f;
 
     // References
     [SerializeField] private TrailRenderer bashTrail;
@@ -57,6 +62,8 @@ public class Player : MonoBehaviour
         bashTrail.startWidth = 10/150f;
         rb = GetComponent<Rigidbody2D>();
 
+        normalSprite.SetActive(true);
+        whiteSprite.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -109,12 +116,26 @@ public class Player : MonoBehaviour
     {
         damage = HandleDamageTaken(damage);
         CurrentHealth -= damage * (1f - armour);
+
+        StartCoroutine(DamageFlash());
+        StartCoroutine(DamageScreen.GetComponent<HurtEffect>().HurtFlash());
         
         if (CurrentHealth <= 0f)
         {
             Die();
         }
     }
+
+    private IEnumerator DamageFlash()
+    {
+        normalSprite.SetActive(false);
+        whiteSprite.SetActive(true);
+
+        yield return new WaitForSeconds(flashDuration);
+
+        normalSprite.SetActive(true);
+        whiteSprite.SetActive(false);
+    }    
 
     private void Die()
     {
