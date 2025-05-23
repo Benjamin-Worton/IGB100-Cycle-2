@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     public float damageMultiplier = 1f;
     public float speed = 0.3f;
     public float maxHealth = 100f;
-    public float pickupRange = 50f;
+    public float pickupRange = 1f;
     public float CooldownMultiplier
     {
         get { return cooldownMultiplier; }

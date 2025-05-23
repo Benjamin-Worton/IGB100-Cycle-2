@@ -17,8 +17,6 @@ public class ShoulderLasers : WeaponAbstract
         LeftLaser.transform.Rotate(0, 180f, 0);
         RightLaser.GetComponent<Bullet>().damage = damage;
         LeftLaser.GetComponent<Bullet>().damage = damage;
-        RightLaser.GetComponent<Bullet>().destroyOnCollision = true;
-        LeftLaser.GetComponent<Bullet>().destroyOnCollision = true;
         RightLaser.GetComponent<Bullet>().range = range;
         LeftLaser.GetComponent<Bullet>().range = range;
     }

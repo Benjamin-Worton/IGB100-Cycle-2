@@ -4,15 +4,15 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class Shotgun : WeaponAbstract, IOrbiting
+public class DoubleBarrelShotgun : WeaponAbstract, IOrbiting
 {
     private GameObject bulletPrefab;
     private GameObject ShotgunPrefab;
 
-    [SerializeField] private float damage = 30f;
+    [SerializeField] private float damage = 70f;
     [SerializeField] private float range = 3.5f;
-    [SerializeField] private int numOfBullets = 5;
-    [SerializeField] private float spreadAngle = 60f;
+    [SerializeField] private int numOfBullets = 10;
+    [SerializeField] private float spreadAngle = 75f;
 
 
 

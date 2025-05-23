@@ -19,7 +19,7 @@ public class UpgradeMenu : MonoBehaviour
     public TMP_Text eaterButtonText;
 
     private Player playerScript;
-    private AssaultRifleWeapon assaultRifleScript;
+    private AssaultRifle assaultRifleScript;
     private ShoulderLasers shoulderScript;
     private RoboticTracks roboticScript;
     private HoverPad hoverScript;
@@ -147,7 +147,7 @@ public class UpgradeMenu : MonoBehaviour
         }
         // Buy Assault Rifle
         playerScript.scrap -= assaultRifleCost;
-        player.AddComponent<AssaultRifleWeapon>();
+        player.AddComponent<AssaultRifle>();
 
         // Reduce player's available inventory space
         playerScript.currentInventorySpace -= assaultRifleInventorySpace;

@@ -4,15 +4,17 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class Shotgun : WeaponAbstract, IOrbiting
+public class NanoDrillShotgun : WeaponAbstract, IOrbiting
 {
     private GameObject bulletPrefab;
     private GameObject ShotgunPrefab;
 
-    [SerializeField] private float damage = 30f;
+    [SerializeField] private float damage = 100f;
     [SerializeField] private float range = 3.5f;
-    [SerializeField] private int numOfBullets = 5;
-    [SerializeField] private float spreadAngle = 60f;
+    [SerializeField] private int numOfBullets = 20;
+    [SerializeField] private float spreadAngle = 90f;
+    [SerializeField] private float stunDuration = 4f;
+
 
 
 
@@ -23,7 +25,7 @@ public class Shotgun : WeaponAbstract, IOrbiting
         fireRate = 2f;  // Default fire rate
 
         // Set up weapon prefabs
-        ShotgunPrefab = Resources.Load<GameObject>("Prefabs/Shotgun");
+        ShotgunPrefab = Resources.Load<GameObject>("Prefabs/Nano Drill Shotgun");
         bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
 
         // Create Shotgun Object above player's head
@@ -70,6 +72,7 @@ public class Shotgun : WeaponAbstract, IOrbiting
             bulletScript.damage = damage;
             bulletScript.destroyOnCollision = true;
             bulletScript.range = range;
+            bulletScript.stunDuration = stunDuration;
         }
 
     }

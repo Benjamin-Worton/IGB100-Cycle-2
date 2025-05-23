@@ -86,14 +86,23 @@ public class BasicEnemy : MonoBehaviour
             collision.gameObject.TryGetComponent<Bullet>(out bullet);
             if (bullet != null)
             {
+                if (bullet.isMerciless) { target.GetComponent<Player>().GiveMerciless(); }
+                if (bullet.stunDuration > 0f) { Stun(bullet.stunDuration); }
                 TakeDamage(bullet.damage);
                 if (bullet.destroyOnCollision) Destroy(collision.gameObject);
+                return;
             }
             IonLaserObject? ionLaser;
             collision.gameObject.TryGetComponent<IonLaserObject>(out ionLaser);
             if (ionLaser != null)
             {
                 TakeDamage(ionLaser.damage);
+                return;
+            }
+            if (target.GetComponent<PlasmaSprayer>() != null) // Plasma Spray
+            { 
+                TakeDamage(target.GetComponent<PlasmaSprayer>().damage);
+                Ignite(4f);
             }
 #nullable disable
         }
@@ -342,7 +351,7 @@ public class BasicEnemy : MonoBehaviour
 
             foreach(var script in target.GetComponents<MercilessProgramming>())
             {
-                script.GiveMerciless();
+                target.GetComponent<Player>().GiveMerciless();
             }
             foreach (var script in target.GetComponents<EmergencyHealthPack>())
             {

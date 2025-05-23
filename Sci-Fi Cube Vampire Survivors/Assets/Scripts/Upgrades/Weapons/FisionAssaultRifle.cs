@@ -3,14 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AssaultRifle : WeaponAbstract, IOrbiting
+public class FisionAssaultRifle : WeaponAbstract, IOrbiting
 {
     // Game Objects 
     private GameObject bulletPrefab;
     private GameObject AssaultRiflePrefab;
 
     
-    [SerializeField] private float damage = 5f;
+    [SerializeField] private float damage = 30f;
     [SerializeField] private float range = 5f;
 
     protected override void Start()
@@ -18,7 +18,7 @@ public class AssaultRifle : WeaponAbstract, IOrbiting
         fireRate = 1f;  // Default fire rate
 
         // Set up weapon prefabs
-        AssaultRiflePrefab = Resources.Load<GameObject>("Prefabs/Assault Rifle");
+        AssaultRiflePrefab = Resources.Load<GameObject>("Prefabs/Fision Assault Rifle");
         bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
 
         // Add weapon to weapon manager
