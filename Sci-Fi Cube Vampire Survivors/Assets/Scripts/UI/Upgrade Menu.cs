@@ -28,12 +28,11 @@ public class UpgradeMenu : MonoBehaviour
     private RepulseBeacon beaconScript;
     private SteelEaters eaterScript;
 
-    bool hasAssaultRifle = false; // We dont need these variables, please remove the hasWeapon variables
     public int assaultRifleCost = 10;
     public int assaultRifleUpgradeCost = 5;
     public int assaultRifleInventorySpace = 2;
 
-    bool hasShoulder = false;
+    bool hasShoulder = false;// We dont need these variables, please remove the hasWeapon variables
     public int shoulderCost = 10;
     public int shoulderUpgradeCost = 5;
     public int ShoulderInventorySpace = 1;
@@ -148,7 +147,6 @@ public class UpgradeMenu : MonoBehaviour
         }
         // Buy Assault Rifle
         playerScript.scrap -= assaultRifleCost;
-        hasAssaultRifle = true;
         player.AddComponent<AssaultRifleWeapon>();
 
         // Reduce player's available inventory space

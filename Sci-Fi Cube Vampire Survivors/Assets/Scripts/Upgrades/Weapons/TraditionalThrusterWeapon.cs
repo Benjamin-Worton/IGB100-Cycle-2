@@ -3,34 +3,23 @@ using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-public class Bash : WeaponAbstract
+public class TraditionalThruster : WeaponAbstract
 {
     [SerializeField] private float bashDistance = 5f;
     [SerializeField] private float bashDuration = 0.2f;
     private float TimeSinceBash = 0f;
-    public float damage = 10f;
+    public float damage = 50f;
 
     
 
-    protected override void Start()
+    private void Awake()
     {
-        fireRate = 2f;
-        StartCoroutine(DelayBetweenWeapons());
-    }
-
-    private IEnumerator DelayBetweenWeapons()
-    {
-        foreach (var script in gameObject.GetComponents<Bash>())
-        {
-            yield return new WaitForSeconds(fireRate / 5);
-        }
-        base.Start();
+        fireRate = 3f;
     }
 
     private void Update()
     {
         TimeSinceBash += Time.deltaTime;
-        HandleVisuals();
     }
 
     
@@ -46,20 +35,26 @@ public class Bash : WeaponAbstract
             StartCoroutine(BashAttack()); // Bash must be a Coroutine so call it instead of using Attack
         }
 
-    private void HandleVisuals()
-    {
-        
-        Color PlayerSpriteColour = GetComponentInChildren<SpriteRenderer>().color;
-        Color.RGBToHSV(PlayerSpriteColour, out float h, out float s, out float v);
-        v = (TimeSinceBash / fireRate) * 0.4f + 0.6f;
-        PlayerSpriteColour = Color.HSVToRGB(h, s, v);
-        GetComponentInChildren<SpriteRenderer>().color = PlayerSpriteColour;
-    }
-
     private IEnumerator BashAttack()
         {
+            GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+            foreach (GameObject enemy in allEnemies)
+            {
+                if (Vector2.Distance(this.transform.position, enemy.transform.position) < 1) // Move all nearby enemies further away
+                {
+                    if (enemy.GetComponent<BasicEnemy>() != null)
+                    {
+                        enemy.GetComponent<BasicEnemy>().TakeDamage(damage, false);
+                    }
+                    if (enemy.GetComponent<Crate>() != null)
+                    {
+                        enemy.GetComponent<Crate>().TakeDamage();
+                    }
+                }
+            }
+
             // Set bashing to be true to enable the trail
-            GetComponentInParent<Player>().isDashing = true;
+            GetComponentInParent<Player>().isThrusterDashing = true;
 
             // Get movement direction for the bash
             Vector3 bashDirection = GetComponentInParent<Player>().direction.normalized;
@@ -80,7 +75,7 @@ public class Bash : WeaponAbstract
             }
             TimeSinceBash = 0f;
             // Set bashing to be false to disable the trail
-            GetComponentInParent<Player>().isDashing = false;
+            GetComponentInParent<Player>().isThrusterDashing = false;
         }
     #endregion
 }

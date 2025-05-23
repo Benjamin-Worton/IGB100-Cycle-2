@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     // Variables
     [HideInInspector] public Vector2 direction = Vector2.zero;
     [HideInInspector] public bool isDashing = false;
+    [HideInInspector] public bool isThrusterDashing = false;
     private Rigidbody2D rb;
     [HideInInspector] public Vector2 lastKnownDirection = Vector2.zero;
 
@@ -31,7 +32,16 @@ public class Player : MonoBehaviour
     public float speed = 0.3f;
     public float maxHealth = 100f;
     public float pickupRange = 50f;
-    public float cooldownMultiplier = 1f; // Percent, AVOID 0% MOST LIKELY WILL BREAK GAME
+    public float CooldownMultiplier
+    {
+        get { return cooldownMultiplier; }
+        set { 
+            if (value < 0.05f) { cooldownMultiplier = 0.05f; }
+            else { cooldownMultiplier = value; }
+        }
+    }
+    public float cooldownMultiplier = 1f;
+
     public int scrap = 0;
     public int maxInventorySpace = 1;
     public int currentInventorySpace = 1;
@@ -108,6 +118,7 @@ public class Player : MonoBehaviour
 
         // If Dashing (set by Bash) then turn on trail
         bashTrail.emitting = isDashing;
+        if (isThrusterDashing) { isDashing = true; }
 
         HandleExp();
     }
@@ -115,13 +126,9 @@ public class Player : MonoBehaviour
     {
         speed = 1f;
 
-        if (gameObject.GetComponent<RoboticTracks>() != null)
+        foreach(var script in GetComponents<MovementUpgradeAbstract>())
         {
-            speed = gameObject.GetComponent<RoboticTracks>().HandleSpeed(speed);
-        }
-        if (gameObject.GetComponent<HoverPad>() != null)
-        {
-            speed = gameObject.GetComponent<HoverPad>().HandleSpeed(speed);
+            speed = script.HandleSpeed(speed);
         }
     }
 
@@ -189,14 +196,14 @@ public class Player : MonoBehaviour
     {
         if (mercilessStacks >= 3) { return; }
         mercilessStacks++;
-        cooldownMultiplier -= 0.1f;
+        CooldownMultiplier -= 0.1f;
         StartCoroutine(RemoveMerciless());
     }
 
     private IEnumerator RemoveMerciless()
     {
         yield return new WaitForSeconds(1);
-        cooldownMultiplier += 0.1f;
+        CooldownMultiplier += 0.1f;
         mercilessStacks--;
     }
 
@@ -225,7 +232,7 @@ public class Player : MonoBehaviour
         foreach (GameObject expObject in allExp)
         {
             float distanceToExp = Vector2.Distance(transform.position, expObject.transform.position);
-            if (distanceToExp < 0.1f)
+            if (distanceToExp < 0.5f)
             {
                 Destroy(expObject);
                 EXP += 1;
@@ -242,7 +249,7 @@ public class Player : MonoBehaviour
                 Vector2 velocity = expRB.velocity;
                 if (velocity.magnitude == 0f)
                 {
-                    expRB.velocity = Vector2.up * expSpeed;
+                    expRB.velocity = Vector2.up * expSpeed * 0.1f;
                     velocity = direction * expSpeed;
                 }
 

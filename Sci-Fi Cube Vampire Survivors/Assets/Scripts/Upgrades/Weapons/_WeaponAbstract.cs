@@ -9,9 +9,9 @@ public abstract class WeaponAbstract : UpgradeAbstract
     // Variables For All Weapons
     [Header("Stats")]
     protected float fireRate;
+    [HideInInspector] public GameObject weapon;
 
-
-    void Start()
+    protected virtual void Start()
     {
         // Start Attack Sequence
         StartCoroutine(FireLoop());
@@ -27,9 +27,17 @@ public abstract class WeaponAbstract : UpgradeAbstract
         // Loop the waiting for attack, then attacking.
         while (true)
         {
-            yield return new WaitForSeconds(fireRate * gameObject.GetComponent<Player>().cooldownMultiplier);
+            yield return new WaitForSeconds(fireRate * gameObject.GetComponent<Player>().CooldownMultiplier);
             Attack(); 
             if (fireRate == 0) break; // FireRate set to 0 means that it is a onetime attack that does not need to be retriggered
+        }
+    }
+
+    public virtual void SetOrbitPosition(Vector3 pos)
+    {
+        if (weapon != null)
+        {
+            weapon.transform.position = pos;
         }
     }
 

@@ -26,6 +26,7 @@ public class BasicEnemy : MonoBehaviour
     public GameObject ScrapPrefab;
     private int chanceOfDroppingScrap = 100; // In Percent %
 
+    private float burnStacks = 0;
     private float burnTimeLeft = 0f;
     public GameObject expPrefab;
 
@@ -75,26 +76,7 @@ public class BasicEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            canMove = false;
-
-            if (collision.gameObject.GetComponent<Player>().isDashing)
-            {
-                TakeDamage(collision.gameObject.GetComponent<Bash>().damage);
-            }
-            else
-            {
-                collision.gameObject.GetComponent<Player>().TakeDamage(damage);
-                if (collision.gameObject.GetComponent<PlasmaShell>() != null)
-                {
-                    TakeDamage(collision.gameObject.GetComponent<PlasmaShell>().damage);
-                }
-            }
-
-            Vector2 pushDirection = (transform.position - collision.transform.position).normalized;
-            rb.velocity = Vector2.zero;
-            rb.AddForce(pushDirection * pushBackForce, ForceMode2D.Impulse);
-
-            StartCoroutine(StopMovementAfterDelay(0.5f));
+            HandlePlayerCollission();
         }
 
         if (collision.gameObject.CompareTag("Weapon"))
@@ -117,6 +99,33 @@ public class BasicEnemy : MonoBehaviour
         }
     }
 
+    private void HandlePlayerCollission()
+    {
+        canMove = false;
+
+        if (target.GetComponent<Player>().isDashing)
+        {
+            TakeDamage(target.GetComponent<Bash>().damage);
+        }
+        else if (target.GetComponent<Player>().isThrusterDashing)
+        {
+            TakeDamage(target.GetComponent<TraditionalThruster>().damage);
+        }
+        else
+        {
+            target.GetComponent<Player>().TakeDamage(damage);
+            foreach (var script in target.GetComponents<PlasmaShell>())
+            {
+                TakeDamage(script.damage);
+            }
+        }
+
+        Vector2 pushDirection = (transform.position - target.transform.position).normalized;
+        rb.velocity = Vector2.zero;
+        rb.AddForce(pushDirection * pushBackForce, ForceMode2D.Impulse);
+
+        StartCoroutine(StopMovementAfterDelay(0.5f));
+    }
     private IEnumerator StopMovementAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -131,15 +140,46 @@ public class BasicEnemy : MonoBehaviour
 
         StartCoroutine(DamageFlash());
 
-        HandleOnTakeDamageEffects(damage);
+        HandleOnTakeDamageEffects(damage, false);
 
         
 
-        if (CurrentHealth <= 0 && CurrentHealth != -0.01f)
+        if (CurrentHealth <= 0 && (CurrentHealth != -0.01f || CurrentHealth - damage == -0.01f))
         {
             CurrentHealth = -0.01f; // Lock Health to prevent multiple deaths
             HandleOnDeathEffects();
             
+
+            for (int i = 0; i < Random.Range(1, 6); i++)
+            {
+                SpawnExp();
+            }
+
+            if (Random.Range(1, 100) <= chanceOfDroppingScrap)
+            {
+                StartCoroutine(RandomScrap());
+            }
+            ScoreManager.instance.AddScore(points);
+            Destroy(gameObject);
+        }
+    }
+
+    public void TakeDamage(float damage, bool doExplosion)
+    {
+        damage = playerScript.HandleDamageMultipliers(damage);
+        CurrentHealth -= damage;
+
+        StartCoroutine(DamageFlash());
+
+        HandleOnTakeDamageEffects(damage, doExplosion);
+
+
+
+        if (CurrentHealth <= 0 && (CurrentHealth != -0.01f || CurrentHealth - damage == -0.01f))
+        {
+            CurrentHealth = -0.01f; // Lock Health to prevent multiple deaths
+            HandleOnDeathEffects();
+
 
             for (int i = 0; i < Random.Range(1, 6); i++)
             {
@@ -169,6 +209,15 @@ public class BasicEnemy : MonoBehaviour
     private IEnumerator RandomScrap()
     {
         int scrapCount = Random.Range(0, 3);
+        foreach (var script in target.GetComponents<VoidCollector>())
+        {
+            scrapCount += 2;
+        }
+        foreach (var script in target.GetComponents<Deconstructor>())
+        {
+            scrapCount += 1;
+        }
+
         float delayBetweenSpawns = 0.1f;
         for (int i = 0; i < scrapCount; i++)
         {
@@ -241,24 +290,47 @@ public class BasicEnemy : MonoBehaviour
     }
 
 
-    private void HandleOnTakeDamageEffects(float damage)
+    private void HandleOnTakeDamageEffects(float damage, bool doExplosion)
     {
         // SteelEaters (Lifesteal)
-        if (target.GetComponent<SteelEaters>() != null)
+        foreach (var script in target.GetComponents<SteelEaters>())
         {
-            target.GetComponent<SteelEaters>().GiveHealth(damage);
+            script.GiveHealth(damage);
         }
 
         // EMPRounds (Stun)
         if (target.GetComponent<EMPRounds>() != null)
         {
-            Stun(1f);
+            Stun(target.GetComponents<EMPRounds>().Length);
         }
 
         // Incendiary Rounds
-        if (target.GetComponent<IncendiaryRounds>() != null)
+        foreach (var script in target.GetComponents<IncendiaryRounds>())
         {
             Ignite(5f);
+        }
+
+        if (doExplosion)
+        {
+            foreach (var script in target.GetComponents<ExplosiveRounds>())
+            {
+                GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+                if (allEnemies.Length == 0) { return; }
+                foreach (GameObject enemy in allEnemies)
+                {
+                    if (Vector2.Distance(this.transform.position, enemy.transform.position) < 0.5) // Move all nearby enemies further away
+                    {
+                        if (enemy.GetComponent<BasicEnemy>() != null)
+                        {
+                            enemy.GetComponent<BasicEnemy>().TakeDamage(damage / 2, false);
+                        }
+                        if (enemy.GetComponent<Crate>() != null)
+                        {
+                            enemy.GetComponent<Crate>().TakeDamage();
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -267,7 +339,19 @@ public class BasicEnemy : MonoBehaviour
         // Merciless Programming (Decrease Cooldown On Kill)
         if (target.GetComponent<MercilessProgramming>() != null)
         {
-            target.GetComponent<MercilessProgramming>().GiveMerciless();
+
+            foreach(var script in target.GetComponents<MercilessProgramming>())
+            {
+                script.GiveMerciless();
+            }
+            foreach (var script in target.GetComponents<EmergencyHealthPack>())
+            {
+                script.DropHealthPack();
+            }
+            foreach (var script in target.GetComponents<EmergencyHealthDrones>())
+            {
+                script.DropHealthPack();
+            }
         }
 
         // Handle Scrap Dropping
@@ -283,13 +367,15 @@ public class BasicEnemy : MonoBehaviour
     // Burn Functions
     public void Ignite(float Seconds)
     {
-        if (burnTimeLeft >= Seconds) { return; }
+        if (burnTimeLeft == Seconds) { return; } // If already burned this frame
+        burnStacks += 1;
+        if (burnTimeLeft > Seconds) { return; } // If burn time is longer
         burnTimeLeft = Seconds;
     }
     private void TakeBurnDamage()
     {
         if (CurrentHealth <= 0f) { return; }
-        TakeDamage(Time.deltaTime * 10f);
+        TakeDamage(Time.deltaTime * (5f + burnStacks));
         burnTimeLeft -= Time.deltaTime;
     }
 

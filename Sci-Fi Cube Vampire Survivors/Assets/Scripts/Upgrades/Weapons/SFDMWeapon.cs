@@ -50,7 +50,15 @@ public class SFDM : WeaponAbstract
 
     private void DamageEnemy(GameObject enemy)
     {
-        enemy.GetComponent<BasicEnemy>().TakeDamage(damage * Time.deltaTime);
+        if (enemy.GetComponent<BasicEnemy>() != null)
+        {
+                enemy.GetComponent<BasicEnemy>().TakeDamage(damage);
+        }
+        if (enemy.GetComponent<Crate>() != null)
+        {
+            enemy.GetComponent<Crate>().TakeDamage();
+        }
+
     }
     #endregion
 }

@@ -11,21 +11,21 @@ public class MercilessProgramming : UpgradeAbstract
     {
         if (mercilessStacks >= 3) { return; }
         mercilessStacks++;
-        GetComponent<Player>().cooldownMultiplier -= 0.1f;
+        GetComponent<Player>().CooldownMultiplier -= 0.1f;
         StartCoroutine(RemoveMerciless());
     }
 
     private IEnumerator RemoveMerciless()
     {
         yield return new WaitForSeconds(1);
-        GetComponent<Player>().cooldownMultiplier += 0.1f;
+        GetComponent<Player>().CooldownMultiplier += 0.1f;
         mercilessStacks--;
     }
 
     // Remove stats
     public override void Remove()
     {
-        GetComponent<Player>().cooldownMultiplier += 0.1f * mercilessStacks;
+        GetComponent<Player>().CooldownMultiplier += 0.1f * mercilessStacks;
         Destroy(this);
     }
 }

@@ -3,20 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AssaultRifleWeapon : WeaponAbstract
+public class AssaultRifleWeapon : WeaponAbstract, IOrbiting
 {
     // Game Objects 
     private GameObject bulletPrefab;
     private GameObject AssaultRiflePrefab;
-    private GameObject AssaultRifleObject;
 
     
     [SerializeField] private float damage = 5f;
     [SerializeField] private float range = 5f;
-    [SerializeField] private float DistanceFromPlayer = 1f;
 
-
-    private void Awake()
+    protected override void Start()
     {
         fireRate = 1f;  // Default fire rate
 
@@ -24,26 +21,18 @@ public class AssaultRifleWeapon : WeaponAbstract
         AssaultRiflePrefab = Resources.Load<GameObject>("Prefabs/AssaultRifle");
         bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
 
-        // Create Assault Rifle Object above player's head
-        AssaultRifleObject = Instantiate(AssaultRiflePrefab, transform.position + Vector3.up * DistanceFromPlayer, Quaternion.identity);
-    }
+        // Add weapon to weapon manager
+        weapon = Instantiate(AssaultRiflePrefab, transform.position, Quaternion.identity);
+        GetComponent<WeaponManager>().AddWeapon(this);
 
-    void Update()
-    {
-        // Keep assault rifle locked to player
-        AssaultRifleObject.transform.position = this.transform.position + Vector3.up * DistanceFromPlayer;
+        base.Start();
     }
 
     public override void Remove()
     {
-        Destroy(AssaultRifleObject);
+        GetComponent<WeaponManager>().RemoveWeapon(this);
+        Destroy(weapon);
         Destroy(this);
-    }
-
-    // Method to upgrade fire rate (called by UpgradeMenu) ### MUST REMOVE ###
-    public void UpgradeFireRate()
-    {
-        fireRate *= 1.5f;  // Increase fire rate (faster firing)
     }
 
     #region Attack Functions 
@@ -66,12 +55,12 @@ public class AssaultRifleWeapon : WeaponAbstract
 
         // Set first enemy as nearest
         GameObject nearestEnemy = allEnemies[0];
-        float distanceToNearest = Vector2.Distance(AssaultRifleObject.transform.position, nearestEnemy.transform.position);
+        float distanceToNearest = Vector2.Distance(weapon.transform.position, nearestEnemy.transform.position);
 
         // Test all other enemies if they are closer
         for (int enemy = 0; enemy < allEnemies.Length; enemy++)
         {
-            float distanceToCurrent = Vector2.Distance(AssaultRifleObject.transform.position, allEnemies[enemy].transform.position);
+            float distanceToCurrent = Vector2.Distance(weapon.transform.position, allEnemies[enemy].transform.position);
             if (distanceToCurrent < distanceToNearest)
             {
                 nearestEnemy = allEnemies[enemy];
@@ -90,17 +79,17 @@ public class AssaultRifleWeapon : WeaponAbstract
     private void Shoot(GameObject target)
     {
         // Set direction and rotation for the assault rifle
-        Vector3 direction = target.transform.position - AssaultRifleObject.transform.position;
+        Vector3 direction = target.transform.position - weapon.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        AssaultRifleObject.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        weapon.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         // Flip Assault Rifle if necessary
-        Vector3 scale = AssaultRifleObject.transform.localScale;
+        Vector3 scale = weapon.transform.localScale;
         scale.y = direction.x < 0 ? -Mathf.Abs(scale.y) : Mathf.Abs(scale.y);
-        AssaultRifleObject.transform.localScale = scale;
+        weapon.transform.localScale = scale;
 
         // Instantiate the bullet and it's stats
-        GameObject Bullet = Instantiate(bulletPrefab, AssaultRifleObject.transform.GetChild(0).transform.position, AssaultRifleObject.transform.rotation);
+        GameObject Bullet = Instantiate(bulletPrefab, weapon.transform.GetChild(0).transform.position, weapon.transform.rotation);
         Bullet bulletScript = Bullet.GetComponent<Bullet>();
         bulletScript.damage = damage;
         bulletScript.destroyOnCollision = false;
