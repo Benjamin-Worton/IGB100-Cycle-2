@@ -11,7 +11,7 @@ public class NuclearRifle : WeaponAbstract, IOrbiting
 
     
     [SerializeField] private float damage = 50f;
-    [SerializeField] private float range = 5f;
+    [SerializeField] private float range = 4f;
 
     protected override void Start()
     {

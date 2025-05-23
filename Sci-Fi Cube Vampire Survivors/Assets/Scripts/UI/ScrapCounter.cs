@@ -7,22 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 public class ScrapCounter : MonoBehaviour
 {
     public TextMeshProUGUI scrapText; // Reference to the UI text component
-    public static ScrapCounter instance;
     private Player playerScript;
-
-    void Awake()
-    {
-        // Set the static instance reference
-        if (instance == null)
-        {
-            instance = this;
-            // Optional: DontDestroyOnLoad(gameObject); if you want to persist between scenes
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject); // Prevent duplicates
-        }
-    }
 
     void Start()
     {

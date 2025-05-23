@@ -29,9 +29,9 @@ public class Player : MonoBehaviour
     public float regen = 0.1f; // Per Second
     public float armour = 0f; // Percent Reduction
     public float damageMultiplier = 1f;
-    public float speed = 0.3f;
+    public float speed = 0.6f;
     public float maxHealth = 100f;
-    public float pickupRange = 1f;
+    public float pickupRange = 2f;
     public float CooldownMultiplier
     {
         get { return cooldownMultiplier; }
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
             else { cooldownMultiplier = value; }
         }
     }
-    public float cooldownMultiplier = 1f;
+    private float cooldownMultiplier = 1f;
 
     public int scrap = 0;
     public int maxInventorySpace = 1;
@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
 
     public int expNeeded = 20;
     public int level = 1;
-    public float expSpeed = 100;
+    public float expSpeed = 4;
 
     // Outside objects
     public HealthBar healthBar;
@@ -232,7 +232,7 @@ public class Player : MonoBehaviour
         foreach (GameObject expObject in allExp)
         {
             float distanceToExp = Vector2.Distance(transform.position, expObject.transform.position);
-            if (distanceToExp < 0.5f)
+            if (distanceToExp < 0.2f)
             {
                 Destroy(expObject);
                 EXP += 1;
@@ -249,11 +249,11 @@ public class Player : MonoBehaviour
                 Vector2 velocity = expRB.velocity;
                 if (velocity.magnitude == 0f)
                 {
-                    expRB.velocity = Vector2.up * expSpeed * 0.1f;
+                    expRB.velocity = Vector2.up * expSpeed;
                     velocity = direction * expSpeed;
                 }
-
-                expRB.velocity = direction * velocity.magnitude * 1.01f;
+                
+                expRB.velocity = direction * velocity.magnitude;
             }
         }
     }

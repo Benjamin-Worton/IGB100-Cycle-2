@@ -8,9 +8,9 @@ public class Spawner : MonoBehaviour
 {
     private int round = 1;  // Starting round
     private int spawnedEnemies = 0;
-    public float spawnInterval = 5f;
-    public float minimumSpawnInterval = 0.5f; // Optional: prevent interval from getting too small
-    public int numberRandomPositions = 10; // Total number of enemies to spawn in a round
+    public float spawnInterval = 30f;
+    public int maximumSpawnAmount = 60;
+    public int numberRandomPositions = 5; // Total number of enemies to spawn in a round
     private int enemiesRemaining; 
     private int scoreCounter;
 
@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
         }
 
         StartCoroutine(SpawnEnemies());
-        StartCoroutine(IncreaseSpawnRateOverTime()); // Start rate increase coroutine
+        StartCoroutine(IncreaseSpawnAmountOverTime()); // Start rate increase coroutine
     }
 
     IEnumerator SpawnEnemies()
@@ -54,9 +54,9 @@ public class Spawner : MonoBehaviour
                 if (enemyScript != null)
                 {
                     // Scale enemy stats per round
-                    float healthMultiplier = Mathf.Pow(1.5f, round - 1);
-                    float speedMultiplier = Mathf.Pow(1.5f, round - 1);
-                    float damageMultiplier = Mathf.Pow(1.5f, round - 1);
+                    float healthMultiplier = Mathf.Pow(1.2f, round - 1);
+                    float speedMultiplier = Mathf.Pow(1.05f, round - 1);
+                    float damageMultiplier = Mathf.Pow(1.2f, round - 1);
 
                     enemyScript.maxHealth *= healthMultiplier;
                     enemyScript.speed *= speedMultiplier;
@@ -72,20 +72,19 @@ public class Spawner : MonoBehaviour
                     Vector2 crateSpawnPos = RandomPointInCircle(circleCollider);  // Random spawn position for crate
                     Instantiate(cratePrefab, crateSpawnPos, Quaternion.identity);
                 }
-
-                yield return new WaitForSeconds(spawnInterval);
             }
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 
-    IEnumerator IncreaseSpawnRateOverTime()
+    IEnumerator IncreaseSpawnAmountOverTime()
     {
         while (true)
         {
-            yield return new WaitForSeconds(60f); // Wait 60 seconds
-            spawnInterval *= 0.75f;
-            if (spawnInterval < minimumSpawnInterval)
-                spawnInterval = minimumSpawnInterval;
+            yield return new WaitForSeconds(20f); // Wait 20 seconds
+            numberRandomPositions = (int)Mathf.Ceil(numberRandomPositions * 1.2f);
+            if (numberRandomPositions > maximumSpawnAmount)
+                numberRandomPositions = maximumSpawnAmount;
 
             round++;
 

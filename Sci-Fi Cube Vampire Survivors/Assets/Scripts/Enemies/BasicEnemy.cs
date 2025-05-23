@@ -157,19 +157,6 @@ public class BasicEnemy : MonoBehaviour
         {
             CurrentHealth = -0.01f; // Lock Health to prevent multiple deaths
             HandleOnDeathEffects();
-            
-
-            for (int i = 0; i < Random.Range(1, 6); i++)
-            {
-                SpawnExp();
-            }
-
-            if (Random.Range(1, 100) <= chanceOfDroppingScrap)
-            {
-                StartCoroutine(RandomScrap());
-            }
-            ScoreManager.instance.AddScore(points);
-            Destroy(gameObject);
         }
     }
 
@@ -188,19 +175,6 @@ public class BasicEnemy : MonoBehaviour
         {
             CurrentHealth = -0.01f; // Lock Health to prevent multiple deaths
             HandleOnDeathEffects();
-
-
-            for (int i = 0; i < Random.Range(1, 6); i++)
-            {
-                SpawnExp();
-            }
-
-            if (Random.Range(1, 100) <= chanceOfDroppingScrap)
-            {
-                StartCoroutine(RandomScrap());
-            }
-            ScoreManager.instance.AddScore(points);
-            Destroy(gameObject);
         }
     }
 
@@ -280,9 +254,6 @@ public class BasicEnemy : MonoBehaviour
             rb.AddForce(forceDir * forceMag, ForceMode2D.Impulse);
             rb.AddTorque(Random.Range(-5f, 5f), ForceMode2D.Impulse);
         }
-
-        // Optional: destroy the EXP pickup if not collected after some time
-        Destroy(exp, 5f);
     }
 
     public void Stun(float Seconds)
@@ -368,6 +339,11 @@ public class BasicEnemy : MonoBehaviour
         {
             StartCoroutine(RandomScrap());
         }
+        for (int i = 0; i < Random.Range(1, 6); i++)
+        {
+            SpawnExp();
+        }
+
         ScoreManager.instance.AddScore(points);
         canMove = false;
         StartCoroutine(DieAfterDelay());
