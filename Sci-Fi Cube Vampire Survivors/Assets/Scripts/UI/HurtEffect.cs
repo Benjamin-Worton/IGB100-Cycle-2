@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HurtEffect : MonoBehaviour
 {
-    public GameObject[] uiDisplays; // Assign your 3 UI displays in the Inspector
+    public GameObject[] uiDisplays; 
     public float flashDuration = 0.2f;
 
     public IEnumerator HurtFlash()
@@ -20,12 +20,10 @@ public class HurtEffect : MonoBehaviour
             shuffledDisplays[i] = shuffledDisplays[randomIndex];
             shuffledDisplays[randomIndex] = temp;
         }
-        Debug.Log("shuffle coroutine started!");
 
         // Flash each UI display in random order
         foreach (GameObject display in shuffledDisplays)
         {
-            Debug.Log("lines coroutine started!");
             display.SetActive(true);
             yield return new WaitForSeconds(flashDuration);
             display.SetActive(false);
