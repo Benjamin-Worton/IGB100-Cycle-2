@@ -49,6 +49,7 @@ public class Spawner : MonoBehaviour
                 // Randomly select an enemy prefab from the list
                 GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
                 GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+                enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y, -0.5f);
 
                 BasicEnemy enemyScript = enemy.GetComponent<BasicEnemy>();
                 if (enemyScript != null)

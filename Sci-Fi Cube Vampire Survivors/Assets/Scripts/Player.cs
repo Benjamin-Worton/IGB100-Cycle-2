@@ -18,7 +18,9 @@ public class Player : MonoBehaviour
 
 
     // Stats
-    public float currentHealth;
+    [Header("UI Stats")]
+    private float currentHealth;
+    public float maxHealth = 100f;
     public float CurrentHealth {
         get { return currentHealth; }
         set {
@@ -26,12 +28,25 @@ public class Player : MonoBehaviour
             healthBar.SetHealth(currentHealth);
         }
     }
+    public int exp = 0;
+    public int EXP {
+        get { return exp; }
+        set {
+            exp = value;
+            expBar.SetEXP(exp);
+        }
+    }
+    private int expNeeded = 20;
+    private int level = 1;
+    private float expSpeed = 4;
+
+    [Header("Player Stats")]
     public float regen = 0.1f; // Per Second
     public float armour = 0f; // Percent Reduction
     public float damageMultiplier = 1f;
     public float speed = 0.6f;
-    public float maxHealth = 100f;
-    public float pickupRange = 2f;
+    
+    private float pickupRange = 2f;
     public float CooldownMultiplier
     {
         get { return cooldownMultiplier; }
@@ -43,35 +58,28 @@ public class Player : MonoBehaviour
     private float cooldownMultiplier = 1f;
 
     public int scrap = 0;
-    public int maxInventorySpace = 1;
-    public int currentInventorySpace = 1;
+    
     public float critRate = 0f;
-    public float critDamageMultiplier = 1.5f;
+    private float critDamageMultiplier = 1.5f;
     public float critBlock = 0f;
-
-
     private int mercilessStacks = 0;
 
-    public int exp = 0;
-    public int EXP {
-        get { return exp; }
-        set {
-            exp = value;
-            expBar.SetEXP(exp);
-        }
-    }
+    [Header("Inventory Stats")]
+    public int maxInventorySpace = 1;
+    public int currentInventorySpace = 1;
 
-    public int expNeeded = 20;
-    public int level = 1;
-    public float expSpeed = 4;
+
+
+
+
 
     // Outside objects
-    public HealthBar healthBar;
-    public EXPBar expBar;
-    public TextMeshProUGUI levelText;
-
-    // References
+    [Header("Outside Objects")]
+    [SerializeField] private HealthBar healthBar;
+    [SerializeField] private EXPBar expBar;
+    [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TrailRenderer bashTrail;
+    [SerializeField] private Sprite[] sprites;
 
     void Start()
     {
@@ -84,6 +92,7 @@ public class Player : MonoBehaviour
         // Setting Trail Width
         bashTrail.startWidth = 10/150f;
         rb = GetComponent<Rigidbody2D>();
+        if (AudioManager.Instance != null) { AudioManager.Instance.PlayMusic("gameplaymusic1"); }
 
     }
 
@@ -115,6 +124,8 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) direction.y -= 1f;
         if (Input.GetKey(KeyCode.A)) direction.x -= 1f;
         if (Input.GetKey(KeyCode.D)) direction.x += 1f;
+
+        HandleSprites();
 
         // If Dashing (set by Bash) then turn on trail
         bashTrail.emitting = isDashing;
@@ -152,6 +163,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Health"))
         {
+            if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("healthpickup"); } 
             ScoreManager.instance.AddScore(200);
             CurrentHealth *= 1.25f;
             Destroy(collision.gameObject);
@@ -234,6 +246,7 @@ public class Player : MonoBehaviour
             float distanceToExp = Vector2.Distance(transform.position, expObject.transform.position);
             if (distanceToExp < 0.2f)
             {
+                if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("scrappickup"); }// Replace with XP pickup sound
                 Destroy(expObject);
                 EXP += 1;
             }
@@ -256,5 +269,13 @@ public class Player : MonoBehaviour
                 expRB.velocity = direction * velocity.magnitude;
             }
         }
+    }
+
+    private void HandleSprites()
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (direction.magnitude == 0f) { return; }
+        if (direction.y != 0f) { sr.sprite = sprites[0]; }
+        if (direction.x != 0f) { sr.sprite = sprites[1]; }
     }
 }

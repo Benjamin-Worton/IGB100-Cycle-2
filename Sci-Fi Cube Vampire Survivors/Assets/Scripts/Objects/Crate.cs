@@ -57,13 +57,15 @@ public class Crate : MonoBehaviour
 
     public void TakeDamage()
     {
-            if (Random.Range(1, 100) <= chanceOfDroppingScrap)
-            {
-                StartCoroutine(RandomScrap());
-            }
-            Instantiate(healthPrefab, transform.position, Quaternion.identity);
-            ScoreManager.instance.AddScore(points);
-            Destroy(gameObject);
+        if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("cratebreak"); }
+        
+        if (Random.Range(1, 100) <= chanceOfDroppingScrap)
+        {
+            StartCoroutine(RandomScrap());
+        }
+        Instantiate(healthPrefab, transform.position, Quaternion.identity);
+        ScoreManager.instance.AddScore(points);
+        Destroy(gameObject);
     }
 
     private IEnumerator RandomScrap()

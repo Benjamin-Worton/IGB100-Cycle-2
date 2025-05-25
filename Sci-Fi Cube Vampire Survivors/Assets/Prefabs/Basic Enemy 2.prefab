@@ -196,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 7793272152296475226}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 266.28476, y: -119.62407, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -222,7 +222,7 @@ MonoBehaviour:
   normalSprite: {fileID: 2726708508836307034}
   whiteSprite: {fileID: 5561042625746381363}
   flashDuration: 0.5
-  pushBackForce: 1000
+  pushBackForce: 600
   damage: 5
   ScrapPrefab: {fileID: 4060324187705972658, guid: d95fd98062ed240279858ae2c010bff6, type: 3}
   expPrefab: {fileID: 6531682024602135149, guid: d2ecad7a7b4ae474ea05606bf02d4660, type: 3}

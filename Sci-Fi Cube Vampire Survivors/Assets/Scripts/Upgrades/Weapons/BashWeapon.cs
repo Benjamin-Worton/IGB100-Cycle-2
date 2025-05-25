@@ -51,36 +51,39 @@ public class Bash : WeaponAbstract
         
         Color PlayerSpriteColour = GetComponentInChildren<SpriteRenderer>().color;
         Color.RGBToHSV(PlayerSpriteColour, out float h, out float s, out float v);
-        v = (TimeSinceBash / fireRate) * 0.4f + 0.6f;
+        v = (TimeSinceBash / fireRate) * 0.8f + 0.2f;
         PlayerSpriteColour = Color.HSVToRGB(h, s, v);
         GetComponentInChildren<SpriteRenderer>().color = PlayerSpriteColour;
     }
 
     private IEnumerator BashAttack()
+    {
+        // Set bashing to be true to enable the trail
+        GetComponentInParent<Player>().isDashing = true;
+
+        if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("bashattack"); }
+
+
+        // Get movement direction for the bash
+        Vector3 bashDirection = GetComponentInParent<Player>().direction.normalized;
+
+        // Elapsed tracks how long the bash has gone on for to match it to a sin wave
+        float elapsed = 0f;
+        while (elapsed < bashDuration)
         {
-            // Set bashing to be true to enable the trail
-            GetComponentInParent<Player>().isDashing = true;
+            float t = elapsed / bashDuration;
+            float speed = Mathf.Sin(t * Mathf.PI);
 
-            // Get movement direction for the bash
-            Vector3 bashDirection = GetComponentInParent<Player>().direction.normalized;
+            float step = speed * bashDistance * Time.deltaTime * 4;
 
-            // Elapsed tracks how long the bash has gone on for to match it to a sin wave
-            float elapsed = 0f;
-            while (elapsed < bashDuration)
-            {
-                float t = elapsed / bashDuration;
-                float speed = Mathf.Sin(t * Mathf.PI);
+            transform.position += bashDirection * step;
 
-                float step = speed * bashDistance * Time.deltaTime * 4;
-
-                transform.position += bashDirection * step;
-
-                elapsed += Time.deltaTime;
-                yield return null;
-            }
-            TimeSinceBash = 0f;
-            // Set bashing to be false to disable the trail
-            GetComponentInParent<Player>().isDashing = false;
+            elapsed += Time.deltaTime;
+            yield return null;
         }
+        TimeSinceBash = 0f;
+        // Set bashing to be false to disable the trail
+        GetComponentInParent<Player>().isDashing = false;
+    }
     #endregion
 }

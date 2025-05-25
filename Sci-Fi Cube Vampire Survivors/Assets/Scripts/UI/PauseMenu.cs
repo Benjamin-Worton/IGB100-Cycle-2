@@ -35,14 +35,13 @@ public class PauseMenu : MonoBehaviour
 		{
 			Time.timeScale = 0f;
             pauseMenu.SetActive(true);
-			return(true);	
+			return(true);
 		}
 	}
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f;  // Unpause the game
-        pauseMenu.SetActive(false);  // Hide the pause menu
+        togglePause();
     }
 
     public void LoadMainMenu()

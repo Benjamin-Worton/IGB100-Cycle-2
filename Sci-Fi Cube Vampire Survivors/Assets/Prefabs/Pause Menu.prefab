@@ -32,10 +32,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1976128456739442924}
-  - {fileID: 5861642205699038926}
   - {fileID: 6167244556425849421}
   - {fileID: 2197757544982071407}
   - {fileID: 1153496537074982826}
+  - {fileID: 5861642205699038926}
   m_Father: {fileID: 6375669566211763792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -318,7 +318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9040822404612081819, guid: 3c0413ac521708941b17371e47e06679, type: 3}
       propertyPath: m_Name
-      value: Pause Menu Button (2)
+      value: Settings
       objectReference: {fileID: 0}
     - target: {fileID: 9114772689755453721, guid: 3c0413ac521708941b17371e47e06679, type: 3}
       propertyPath: m_text
@@ -422,9 +422,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5726440385298915489, guid: 3c0413ac521708941b17371e47e06679, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -7650922355583118124}
+    - target: {fileID: 5726440385298915489, guid: 3c0413ac521708941b17371e47e06679, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
     - target: {fileID: 9040822404612081819, guid: 3c0413ac521708941b17371e47e06679, type: 3}
       propertyPath: m_Name
-      value: Pause Menu Button (3)
+      value: Restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114772689755453721, guid: 3c0413ac521708941b17371e47e06679, type: 3}
+      propertyPath: m_text
+      value: RESTART
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -524,9 +536,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5726440385298915489, guid: 3c0413ac521708941b17371e47e06679, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -7650922355583118124}
+    - target: {fileID: 5726440385298915489, guid: 3c0413ac521708941b17371e47e06679, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 9040822404612081819, guid: 3c0413ac521708941b17371e47e06679, type: 3}
       propertyPath: m_Name
-      value: Pause Menu Button (1)
+      value: Resume
       objectReference: {fileID: 0}
     - target: {fileID: 9114772689755453721, guid: 3c0413ac521708941b17371e47e06679, type: 3}
       propertyPath: m_text
@@ -630,9 +650,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5726440385298915489, guid: 3c0413ac521708941b17371e47e06679, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: -7650922355583118124}
+    - target: {fileID: 5726440385298915489, guid: 3c0413ac521708941b17371e47e06679, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 9040822404612081819, guid: 3c0413ac521708941b17371e47e06679, type: 3}
       propertyPath: m_Name
-      value: Pause Menu Button
+      value: Quit 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

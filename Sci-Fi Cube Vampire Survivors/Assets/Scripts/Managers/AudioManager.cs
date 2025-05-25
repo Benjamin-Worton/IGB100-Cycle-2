@@ -29,7 +29,10 @@ public class AudioManager : MonoBehaviour
         {
             PlayMusic(defaultMusic);
         }
+        
     }
+
+    
 
     //play specific audio clip
     public void PlaySFX(AudioClip clip)
@@ -41,7 +44,7 @@ public class AudioManager : MonoBehaviour
     // play audio clip from library
     public void PlaySFX(string clipName)
     {
-        AudioClip clip = SoundLibrary.Instance?.GetClip(clipName);
+        AudioClip clip = SoundLibrary.Instance.GetClip(clipName);
         if (clip != null)
             PlaySFX(clip); 
     }

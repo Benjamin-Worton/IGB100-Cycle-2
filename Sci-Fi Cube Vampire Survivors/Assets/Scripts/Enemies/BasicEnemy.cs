@@ -52,22 +52,14 @@ public class BasicEnemy : MonoBehaviour
 
         if (canMove)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+            transform.position = new Vector3(transform.position.x, transform.position.y, -0.5f);
         }
 
-        if (target.transform.position.x + speed * Time.deltaTime < transform.position.x)
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = -1;
-            transform.localScale = scale;
-        }
-
-        if (target.transform.position.x > transform.position.x + speed * Time.deltaTime)
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = 1;
-            transform.localScale = scale;
-        }
+        Vector3 scale = transform.localScale;
+        if (target.transform.position.x + speed * Time.deltaTime < transform.position.x) { scale.x = -1; }
+        if (target.transform.position.x > transform.position.x + speed * Time.deltaTime) { scale.x = 1; }
+        transform.localScale = scale;
 
         if (burnTimeLeft > 0f) { TakeBurnDamage(); }
     }
@@ -220,6 +212,10 @@ public class BasicEnemy : MonoBehaviour
     {
         // Spawn just above the enemy
         Vector3 spawnPosition = transform.position + Vector3.up * 0.5f;
+
+        // Play sound
+        if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("scrappickup"); }
+        
 
         // Instantiate the scrap prefab
         GameObject scrap = Instantiate(ScrapPrefab, spawnPosition, Quaternion.identity);
