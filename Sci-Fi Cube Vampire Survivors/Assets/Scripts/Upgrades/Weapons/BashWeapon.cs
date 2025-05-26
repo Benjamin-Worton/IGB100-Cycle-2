@@ -12,9 +12,19 @@ public class Bash : WeaponAbstract
 
     
 
-    private void Awake()
+    protected override void Start()
     {
         fireRate = 2f;
+        StartCoroutine(DelayBetweenWeapons());
+    }
+
+    private IEnumerator DelayBetweenWeapons()
+    {
+        foreach (var script in gameObject.GetComponents<Bash>())
+        {
+            yield return new WaitForSeconds(fireRate / 5);
+        }
+        base.Start();
     }
 
     private void Update()

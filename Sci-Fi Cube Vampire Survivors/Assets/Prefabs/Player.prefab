@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1008944373976226517}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.002435, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 4830964580610730877}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0066666664}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -152,7 +152,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 600
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -186,10 +186,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2728502580841112357}
   - component: {fileID: 3670684964129451145}
+  - component: {fileID: 8214857849750369818}
   - component: {fileID: 1540785858351474514}
   - component: {fileID: 1765200349187196042}
   - component: {fileID: 4765688335883833316}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -204,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6709941521318432841}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -228,12 +229,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0}
   isDashing: 0
+  isThrusterDashing: 0
   lastKnownDirection: {x: 0, y: 0}
   currentHealth: 0
   regen: 0.1
   armour: 0
   damageMultiplier: 1
-  speed: 0.3
+  speed: 0.6
   maxHealth: 100
   pickupRange: 50
   cooldownMultiplier: 1
@@ -251,6 +253,19 @@ MonoBehaviour:
   expBar: {fileID: 0}
   levelText: {fileID: 0}
   bashTrail: {fileID: 1540785858351474514}
+--- !u!114 &8214857849750369818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709941521318432841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f400f699093bb4f8bed9da94c51fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrbitDistance: 1
 --- !u!96 &1540785858351474514
 TrailRenderer:
   serializedVersion: 3
@@ -272,7 +287,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bd2739de8df977342a378c88f440d64b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -324,7 +339,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
+      key0: {r: 1, g: 0.83297265, b: 0, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -417,7 +432,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6709941521318432841}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -435,7 +450,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!1 &8029636039165498099
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,8 +478,8 @@ Transform:
   m_GameObject: {fileID: 8029636039165498099}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.013333333, z: 0}
-  m_LocalScale: {x: 10, y: 0.0066666664, z: 0.0066666664}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2728502580841112357}
@@ -503,7 +518,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
 --- !u!114 &621682479240573094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +534,10 @@ MonoBehaviour:
   spawnInterval: 5
   minimumSpawnInterval: 0.5
   numberRandomPositions: 10
-  enemyPrefabs: []
-  cratePrefab: {fileID: 0}
+  enemyPrefabs:
+  - {fileID: 7793272152296475226, guid: 44e506d602ebb114994148db81bdc411, type: 3}
+  - {fileID: 7793272152296475226, guid: 4a3cca9507ec39043b4bc4d00d420087, type: 3}
+  - {fileID: 7793272152296475226, guid: eba0bc969b768f643b38055858730840, type: 3}
+  cratePrefab: {fileID: 1882289931951361443, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
   circleCollider: {fileID: 5187792468595694085}
   enemiesRemainingSlider: {fileID: 0}

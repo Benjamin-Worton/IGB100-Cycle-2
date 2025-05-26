@@ -68,7 +68,7 @@ public class HornetDrone : MonoBehaviour
         GameObject Bullet = Instantiate(bulletPrefab, transform.GetChild(0).transform.position, Quaternion.Euler(0f, 0f, angle));
         Bullet bulletScript = Bullet.GetComponent<Bullet>();
         bulletScript.damage = damage;
-        bulletScript.destroyOnCollision = false;
+        bulletScript.destroyOnCollision = true;
         bulletScript.range = range;
     }
 }

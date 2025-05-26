@@ -8,6 +8,7 @@ public class HornetDrones : WeaponAbstract
     private readonly float DistanceFromPlayer = 0.5f;
     [SerializeField] private float damage = 10f;
     [SerializeField] private float range = 5f;
+    [SerializeField] private float height = 0.8f;
     private GameObject RightDrone;
     private GameObject LeftDrone;
 
@@ -17,26 +18,31 @@ public class HornetDrones : WeaponAbstract
         LeftDrone.GetComponent<HornetDrone>().Fire();
     }
 
-    void Awake()
+    protected override void Start()
     {
         fireRate = 2f; // Default fire rate
         dronePrefab = Resources.Load<GameObject>("Prefabs/HornetDrone");
 
-
+        foreach (var droneWeapon in GetComponents<HornetDrones>())
+        {
+            height -= 0.2f;
+        }
         // Create and position drones, as well as modify their stats
-        RightDrone = Instantiate(dronePrefab, transform.position + Vector3.right * DistanceFromPlayer + Vector3.up * 0.8f, Quaternion.identity);
-        LeftDrone = Instantiate(dronePrefab, transform.position + Vector3.right * -DistanceFromPlayer + Vector3.up * 0.8f, Quaternion.identity);
+        RightDrone = Instantiate(dronePrefab, transform.position + Vector3.right * DistanceFromPlayer + Vector3.up * height, Quaternion.identity);
+        LeftDrone = Instantiate(dronePrefab, transform.position + Vector3.right * -DistanceFromPlayer + Vector3.up * height, Quaternion.identity);
         RightDrone.GetComponent<HornetDrone>().damage = damage;
         LeftDrone.GetComponent<HornetDrone>().damage = damage;
         RightDrone.GetComponent<HornetDrone>().range = range;
         LeftDrone.GetComponent<HornetDrone>().range = range;
+
+        base.Start();
     }
 
     private void Update()
     {
         // Keep drones locked to player
-        RightDrone.transform.position = transform.position + Vector3.right * DistanceFromPlayer + Vector3.up * 0.8f;
-        LeftDrone.transform.position = transform.position + Vector3.right * -DistanceFromPlayer + Vector3.up * 0.8f;
+        RightDrone.transform.position = transform.position + Vector3.right * DistanceFromPlayer + Vector3.up * height;
+        LeftDrone.transform.position = transform.position + Vector3.right * -DistanceFromPlayer + Vector3.up * height;
     }
 
     public override void Remove()

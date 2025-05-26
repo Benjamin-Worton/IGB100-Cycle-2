@@ -17,6 +17,17 @@ public class Oil : MonoBehaviour
         }
     }
 
+
+    private void Awake()
+    {
+        StartCoroutine(DieAfter10Seconds());
+    }
+
+    private IEnumerator DieAfter10Seconds()
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(this);
+    }
     public void Ignite()
     {
         // Check if already ignited, if not, ignite

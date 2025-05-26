@@ -7,7 +7,7 @@ public class ElectricEngine : MovementUpgradeAbstract
     // Increases Stats
     public override float HandleSpeed(float speed)
     {
-        speed *= 1.1f;
+        speed *= 3f;
         return speed;
     }
 

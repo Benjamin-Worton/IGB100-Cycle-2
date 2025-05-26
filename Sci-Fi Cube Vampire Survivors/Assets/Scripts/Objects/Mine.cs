@@ -25,8 +25,15 @@ public class Mine : MonoBehaviour
             {
                 if (Vector2.Distance(this.transform.position, enemy.transform.position) < range)
                 {
-                    enemy.GetComponent<BasicEnemy>().Stun(1);
-                    enemy.GetComponent<BasicEnemy>().TakeDamage(damage);
+                    if (enemy.GetComponent<BasicEnemy>() != null)
+                    {
+                        enemy.GetComponent<BasicEnemy>().Stun(1f);
+                        enemy.GetComponent<BasicEnemy>().TakeDamage(damage);
+                    }
+                    if (enemy.GetComponent<Crate>() != null)
+                    {
+                        enemy.GetComponent<Crate>().TakeDamage();
+                    }
                 }
             }
         }

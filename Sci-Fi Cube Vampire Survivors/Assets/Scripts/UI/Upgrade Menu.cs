@@ -19,7 +19,7 @@ public class UpgradeMenu : MonoBehaviour
     public TMP_Text eaterButtonText;
 
     private Player playerScript;
-    private AssaultRifleWeapon assaultRifleScript;
+    private AssaultRifle assaultRifleScript;
     private ShoulderLasers shoulderScript;
     private RoboticTracks roboticScript;
     private HoverPad hoverScript;
@@ -28,12 +28,11 @@ public class UpgradeMenu : MonoBehaviour
     private RepulseBeacon beaconScript;
     private SteelEaters eaterScript;
 
-    bool hasAssaultRifle = false; // We dont need these variables, please remove the hasWeapon variables
     public int assaultRifleCost = 10;
     public int assaultRifleUpgradeCost = 5;
     public int assaultRifleInventorySpace = 2;
 
-    bool hasShoulder = false;
+    bool hasShoulder = false;// We dont need these variables, please remove the hasWeapon variables
     public int shoulderCost = 10;
     public int shoulderUpgradeCost = 5;
     public int ShoulderInventorySpace = 1;
@@ -148,8 +147,7 @@ public class UpgradeMenu : MonoBehaviour
         }
         // Buy Assault Rifle
         playerScript.scrap -= assaultRifleCost;
-        hasAssaultRifle = true;
-        player.AddComponent<AssaultRifleWeapon>();
+        player.AddComponent<AssaultRifle>();
 
         // Reduce player's available inventory space
         playerScript.currentInventorySpace -= assaultRifleInventorySpace;
@@ -215,7 +213,6 @@ public class UpgradeMenu : MonoBehaviour
             if (!hasHover && playerScript.scrap >= hoverCost)
             {
                 playerScript.scrap -= hoverCost;
-                ScrapCounter.instance.SetScrap(playerScript.scrap);
                 hasHover = true;
                 ChangeButtonText(hoverButtonText, "PURCHASED");
                 EnableScript("HoverPad");
@@ -234,7 +231,6 @@ public class UpgradeMenu : MonoBehaviour
             if (!hasShell && playerScript.scrap >= shellCost)
             {
                 playerScript.scrap -= shellCost;
-                ScrapCounter.instance.SetScrap(playerScript.scrap);
                 hasShell = true;
                 ChangeButtonText(shellButtonText, "PURCHASED");
                 EnableScript("PlasmaShell");
@@ -253,7 +249,6 @@ public class UpgradeMenu : MonoBehaviour
             if (!hasMines && playerScript.scrap >= minesCost)
             {
                 playerScript.scrap -= minesCost;
-                ScrapCounter.instance.SetScrap(playerScript.scrap);
                 hasMines = true;
                 ChangeButtonText(minesButtonText, "PURCHASED");
                 EnableScript("EMP1Mines");
@@ -272,7 +267,6 @@ public class UpgradeMenu : MonoBehaviour
             if (!hasBeacon && playerScript.scrap >= beaconCost)
             {
                 playerScript.scrap -= beaconCost;
-                ScrapCounter.instance.SetScrap(playerScript.scrap);
                 hasBeacon = true;
                 ChangeButtonText(beaconButtonText, "PURCHASED");
                 EnableScript("RepulseBeacon");
@@ -291,7 +285,6 @@ public class UpgradeMenu : MonoBehaviour
             if (!hasEater && playerScript.scrap >= eaterCost)
             {
                 playerScript.scrap -= eaterCost;
-                ScrapCounter.instance.SetScrap(playerScript.scrap);
                 hasEater = true;
                 ChangeButtonText(eaterButtonText, "PURCHASED");
                 EnableScript("SteelEaters");

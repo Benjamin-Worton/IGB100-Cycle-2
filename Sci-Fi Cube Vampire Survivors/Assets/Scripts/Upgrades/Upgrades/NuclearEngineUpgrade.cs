@@ -7,7 +7,7 @@ public class NuclearEngine : MovementUpgradeAbstract
     // Increases Stats
     public override float HandleSpeed(float speed)
     {
-        speed *= 1.3f;
+        speed *= 4f;
         return speed;
     }
 

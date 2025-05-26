@@ -38,7 +38,6 @@ public class Crate : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collided");
         // If the collider is labeled as player, deal damage
         // and push back the enemy away from the player
         if (collision.gameObject.CompareTag("Player"))
@@ -51,19 +50,7 @@ public class Crate : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Weapon")) {
 #nullable enable
-            Bullet? bullet;
-            collision.gameObject.TryGetComponent<Bullet>(out bullet);
-            if (bullet != null)
-            {
-                TakeDamage();
-                if (bullet.destroyOnCollision) Destroy(collision.gameObject);
-            }
-            IonLaserObject? ionLaser;
-            collision.gameObject.TryGetComponent<IonLaserObject>(out ionLaser);
-            if (ionLaser != null)
-            {
-                TakeDamage();
-            }
+            TakeDamage();
 #nullable disable
         }
     }
