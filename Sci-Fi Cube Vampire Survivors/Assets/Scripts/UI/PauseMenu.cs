@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     bool paused = false;
     public GameObject pauseMenu;
-    public string MenuScene = "Menu";
+    public string MenuScene = "Main Menu";
 
     void Start()
     {
@@ -41,17 +41,20 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
+        if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("buttonpress"); }
         togglePause();
     }
 
     public void LoadMainMenu()
     {
+        if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("buttonpress"); }
         Time.timeScale = 1f;  // Unpause the game
         SceneManager.LoadScene(MenuScene);  // Load the Main Menu scene
     }
 
     public void RestartGame()
     {
+        if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("buttonpress"); }
         Time.timeScale = 1f;  // Unpause the game
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);  // Reload the current scene
     }

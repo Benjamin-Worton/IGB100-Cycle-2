@@ -8,9 +8,9 @@ public class Spawner : MonoBehaviour
 {
     private int round = 1;  // Starting round
     private int spawnedEnemies = 0;
-    public float spawnInterval = 30f;
+    public float spawnInterval = 10f;
     public int maximumSpawnAmount = 60;
-    public int numberRandomPositions = 5; // Total number of enemies to spawn in a round
+    public int numberRandomPositions = 2; // Total number of enemies to spawn in a round
     private int enemiesRemaining; 
     private int scoreCounter;
 
@@ -73,8 +73,9 @@ public class Spawner : MonoBehaviour
                     Vector2 crateSpawnPos = RandomPointInCircle(circleCollider);  // Random spawn position for crate
                     Instantiate(cratePrefab, crateSpawnPos, Quaternion.identity);
                 }
+                yield return new WaitForSeconds(spawnInterval);
             }
-            yield return new WaitForSeconds(spawnInterval);
+            
         }
     }
 
@@ -88,11 +89,6 @@ public class Spawner : MonoBehaviour
                 numberRandomPositions = maximumSpawnAmount;
 
             round++;
-
-            if (playerScript != null)
-            {
-                playerScript.LevelUp();
-            }
         }   
     }
 

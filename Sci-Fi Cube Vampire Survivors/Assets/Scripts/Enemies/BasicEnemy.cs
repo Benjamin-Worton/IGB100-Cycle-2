@@ -57,8 +57,8 @@ public class BasicEnemy : MonoBehaviour
         }
 
         Vector3 scale = transform.localScale;
-        if (target.transform.position.x + speed * Time.deltaTime < transform.position.x) { scale.x = -1; }
-        if (target.transform.position.x > transform.position.x + speed * Time.deltaTime) { scale.x = 1; }
+        if (target.transform.position.x + speed * Time.deltaTime < transform.position.x) { scale.x = -Mathf.Abs(scale.x); }
+        if (target.transform.position.x > transform.position.x + speed * Time.deltaTime) { scale.x = Mathf.Abs(scale.x); }
         transform.localScale = scale;
 
         if (burnTimeLeft > 0f) { TakeBurnDamage(); }
@@ -241,15 +241,6 @@ public class BasicEnemy : MonoBehaviour
         // You can spawn multiple EXP or just one. Here's one for now:
         Vector3 spawnPosition = transform.position + Vector3.up * 0.2f;
         GameObject exp = Instantiate(expPrefab, spawnPosition, Quaternion.identity);
-
-        Rigidbody2D rb = exp.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            Vector2 forceDir = new Vector2(Random.Range(-1f, 1f), 1f).normalized;
-            float forceMag = Random.Range(0.5f, 2f);
-            rb.AddForce(forceDir * forceMag, ForceMode2D.Impulse);
-            rb.AddTorque(Random.Range(-5f, 5f), ForceMode2D.Impulse);
-        }
     }
 
     public void Stun(float Seconds)
@@ -335,10 +326,7 @@ public class BasicEnemy : MonoBehaviour
         {
             StartCoroutine(RandomScrap());
         }
-        for (int i = 0; i < Random.Range(1, 6); i++)
-        {
-            SpawnExp();
-        }
+        SpawnExp();
 
         ScoreManager.instance.AddScore(points);
         canMove = false;

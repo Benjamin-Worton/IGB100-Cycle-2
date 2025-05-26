@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         get { return currentHealth; }
         set {
             currentHealth = value;
-            healthBar.SetHealth(currentHealth);
+            healthBar.SetCurrent(currentHealth);
         }
     }
     public int exp = 0;
@@ -33,10 +33,10 @@ public class Player : MonoBehaviour
         get { return exp; }
         set {
             exp = value;
-            expBar.SetEXP(exp);
+            expBar.SetCurrent(exp);
         }
     }
-    private int expNeeded = 20;
+    private int expNeeded = 5;
     private int level = 1;
     private float expSpeed = 4;
 
@@ -75,18 +75,19 @@ public class Player : MonoBehaviour
 
     // Outside objects
     [Header("Outside Objects")]
-    [SerializeField] private HealthBar healthBar;
-    [SerializeField] private EXPBar expBar;
+    [SerializeField] private Bar healthBar;
+    [SerializeField] private Bar expBar;
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TrailRenderer bashTrail;
     [SerializeField] private Sprite[] sprites;
+    [SerializeField] private HurtEffect hurtEffect;
 
     void Start()
     {
         CurrentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMax(maxHealth);
         EXP = 0;
-        expBar.SetMaxEXP(expNeeded);
+        expBar.SetMax(expNeeded);
         levelText.text = "Level " + level.ToString();
 
         // Setting Trail Width
@@ -197,11 +198,9 @@ public class Player : MonoBehaviour
         currentInventorySpace = maxInventorySpace;
         expNeeded = expNeeded * 2;
         EXP = 0;
-        expBar.SetMaxEXP(expNeeded);
+        expBar.SetMax(expNeeded);
         regen = regen * 2;
         speed = speed * 1.5f;
-
-        Debug.Log("Player leveled up to level " + level);
     }
 
     public void GiveMerciless()
@@ -235,6 +234,7 @@ public class Player : MonoBehaviour
         {
             return 0;
         }
+        StartCoroutine(hurtEffect.HurtFlash());
         return damage * (1f - armour);
 
     }
@@ -244,7 +244,7 @@ public class Player : MonoBehaviour
         foreach (GameObject expObject in allExp)
         {
             float distanceToExp = Vector2.Distance(transform.position, expObject.transform.position);
-            if (distanceToExp < 0.2f)
+            if (distanceToExp < 0.4f)
             {
                 if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("scrappickup"); }// Replace with XP pickup sound
                 Destroy(expObject);
@@ -258,15 +258,7 @@ public class Player : MonoBehaviour
             {
                 Rigidbody2D expRB = expObject.GetComponent<Rigidbody2D>();
                 Vector2 direction = (transform.position - expObject.transform.position).normalized;
-
-                Vector2 velocity = expRB.velocity;
-                if (velocity.magnitude == 0f)
-                {
-                    expRB.velocity = Vector2.up * expSpeed;
-                    velocity = direction * expSpeed;
-                }
-                
-                expRB.velocity = direction * velocity.magnitude;
+                expRB.velocity = direction * expSpeed;
             }
         }
     }

@@ -65,7 +65,7 @@ public class Bash : WeaponAbstract
 
 
         // Get movement direction for the bash
-        Vector3 bashDirection = GetComponentInParent<Player>().direction.normalized;
+        Vector3 bashDirection = GetComponentInParent<Player>().lastKnownDirection.normalized;
 
         // Elapsed tracks how long the bash has gone on for to match it to a sin wave
         float elapsed = 0f;
