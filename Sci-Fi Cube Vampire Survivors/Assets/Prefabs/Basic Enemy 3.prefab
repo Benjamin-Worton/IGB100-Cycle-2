@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6586192486398912937}
   - component: {fileID: 9018122191698106879}
   m_Layer: 6
-  m_Name: enemy4-hurt
+  m_Name: enemy3-hurt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8854431c98ddfd940a06c8c705708268, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1840f23fc7e3141e1864931be8be2726, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 1.5, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 8078271996965640621}
   - component: {fileID: 6226492715851539257}
   m_Layer: 6
-  m_Name: enemy4
+  m_Name: enemy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,12 +287,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 86138a3b0d3dc428f8fd8ecdc458a790, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 028355ebbfa10b1458010aef5df9b778, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 1.5, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

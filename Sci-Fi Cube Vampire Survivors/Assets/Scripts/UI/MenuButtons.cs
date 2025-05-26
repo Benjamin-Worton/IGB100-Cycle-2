@@ -7,10 +7,15 @@ public class MenuButtons : MonoBehaviour
 {
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Main Menu")
-        {
-            if (SceneManager.GetActiveScene().name == "Main Menu" && AudioManager.Instance != null) { AudioManager.Instance.PlayMusic("menumusic"); }
-        }
+        StartCoroutine(PlayMenuMusicDelayed());
+    }
+
+    private IEnumerator PlayMenuMusicDelayed()
+    {
+        yield return new WaitForEndOfFrame();
+
+        if (SceneManager.GetActiveScene().name == "Main Menu" && !AudioManager.Instance.musicSource.isPlaying) { AudioManager.Instance.PlayMusic("menumusic"); }
+
     }
     public void ChangeScene(string sceneName)
     {
