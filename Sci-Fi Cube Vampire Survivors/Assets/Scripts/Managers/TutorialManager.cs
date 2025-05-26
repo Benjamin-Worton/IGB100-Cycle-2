@@ -6,16 +6,19 @@ public class TutorialManager : MonoBehaviour
 {
     public GameObject[] tutorialDisplays; 
     public GameObject shopDisplay;
-    public float tipDuraction = 1f;
-
+    [SerializeField] private float tipDuraction = 3f;
     public IEnumerator TutorialTip()
     {
+        Time.timeScale = 0;
+
         foreach (GameObject display in tutorialDisplays)
         {
             display.SetActive(true);
-            yield return new WaitForSeconds(tipDuraction);
+            yield return new WaitForSecondsRealtime(tipDuraction);
             display.SetActive(false);
         }
+
+        Time.timeScale = 1;
     }
 
     public IEnumerator ShopTip()
