@@ -60,7 +60,7 @@ public class WeaponManager : MonoBehaviour
         for (int i = 0; i < total; i++)
         {
             WeaponAbstract weapon = orbitingWeapons[i];
-            float angle = (360f / total) * i - 90f;
+            float angle = (360f / total) * i + 90f;
             Vector2 direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
 
             Vector3 orbitPos = (Vector2)playerTransform.position + direction * OrbitDistance;

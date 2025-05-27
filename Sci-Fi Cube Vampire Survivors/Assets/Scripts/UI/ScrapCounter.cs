@@ -12,7 +12,6 @@ public class ScrapCounter : MonoBehaviour
     void Start()
     {
         playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        UpdateScrapText();
     }
 
     void Update()

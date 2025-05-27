@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 1765200349187196042}
   - component: {fileID: 4765688335883833316}
   - component: {fileID: 489214671765381279}
-  - component: {fileID: 6726564117671436481}
+  - component: {fileID: 3494071627438160356}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -431,13 +431,13 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6709941521318432841}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -502,7 +502,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6726564117671436481
+--- !u!114 &3494071627438160356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -511,13 +511,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6709941521318432841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71b6eb8f155f63947a57755893858e3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 55c4bfb7bef550d4a923821ecff4bf8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
-  bashDistance: 5
-  bashDuration: 0.2
-  damage: 10
+  damage: 5
+  range: 4
 --- !u!1 &8029636039165498099
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +584,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 1.4
 --- !u!114 &621682479240573094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,3 +607,4 @@ MonoBehaviour:
   cratePrefab: {fileID: 1882289931951361443, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
   circleCollider: {fileID: 5187792468595694085}
   enemiesRemainingSlider: {fileID: 0}
+  tutorialManager: {fileID: 0}

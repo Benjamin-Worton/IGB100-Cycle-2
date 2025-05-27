@@ -3512,54 +3512,6 @@ PrefabInstance:
       propertyPath: enemiesRemainingSlider
       value: 
       objectReference: {fileID: 1749563336}
-    - target: {fileID: 621682479240573094, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: enemyPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 7793272152296475226, guid: 0ab7cf977996c8944831ebd11c33bf9d, type: 3}
-    - target: {fileID: 621682479240573094, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: enemyPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 7793272152296475226, guid: eba0bc969b768f643b38055858730840, type: 3}
-    - target: {fileID: 1765200349187196042, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1765200349187196042, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1765200349187196042, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 1.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 1765200349187196042, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 1765200349187196042, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1765200349187196042, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1765200349187196042, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728502580841112357, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728502580841112357, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2728502580841112357, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2728502580841112357, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3616,18 +3568,6 @@ PrefabInstance:
       propertyPath: hurtEffect
       value: 
       objectReference: {fileID: 1041933520}
-    - target: {fileID: 3670684964129451145, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: sprites.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670684964129451145, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: sprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 8d42e4ae766e2cd45abeb1d42ed07dfd, type: 3}
-    - target: {fileID: 3670684964129451145, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: sprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 3174ddb01ab6ca74bb42a3871f829f6e, type: 3}
     - target: {fileID: 4765688335883833316, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: m_Mass
       value: 100
@@ -3648,8 +3588,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6726564117671436481, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4255,7 +4194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8243156589717715456, guid: 3f892e07287327247abd5c778db70606, type: 3}
       propertyPath: hudUi.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8243156589717715456, guid: 3f892e07287327247abd5c778db70606, type: 3}
       propertyPath: animationDuration
@@ -4273,6 +4212,10 @@ PrefabInstance:
       propertyPath: hudUi.Array.data[2]
       value: 
       objectReference: {fileID: 285971893}
+    - target: {fileID: 8243156589717715456, guid: 3f892e07287327247abd5c778db70606, type: 3}
+      propertyPath: hudUi.Array.data[3]
+      value: 
+      objectReference: {fileID: 67640467}
     - target: {fileID: 8424000748974281602, guid: 3f892e07287327247abd5c778db70606, type: 3}
       propertyPath: m_SizeDelta.x
       value: 500
