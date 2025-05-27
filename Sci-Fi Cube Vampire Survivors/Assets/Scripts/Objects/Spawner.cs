@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
 {
     private int round = 1;  // Starting round
     private int spawnedEnemies = 0;
+    private int spawnedCrates = 0;
     public float spawnInterval = 10f;
     public int maximumSpawnAmount = 60;
     public int numberRandomPositions = 2; // Total number of enemies to spawn in a round
@@ -22,6 +23,8 @@ public class Spawner : MonoBehaviour
     public CircleCollider2D circleCollider;
     private Player playerScript;
     public Slider enemiesRemainingSlider;
+
+    [SerializeField] private TutorialManager tutorialManager;
 
     void Start()
     {
@@ -42,6 +45,8 @@ public class Spawner : MonoBehaviour
             spawnedEnemies = 0;
             enemiesRemaining = numberRandomPositions;
 
+            StartCoroutine(tutorialManager.TutorialTip());
+
             while (spawnedEnemies < numberRandomPositions)
             {
                 Vector2 spawnPos = RandomPointInCircle(circleCollider);
@@ -50,6 +55,11 @@ public class Spawner : MonoBehaviour
                 GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
                 GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
                 enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y, -0.5f);
+
+                if (spawnedEnemies == 0 && round == 1)
+                {
+                    enemy.AddComponent<Target>();
+                }
 
                 BasicEnemy enemyScript = enemy.GetComponent<BasicEnemy>();
                 if (enemyScript != null)
@@ -70,8 +80,15 @@ public class Spawner : MonoBehaviour
                 // Spawn crates randomly alongside enemies
                 if (Random.Range(0f, 1f) <= 0.1f) // Adjust probability (e.g., 10% chance of spawning a crate)
                 {
+
                     Vector2 crateSpawnPos = RandomPointInCircle(circleCollider);  // Random spawn position for crate
                     Instantiate(cratePrefab, crateSpawnPos, Quaternion.identity);
+
+                    if (spawnedCrates == 0)
+                    {
+                        cratePrefab.AddComponent<GoodTarget>();
+                        spawnedCrates++;
+                    }
                 }
                 yield return new WaitForSeconds(spawnInterval);
             }
@@ -84,7 +101,7 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(20f); // Wait 20 seconds
-            numberRandomPositions = (int)Mathf.Ceil(numberRandomPositions * 1.2f);
+            numberRandomPositions = (int)Mathf.Ceil(numberRandomPositions * 2f);
             if (numberRandomPositions > maximumSpawnAmount)
                 numberRandomPositions = maximumSpawnAmount;
 
