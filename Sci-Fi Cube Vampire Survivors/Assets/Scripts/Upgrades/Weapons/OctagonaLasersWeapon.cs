@@ -17,7 +17,7 @@ public class OctagonalLasers : WeaponAbstract
             float angle = (360f / 8) * i;
             Vector3 direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
             GameObject Laser = Instantiate(laserPrefab, transform.position + direction * DistanceFromPlayer, Quaternion.identity);
-            Laser.transform.Rotate(0, angle, 0);
+            Laser.transform.Rotate(0, 0, angle);
             Laser.GetComponent<Bullet>().damage = damage;
             Laser.GetComponent<Bullet>().range = range;
             Laser.GetComponent<Bullet>().isBurning = true;

@@ -102,6 +102,9 @@ MonoBehaviour:
   damage: 5
   destroyOnCollision: 1
   range: 5
+  isMerciless: 0
+  isBurning: 0
+  stunDuration: 0
 --- !u!61 &-3007165805119892825
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,10 +169,10 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
