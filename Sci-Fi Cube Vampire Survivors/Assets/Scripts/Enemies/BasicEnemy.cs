@@ -29,6 +29,7 @@ public class BasicEnemy : MonoBehaviour
     private float burnStacks = 0;
     private float burnTimeLeft = 0f;
     public GameObject expPrefab;
+    private bool isDead = false;
 
     void Start()
     {
@@ -136,6 +137,8 @@ public class BasicEnemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (isDead) { return; }
+
         damage = playerScript.HandleDamageMultipliers(damage);
         CurrentHealth -= damage;
 
@@ -154,6 +157,8 @@ public class BasicEnemy : MonoBehaviour
 
     public void TakeDamage(float damage, bool doExplosion)
     {
+        if (isDead) { return; }
+
         damage = playerScript.HandleDamageMultipliers(damage);
         CurrentHealth -= damage;
 
@@ -303,6 +308,9 @@ public class BasicEnemy : MonoBehaviour
 
     private void HandleOnDeathEffects()
     {
+        if (isDead) { return; }
+        isDead = true;
+
         // Merciless Programming (Decrease Cooldown On Kill)
         if (target.GetComponent<MercilessProgramming>() != null)
         {
