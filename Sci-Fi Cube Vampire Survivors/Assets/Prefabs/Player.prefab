@@ -602,9 +602,8 @@ MonoBehaviour:
   numberRandomPositions: 10
   enemyPrefabs:
   - {fileID: 7793272152296475226, guid: 44e506d602ebb114994148db81bdc411, type: 3}
-  - {fileID: 7793272152296475226, guid: 4a3cca9507ec39043b4bc4d00d420087, type: 3}
+  - {fileID: 7793272152296475226, guid: 0ab7cf977996c8944831ebd11c33bf9d, type: 3}
   - {fileID: 7793272152296475226, guid: eba0bc969b768f643b38055858730840, type: 3}
   cratePrefab: {fileID: 1882289931951361443, guid: 89eaa6eaa25221549905ba2c64f58414, type: 3}
   circleCollider: {fileID: 5187792468595694085}
-  enemiesRemainingSlider: {fileID: 0}
   tutorialManager: {fileID: 0}

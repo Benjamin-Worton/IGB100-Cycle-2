@@ -907,9 +907,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 661972777}
     - target: {fileID: 621682479240573094, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: enemiesRemainingSlider
+      propertyPath: enemyPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7793272152296475226, guid: 0ab7cf977996c8944831ebd11c33bf9d, type: 3}
     - target: {fileID: 2728502580841112357, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -966,22 +966,6 @@ PrefabInstance:
       propertyPath: hurtEffect
       value: 
       objectReference: {fileID: 272530606}
-    - target: {fileID: 4765688335883833316, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765688335883833316, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765688335883833316, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5187792468595694085, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
-      propertyPath: m_Radius
-      value: 1.4
-      objectReference: {fileID: 0}
     - target: {fileID: 6709941521318432841, guid: ed88f367cd24fb9429abb4ff77e8e436, type: 3}
       propertyPath: m_Name
       value: Player
