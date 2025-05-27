@@ -65,21 +65,6 @@ public class DefensiveMenu : MonoBehaviour
             return;
         }
 
-        Component existingScript = player.GetComponent(type);
-
-        if (existingScript == null)
-        {
-            player.AddComponent(type);
-            Debug.Log($"{weaponScriptName} added to player.");
-        }
-        else
-        {
-            MonoBehaviour mono = existingScript as MonoBehaviour;
-            if (mono != null && !mono.enabled)
-            {
-                mono.enabled = true;
-                Debug.Log($"{weaponScriptName} enabled on player.");
-            }
-        }
+        player.AddComponent(type);
     }
 }

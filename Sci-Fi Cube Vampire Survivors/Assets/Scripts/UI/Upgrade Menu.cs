@@ -149,9 +149,6 @@ public class UpgradeMenu : MonoBehaviour
         playerScript.scrap -= assaultRifleCost;
         player.AddComponent<AssaultRifle>();
 
-        // Reduce player's available inventory space
-        playerScript.currentInventorySpace -= assaultRifleInventorySpace;
-
         ChangeButtonText(assaultRifleButtonText, "UPGRADE FOR " + assaultRifleUpgradeCost + " SCRAP");
         EnableScript("AssaultRifleWeapon");
     }
