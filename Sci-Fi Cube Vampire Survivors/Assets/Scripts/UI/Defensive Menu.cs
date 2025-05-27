@@ -5,9 +5,10 @@ using UnityEngine;
 public class DefensiveMenu : MonoBehaviour
 {
     public GameObject upgradeMenuStart;
-    public GameObject player; // Assign in Inspector
+    public GameObject player;
+    public HoverMessageController hoverMessageController;
 
-    public int upgradeCost = 10; // Set cost per upgrade in Inspector
+    public int upgradeCost = 10;
 
     public void BackToMainMenu()
     {
@@ -17,6 +18,14 @@ public class DefensiveMenu : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+    }
+    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            BackToMainMenu();
+        }
     }
 
     public void EnableScript(string weaponScriptName)
@@ -34,25 +43,19 @@ public class DefensiveMenu : MonoBehaviour
             return;
         }
 
-        // Inventory space check
-        if (playerScript.currentInventorySpace >= playerScript.maxInventorySpace)
-        {
-            Debug.Log("Inventory is full. Cannot purchase upgrade.");
-            return;
-        }
-
         // Scrap check
         if (playerScript.scrap < upgradeCost)
         {
+            hoverMessageController.ShowMessage("Not Enough Scrap!");
             Debug.Log("Not enough scrap to buy this upgrade.");
             return;
         }
 
         // Deduct scrap and add to inventory
         playerScript.scrap -= upgradeCost;
-        playerScript.currentInventorySpace += 1;
 
-        Debug.Log($"Upgrade bought! Remaining scrap: {playerScript.scrap}, Inventory: {playerScript.currentInventorySpace}/{playerScript.maxInventorySpace}");
+        hoverMessageController.ShowMessage("Upgrade Bought!");
+        Debug.Log($"Upgrade bought! Remaining scrap: {playerScript.scrap}");
 
         // Add or enable the script
         System.Type type = System.Type.GetType(weaponScriptName);

@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public bool isThrusterDashing = false;
     private Rigidbody2D rb;
     [HideInInspector] public Vector2 lastKnownDirection = Vector2.zero;
+    public HoverMessageController hoverMessageController;
 
 
     // Stats
@@ -43,8 +44,6 @@ public class Player : MonoBehaviour
     private float cooldownMultiplier = 1f;
 
     public int scrap = 0;
-    public int maxInventorySpace = 1;
-    public int currentInventorySpace = 0;
     public float critRate = 0f;
     public float critDamageMultiplier = 1.5f;
     public float critBlock = 0f;
@@ -163,32 +162,13 @@ public class Player : MonoBehaviour
         level++;
         levelText.text = "Level " + level.ToString();
 
-        // Inventory space progression
-        switch (level)
-        {
-            case 2:
-                maxInventorySpace = 2;
-                break;
-            case 3:
-                maxInventorySpace = 4;
-                break;
-            case 4:
-                maxInventorySpace = 8;
-                break;
-            case 5:
-                maxInventorySpace = 9;
-                break;
-            default:
-                break;
-        }
-
-        currentInventorySpace = maxInventorySpace;
         expNeeded = expNeeded * 2;
         EXP = 0;
         expBar.SetMaxEXP(expNeeded);
         regen = regen * 2;
         speed = speed * 1.5f;
 
+        hoverMessageController.ShowMessage("Level Up!");
         Debug.Log("Player leveled up to level " + level);
     }
 
