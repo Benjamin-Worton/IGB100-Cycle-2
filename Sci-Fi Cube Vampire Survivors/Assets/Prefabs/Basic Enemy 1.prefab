@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
-  speed: 0.3
+  speed: 0.75
   points: 100
   normalSprite: {fileID: 4877363017930903073}
   whiteSprite: {fileID: 5303853676268324632}
@@ -225,7 +225,7 @@ MonoBehaviour:
   pushBackForce: 600
   damage: 10
   ScrapPrefab: {fileID: 4060324187705972658, guid: d95fd98062ed240279858ae2c010bff6, type: 3}
-  expPrefab: {fileID: 8858265308934029929, guid: 3aca21de714982f46929a46c224e34e7, type: 3}
+  expPrefab: {fileID: 6531682024602135149, guid: 3aca21de714982f46929a46c224e34e7, type: 3}
 --- !u!50 &2434365912085781012
 Rigidbody2D:
   serializedVersion: 4
