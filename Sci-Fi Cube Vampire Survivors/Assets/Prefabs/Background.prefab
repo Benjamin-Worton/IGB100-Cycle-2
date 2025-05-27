@@ -433,7 +433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2190859116808132527}
-  - component: {fileID: 7602959263912985038}
+  - component: {fileID: 6216698283013820327}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -460,7 +460,7 @@ Transform:
   - {fileID: 7825326440407251763}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7602959263912985038
+--- !u!114 &6216698283013820327
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -473,9 +473,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  quads:
-  - {fileID: 2488596446009946662}
-  - {fileID: 8327312764965273371}
-  - {fileID: 4276596221151995024}
-  - {fileID: 7825326440407251763}
+  quads: []
   tileSize: 15

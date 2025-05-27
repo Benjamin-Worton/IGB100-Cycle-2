@@ -49,9 +49,7 @@ public class Crate : MonoBehaviour
         }
         
         if (collision.gameObject.CompareTag("Weapon")) {
-#nullable enable
             TakeDamage();
-#nullable disable
         }
     }
 
