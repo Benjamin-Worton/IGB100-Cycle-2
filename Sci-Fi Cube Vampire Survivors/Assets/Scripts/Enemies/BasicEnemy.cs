@@ -29,7 +29,7 @@ public class BasicEnemy : MonoBehaviour
     private float burnStacks = 0;
     private float burnTimeLeft = 0f;
     public GameObject expPrefab;
-    private bool isDead = false;
+    [HideInInspector] public bool isDead = false;
 
     void Start()
     {
@@ -81,8 +81,9 @@ public class BasicEnemy : MonoBehaviour
             {
                 if (bullet.isMerciless) { target.GetComponent<Player>().GiveMerciless(); }
                 if (bullet.stunDuration > 0f) { Stun(bullet.stunDuration); }
-                TakeDamage(bullet.damage);
-                if (bullet.destroyOnCollision) Destroy(collision.gameObject);
+                float bulletdamage = bullet.damage;
+                if (bullet.destroyOnCollision && !isDead) Destroy(collision.gameObject);
+                TakeDamage(bulletdamage);
                 return;
             }
             IonLaserObject? ionLaser;
@@ -188,7 +189,7 @@ public class BasicEnemy : MonoBehaviour
 
     private IEnumerator RandomScrap()
     {
-        int scrapCount = Random.Range(0, 3);
+        int scrapCount = Random.Range(1, 3);
         foreach (var script in target.GetComponents<VoidCollector>())
         {
             scrapCount += 2;
@@ -310,6 +311,7 @@ public class BasicEnemy : MonoBehaviour
     {
         if (isDead) { return; }
         isDead = true;
+        gameObject.layer = LayerMask.NameToLayer("Default");
 
         // Merciless Programming (Decrease Cooldown On Kill)
         if (target.GetComponent<MercilessProgramming>() != null)

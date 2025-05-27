@@ -35,6 +35,14 @@ public class AssaultRifle : WeaponAbstract, IOrbiting
         Destroy(this);
     }
 
+    void Update()
+    {
+        if (fireRate == 0f)
+        {
+            Attack();
+        }
+    }
+
     #region Attack Functions 
     
     // Finds Nearest Enemy and then Shoots at them
@@ -51,7 +59,7 @@ public class AssaultRifle : WeaponAbstract, IOrbiting
     {
         // Find nearest enemy, if you know of a better way to do this, please do
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (allEnemies.Length == 0) { return null; }
+        if (allEnemies.Length == 0) { fireRate = 0f;  return null; }
 
         // Set first enemy as nearest
         GameObject nearestEnemy = allEnemies[0];
@@ -61,6 +69,7 @@ public class AssaultRifle : WeaponAbstract, IOrbiting
         for (int enemy = 0; enemy < allEnemies.Length; enemy++)
         {
             float distanceToCurrent = Vector2.Distance(weapon.transform.position, allEnemies[enemy].transform.position);
+            if (allEnemies[enemy].GetComponent<BasicEnemy>() != null && !allEnemies[enemy].GetComponent<BasicEnemy>().isDead) { continue; }
             if (distanceToCurrent < distanceToNearest)
             {
                 nearestEnemy = allEnemies[enemy];
@@ -68,13 +77,17 @@ public class AssaultRifle : WeaponAbstract, IOrbiting
             }
         }
 
-        // If nearest enemy is out of range, return null
-        if (Vector2.Distance(transform.position, nearestEnemy.transform.position) > range) { return null; }
+        // If nearest enemy is out of range, return null and try again next frame
+        if (Vector2.Distance(transform.position, nearestEnemy.transform.position) > range) { fireRate = 0f; return null; }
 
+        if (fireRate == 0f)
+        {
+            fireRate = 1f;
+            StartCoroutine(FireLoop());
+        }
         return nearestEnemy;
     }
     #nullable disable
-
 
     private void Shoot(GameObject target)
     {

@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 5738548397203245427}
   - component: {fileID: 1417675976312989134}
   m_Layer: 5
-  m_Name: Pause Menu Button (3)
+  m_Name: Quit 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6647523395418252055}
   - component: {fileID: 106137105091661577}
-  - component: {fileID: 2817411991794754280}
+  - component: {fileID: 4686467862553963827}
   m_Layer: 5
   m_Name: EXP Bar
   m_TagString: Untagged
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2817411991794754280
+--- !u!114 &4686467862553963827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2728934508685119732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c423e72c58e39f743a87f0a08098c3f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 46ad5263698ffd0498aa4e64504a236b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 106137105091661577}
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 4693139446454279862}
   - component: {fileID: 2102779570696860171}
   m_Layer: 5
-  m_Name: Pause Menu Button (2)
+  m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1738,10 +1738,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5283745108511365719}
-  - {fileID: 245306497118573685}
   - {fileID: 552051927668531446}
   - {fileID: 5530205550189380308}
   - {fileID: 4773031168679777553}
+  - {fileID: 245306497118573685}
   m_Father: {fileID: 740228348443878635}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1929,7 +1929,7 @@ GameObject:
   - component: {fileID: 1079136742208981015}
   - component: {fileID: 5978016891990582442}
   m_Layer: 5
-  m_Name: Pause Menu Button
+  m_Name: Quit 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2062,7 +2062,7 @@ GameObject:
   - component: {fileID: 736080834543090836}
   - component: {fileID: 6212968610273136681}
   m_Layer: 5
-  m_Name: Pause Menu Button (1)
+  m_Name: Resume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

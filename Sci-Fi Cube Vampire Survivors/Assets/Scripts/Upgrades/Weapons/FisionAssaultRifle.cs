@@ -18,7 +18,7 @@ public class FisionAssaultRifle : WeaponAbstract, IOrbiting
         fireRate = 1f;  // Default fire rate
 
         // Set up weapon prefabs
-        AssaultRiflePrefab = Resources.Load<GameObject>("Prefabs/Fision Assault Rifle");
+        AssaultRiflePrefab = Resources.Load<GameObject>("Prefabs/Assault Rifle");
         bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
 
         // Add weapon to weapon manager
@@ -35,23 +35,31 @@ public class FisionAssaultRifle : WeaponAbstract, IOrbiting
         Destroy(this);
     }
 
+    void Update()
+    {
+        if (fireRate == 0f)
+        {
+            Attack();
+        }
+    }
+
     #region Attack Functions 
-    
+
     // Finds Nearest Enemy and then Shoots at them
     protected override void Attack()
     {
-        #nullable enable
+#nullable enable
         GameObject? nearestEnemy = FindNearestEnemy();
         if (nearestEnemy == null) return;
-        #nullable disable
+#nullable disable
         Shoot(nearestEnemy);
     }
-    #nullable enable
+#nullable enable
     private GameObject? FindNearestEnemy()
     {
         // Find nearest enemy, if you know of a better way to do this, please do
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (allEnemies.Length == 0) { return null; }
+        if (allEnemies.Length == 0) { fireRate = 0f; return null; }
 
         // Set first enemy as nearest
         GameObject nearestEnemy = allEnemies[0];
@@ -61,6 +69,7 @@ public class FisionAssaultRifle : WeaponAbstract, IOrbiting
         for (int enemy = 0; enemy < allEnemies.Length; enemy++)
         {
             float distanceToCurrent = Vector2.Distance(weapon.transform.position, allEnemies[enemy].transform.position);
+            if (allEnemies[enemy].GetComponent<BasicEnemy>() != null && !allEnemies[enemy].GetComponent<BasicEnemy>().isDead) { continue; }
             if (distanceToCurrent < distanceToNearest)
             {
                 nearestEnemy = allEnemies[enemy];
@@ -68,13 +77,17 @@ public class FisionAssaultRifle : WeaponAbstract, IOrbiting
             }
         }
 
-        // If nearest enemy is out of range, return null
-        if (Vector2.Distance(transform.position, nearestEnemy.transform.position) > range) { return null; }
+        // If nearest enemy is out of range, return null and try again next frame
+        if (Vector2.Distance(transform.position, nearestEnemy.transform.position) > range) { fireRate = 0f; return null; }
 
+        if (fireRate == 0f)
+        {
+            fireRate = 1f;
+            StartCoroutine(FireLoop());
+        }
         return nearestEnemy;
     }
-    #nullable disable
-
+#nullable disable
 
     private void Shoot(GameObject target)
     {
@@ -95,5 +108,5 @@ public class FisionAssaultRifle : WeaponAbstract, IOrbiting
         bulletScript.destroyOnCollision = true;
         bulletScript.range = range;
     }
-#endregion Attack 
+    #endregion Attack 
 }

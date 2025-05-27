@@ -22,7 +22,7 @@ public abstract class WeaponAbstract : UpgradeAbstract
     /// Calls the <see cref="Attack"/> function each time fireRate * cooldownMultiplier is elapsed
     /// </summary>
     /// <returns></returns>
-    private IEnumerator FireLoop()
+    protected IEnumerator FireLoop()
     {
         // Loop the waiting for attack, then attacking.
         while (true)

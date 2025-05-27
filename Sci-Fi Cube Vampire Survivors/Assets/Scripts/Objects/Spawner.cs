@@ -22,7 +22,6 @@ public class Spawner : MonoBehaviour
     private GameObject player;
     public CircleCollider2D circleCollider;
     private Player playerScript;
-    public Slider enemiesRemainingSlider;
 
     [SerializeField] private TutorialManager tutorialManager;
 
