@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     private int spawnedCrates = 0;
     public float spawnInterval = 10f;
     public int maximumSpawnAmount = 60;
-    public int numberRandomPositions = 1; // Total number of enemies to spawn in a round
+    public int numberRandomPositions = 2; // Total number of enemies to spawn in a round
     private int enemiesRemaining; 
     private int scoreCounter;
 
@@ -101,7 +101,7 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(20f); // Wait 20 seconds
-            numberRandomPositions = (int)Mathf.Ceil(numberRandomPositions * 1.2f);
+            numberRandomPositions = (int)Mathf.Ceil(numberRandomPositions * 2f);
             if (numberRandomPositions > maximumSpawnAmount)
                 numberRandomPositions = maximumSpawnAmount;
 
