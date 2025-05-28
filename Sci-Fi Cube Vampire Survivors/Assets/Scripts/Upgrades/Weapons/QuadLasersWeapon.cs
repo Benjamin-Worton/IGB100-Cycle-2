@@ -7,7 +7,6 @@ public class QuadLasers : WeaponAbstract
     private GameObject laserPrefab;
     private readonly float DistanceFromPlayer = 0.4f;
     [SerializeField] private float damage = 30f;
-    [SerializeField] private float range = 7f;
 
 
     protected override void Attack()
@@ -19,7 +18,6 @@ public class QuadLasers : WeaponAbstract
             GameObject Laser = Instantiate(laserPrefab, transform.position + direction * DistanceFromPlayer, Quaternion.identity);
             Laser.transform.Rotate(0, 0, angle);
             Laser.GetComponent<Bullet>().damage = damage;
-            Laser.GetComponent<Bullet>().range = range;
             Laser.GetComponent<Bullet>().isBurning = true;
 
         }

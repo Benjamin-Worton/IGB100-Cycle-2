@@ -33,18 +33,20 @@ public class Spawner : MonoBehaviour
             playerScript = player.GetComponent<Player>();
         }
 
+        StartCoroutine(tutorialManager.TutorialTip());
         StartCoroutine(SpawnEnemies());
         StartCoroutine(IncreaseSpawnAmountOverTime()); // Start rate increase coroutine
     }
 
     IEnumerator SpawnEnemies()
     {
+        
         while (true)
         {
             spawnedEnemies = 0;
             enemiesRemaining = numberRandomPositions;
 
-            StartCoroutine(tutorialManager.TutorialTip());
+            
 
             while (spawnedEnemies < numberRandomPositions)
             {
@@ -89,9 +91,9 @@ public class Spawner : MonoBehaviour
                         spawnedCrates++;
                     }
                 }
-                yield return new WaitForSeconds(spawnInterval);
+                
             }
-            
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
 
@@ -100,7 +102,7 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(20f); // Wait 20 seconds
-            numberRandomPositions = (int)Mathf.Ceil(numberRandomPositions * 2f);
+            numberRandomPositions = (int)Mathf.Ceil(numberRandomPositions * 1.2f);
             if (numberRandomPositions > maximumSpawnAmount)
                 numberRandomPositions = maximumSpawnAmount;
 

@@ -71,8 +71,8 @@ public class NanoDrillShotgun : WeaponAbstract, IOrbiting
             Bullet bulletScript = Bullet.GetComponent<Bullet>();
             bulletScript.damage = damage;
             bulletScript.destroyOnCollision = true;
-            bulletScript.range = range;
             bulletScript.stunDuration = stunDuration;
+            bulletScript.range = range;
         }
 
     }

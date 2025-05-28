@@ -7,7 +7,6 @@ public class ShoulderLasers : WeaponAbstract
     private GameObject laserPrefab;
     private readonly float DistanceFromPlayer = 0.4f;
     [SerializeField] private float damage = 10f;
-    [SerializeField] private float range = 7f;
 
 
     protected override void Attack()
@@ -17,8 +16,6 @@ public class ShoulderLasers : WeaponAbstract
         LeftLaser.transform.Rotate(0, 180f, 0);
         RightLaser.GetComponent<Bullet>().damage = damage;
         LeftLaser.GetComponent<Bullet>().damage = damage;
-        RightLaser.GetComponent<Bullet>().range = range;
-        LeftLaser.GetComponent<Bullet>().range = range;
     }
 
     // Start is called before the first frame update

@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     [SerializeField] private float OrbitDistance = 1f;
-
+    private float angleBonus = 0f;
     private List<WeaponAbstract> orbitingWeapons = new List<WeaponAbstract>();
     private Transform playerTransform;
 
@@ -57,14 +57,24 @@ public class WeaponManager : MonoBehaviour
     private void UpdateOrbitPositions()
     {
         int total = orbitingWeapons.Count;
-        for (int i = 0; i < total; i++)
-        {
-            WeaponAbstract weapon = orbitingWeapons[i];
-            float angle = (360f / total) * i + 90f;
-            Vector2 direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+        angleBonus += Time.deltaTime * 10f;
+        float ringSpacing = 1f;
+        int currentIndex = 0;
+        int ring = 1;
 
-            Vector3 orbitPos = (Vector2)playerTransform.position + direction * OrbitDistance;
-            weapon.SetOrbitPosition(orbitPos);
+        while (currentIndex < total)
+        {
+            int weaponsInCurrentRing = ring * 8;
+            float radius = OrbitDistance + (ring - 1) * ringSpacing;
+            for (int i= 0; i < weaponsInCurrentRing && currentIndex < total; i++, currentIndex++)
+            {
+                WeaponAbstract weapon = orbitingWeapons[currentIndex];
+                float angle = (360f / weaponsInCurrentRing) * i + 90f + angleBonus;
+                Vector2 direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+                Vector3 orbitPos = (Vector2)playerTransform.position + direction * radius;
+                weapon.SetOrbitPosition(orbitPos);
+            }
+            ring++;
         }
     }
 }

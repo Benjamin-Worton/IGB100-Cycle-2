@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [HideInInspector] public float damage = 10f;
     [HideInInspector] public bool destroyOnCollision = false;
-    [HideInInspector] public float range = 5f;
+    [HideInInspector] public float range = 30f;
     [HideInInspector] public bool isMerciless = false;
     [HideInInspector] public bool isBurning = false;
     [HideInInspector] public float stunDuration = 0f;

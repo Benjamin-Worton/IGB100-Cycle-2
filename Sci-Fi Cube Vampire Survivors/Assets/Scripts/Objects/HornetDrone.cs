@@ -69,6 +69,5 @@ public class HornetDrone : MonoBehaviour
         Bullet bulletScript = Bullet.GetComponent<Bullet>();
         bulletScript.damage = damage;
         bulletScript.destroyOnCollision = true;
-        bulletScript.range = range;
     }
 }

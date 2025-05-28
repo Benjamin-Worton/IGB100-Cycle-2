@@ -9,7 +9,7 @@ public class NuclearRifle : WeaponAbstract, IOrbiting
     private GameObject bulletPrefab;
     private GameObject AssaultRiflePrefab;
 
-    
+
     [SerializeField] private float damage = 50f;
     [SerializeField] private float range = 4f;
 
@@ -59,33 +59,40 @@ public class NuclearRifle : WeaponAbstract, IOrbiting
     {
         // Find nearest enemy, if you know of a better way to do this, please do
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (allEnemies.Length == 0) { fireRate = 0f; return null; }
 
-        // Set first enemy as nearest
-        GameObject nearestEnemy = allEnemies[0];
-        float distanceToNearest = Vector2.Distance(weapon.transform.position, nearestEnemy.transform.position);
+        GameObject? nearestEnemy = null;
+        float distanceToNearest = Mathf.Infinity;
 
         // Test all other enemies if they are closer
-        for (int enemy = 0; enemy < allEnemies.Length; enemy++)
+
+        foreach (var enemy in allEnemies)
         {
-            float distanceToCurrent = Vector2.Distance(weapon.transform.position, allEnemies[enemy].transform.position);
-            if (allEnemies[enemy].GetComponent<BasicEnemy>() != null && !allEnemies[enemy].GetComponent<BasicEnemy>().isDead) { continue; }
-            if (distanceToCurrent < distanceToNearest)
+
+            bool isValid = false;
+            BasicEnemy basicEnemy = enemy.GetComponent<BasicEnemy>();
+            if (basicEnemy != null && !basicEnemy.isDead) { isValid = true; }
+            Crate crate = enemy.GetComponent<Crate>();
+            if (crate != null) { isValid = true; }
+
+            if (!isValid) { continue; }
+
+            float distanceToCurrent = Vector2.Distance(weapon.transform.position, enemy.transform.position);
+            if (distanceToCurrent < distanceToNearest) { distanceToNearest = distanceToCurrent; nearestEnemy = enemy; }
+
+        }
+
+        if (nearestEnemy != null && Vector2.Distance(weapon.transform.position, nearestEnemy.transform.position) < range)
+        {
+            if (fireRate == 0f)
             {
-                nearestEnemy = allEnemies[enemy];
-                distanceToNearest = distanceToCurrent;
+                fireRate = 1f;
+                StartCoroutine(FireLoop());
             }
+
+            return nearestEnemy;
         }
 
-        // If nearest enemy is out of range, return null and try again next frame
-        if (Vector2.Distance(transform.position, nearestEnemy.transform.position) > range) { fireRate = 0f; return null; }
-
-        if (fireRate == 0f)
-        {
-            fireRate = 1f;
-            StartCoroutine(FireLoop());
-        }
-        return nearestEnemy;
+        return null;
     }
 #nullable disable
 
@@ -106,7 +113,6 @@ public class NuclearRifle : WeaponAbstract, IOrbiting
         Bullet bulletScript = Bullet.GetComponent<Bullet>();
         bulletScript.damage = damage;
         bulletScript.destroyOnCollision = true;
-        bulletScript.range = range;
     }
     #endregion Attack 
 }

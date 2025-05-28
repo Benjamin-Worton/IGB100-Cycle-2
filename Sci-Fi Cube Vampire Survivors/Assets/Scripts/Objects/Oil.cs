@@ -9,12 +9,10 @@ public class Oil : MonoBehaviour
     [HideInInspector] public float burnDistance = 1.5f;
     private bool isIgnited = false;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Weapon"))
-        {
-            Ignite();
-        }
+        if (!collision.CompareTag("Weapon")) { return; }
+        Ignite();
     }
 
 
