@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6223913203769140051}
   - component: {fileID: 6025409035175326573}
   - component: {fileID: 6357554463024966966}
+  - component: {fileID: 458231479736348906}
   m_Layer: 0
   m_Name: HornetDrone
   m_TagString: Untagged
@@ -131,3 +132,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   range: 3.5
+--- !u!95 &458231479736348906
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4036774877747096781}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5e51e8a7fc4f4546aadc8031ee389d4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
