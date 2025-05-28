@@ -34,6 +34,7 @@ public class Spawner : MonoBehaviour
         }
 
         StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnCrates());
         StartCoroutine(IncreaseSpawnAmountOverTime()); // Start rate increase coroutine
     }
 
@@ -55,7 +56,7 @@ public class Spawner : MonoBehaviour
                 GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
                 enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y, -0.5f);
 
-                if (spawnedEnemies == 0 && round == 1)
+                if (spawnedEnemies == 0 && round == 1 )
                 {
                     enemy.AddComponent<Target>();
                 }
@@ -76,24 +77,33 @@ public class Spawner : MonoBehaviour
                 spawnedEnemies++;
                 enemiesRemaining--;
 
-                // Spawn crates randomly alongside enemies
-                if (Random.Range(0f, 1f) <= 0.1f) // Adjust probability (e.g., 10% chance of spawning a crate)
-                {
-
-                    Vector2 crateSpawnPos = RandomPointInCircle(circleCollider);  // Random spawn position for crate
-                    Instantiate(cratePrefab, crateSpawnPos, Quaternion.identity);
-
-                    if (spawnedCrates == 0)
-                    {
-                        cratePrefab.AddComponent<GoodTarget>();
-                        spawnedCrates++;
-                    }
-                }
                 yield return new WaitForSeconds(spawnInterval);
             }
             
         }
     }
+    
+    IEnumerator SpawnCrates()
+    {
+        while (true)
+        {
+            while (spawnedCrates < numberRandomPositions)
+            {
+                Vector2 spawnPos = RandomPointInCircle(circleCollider);
+
+                if (Random.Range(0f, 1f) <= 0.1f)
+                {
+                    Vector2 crateSpawnPos = RandomPointInCircle(circleCollider);
+                    GameObject crate = Instantiate(cratePrefab, crateSpawnPos, Quaternion.identity);
+                    crate.AddComponent<GoodTarget>();
+                    spawnedCrates++;
+                }
+
+                yield return new WaitForSeconds(spawnInterval);
+            }
+        }
+    }
+
 
     IEnumerator IncreaseSpawnAmountOverTime()
     {
