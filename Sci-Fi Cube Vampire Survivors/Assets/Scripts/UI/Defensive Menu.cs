@@ -8,7 +8,7 @@ public class DefensiveMenu : MonoBehaviour
     public GameObject player;
     public HoverMessageController hoverMessageController;
 
-    public int upgradeCost = 10;
+    private int currentUpgradeCost;
 
     public void BackToMainMenu()
     {
@@ -28,6 +28,11 @@ public class DefensiveMenu : MonoBehaviour
         }
     }
 
+    public void UpgradePrice(int cost)
+    {
+        currentUpgradeCost = cost;
+    }
+
     public void EnableScript(string weaponScriptName)
     {
         if (player == null)
@@ -43,21 +48,17 @@ public class DefensiveMenu : MonoBehaviour
             return;
         }
 
-        // Scrap check
-        if (playerScript.scrap < upgradeCost)
+        if (playerScript.scrap < currentUpgradeCost)
         {
             hoverMessageController.ShowMessage("Not Enough Scrap!");
             Debug.Log("Not enough scrap to buy this upgrade.");
             return;
         }
 
-        // Deduct scrap and add to inventory
-        playerScript.scrap -= upgradeCost;
-
+        playerScript.scrap -= currentUpgradeCost;
         hoverMessageController.ShowMessage("Upgrade Bought!");
         Debug.Log($"Upgrade bought! Remaining scrap: {playerScript.scrap}");
 
-        // Add or enable the script
         System.Type type = System.Type.GetType(weaponScriptName);
         if (type == null)
         {

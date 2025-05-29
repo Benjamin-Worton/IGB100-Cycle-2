@@ -5,15 +5,14 @@ public class ShowOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     public GameObject prefabToShow;
 
-public void OnPointerEnter(PointerEventData eventData)
-{
-    if (prefabToShow != null)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        prefabToShow.SetActive(true);
-        prefabToShow.transform.SetAsLastSibling(); // Brings to front
+        if (prefabToShow != null)
+        {
+            prefabToShow.SetActive(true);
+            prefabToShow.transform.SetAsLastSibling(); // Brings to front
+        }
     }
-    Debug.Log("In");
-}
 
     public void OnPointerExit(PointerEventData eventData)
     {
@@ -21,7 +20,21 @@ public void OnPointerEnter(PointerEventData eventData)
         {
             prefabToShow.SetActive(false);
         }
+    }
 
-        Debug.Log("Out");
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && prefabToShow != null)
+        {
+            prefabToShow.SetActive(false);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (prefabToShow != null)
+        {
+            prefabToShow.SetActive(false);
+        }
     }
 }

@@ -27,6 +27,9 @@ GameObject:
   - component: {fileID: -6638520541469874373}
   - component: {fileID: -6018159857359795806}
   - component: {fileID: -5545584778594237375}
+  - component: {fileID: -6529776452672695636}
+  - component: {fileID: -1188274893918676854}
+  - component: {fileID: 7543140142238441083}
   m_Layer: 6
   m_Name: Crate
   m_TagString: Enemy
@@ -337,6 +340,51 @@ MonoBehaviour:
   floatAmplitude: 0.2
   floatFrequency: 2
 --- !u!114 &-5545584778594237375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882289931951361443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3157114ec572148c987df34195c0f806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DistanceFromEnemy: 1
+  floatAmplitude: 0.2
+  floatFrequency: 2
+--- !u!114 &-6529776452672695636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882289931951361443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3157114ec572148c987df34195c0f806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DistanceFromEnemy: 1
+  floatAmplitude: 0.2
+  floatFrequency: 2
+--- !u!114 &-1188274893918676854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882289931951361443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3157114ec572148c987df34195c0f806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DistanceFromEnemy: 1
+  floatAmplitude: 0.2
+  floatFrequency: 2
+--- !u!114 &7543140142238441083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
