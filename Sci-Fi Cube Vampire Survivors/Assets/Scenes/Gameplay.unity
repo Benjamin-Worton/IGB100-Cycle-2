@@ -475,6 +475,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 124826423805035367, guid: bca71c8368faf5344993042a191fac31, type: 3}
+      propertyPath: m_Name
+      value: Shoulder Lasers Button
+      objectReference: {fileID: 0}
     - target: {fileID: 245306497118573685, guid: bca71c8368faf5344993042a191fac31, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -605,6 +609,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 480
       objectReference: {fileID: 0}
+    - target: {fileID: 2691442775491316215, guid: bca71c8368faf5344993042a191fac31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: ShoulderLasers
+      objectReference: {fileID: 0}
     - target: {fileID: 2787801368198099601, guid: bca71c8368faf5344993042a191fac31, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -663,7 +671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4828850022764967080, guid: bca71c8368faf5344993042a191fac31, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945512247874591949, guid: bca71c8368faf5344993042a191fac31, type: 3}
+      propertyPath: m_Name
+      value: Fission Assault Rifle  Description
       objectReference: {fileID: 0}
     - target: {fileID: 4947760035536148647, guid: bca71c8368faf5344993042a191fac31, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -784,6 +796,10 @@ PrefabInstance:
     - target: {fileID: 8730330526384416221, guid: bca71c8368faf5344993042a191fac31, type: 3}
       propertyPath: m_margin.z
       value: -134.49419
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055503424417961069, guid: bca71c8368faf5344993042a191fac31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: FissionAssaultRifle
       objectReference: {fileID: 0}
     - target: {fileID: 9173510374773571352, guid: bca71c8368faf5344993042a191fac31, type: 3}
       propertyPath: m_UiScaleMode
@@ -1404,17 +1420,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 2349752042728771586, guid: 5b258ed1c0b9341d1b210e312242130c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4425501062142194396, guid: 5b258ed1c0b9341d1b210e312242130c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4425501062142194396, guid: 5b258ed1c0b9341d1b210e312242130c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4425501062142194396, guid: 5b258ed1c0b9341d1b210e312242130c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6104106805317296074, guid: 5b258ed1c0b9341d1b210e312242130c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1458,11 +1478,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8813946929961475396, guid: 5b258ed1c0b9341d1b210e312242130c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8813946929961475396, guid: 5b258ed1c0b9341d1b210e312242130c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
