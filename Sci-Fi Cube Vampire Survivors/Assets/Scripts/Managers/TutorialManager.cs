@@ -31,6 +31,7 @@ public class TutorialManager : MonoBehaviour
     public IEnumerator TutorialTip()
     {
         Time.timeScale = 0;
+        Debug.Log(Time.timeScale);
         blackScreen.SetActive(true);
 
         foreach (GameObject display in tutorialDisplays)
@@ -46,6 +47,14 @@ public class TutorialManager : MonoBehaviour
 
         yield return StartCoroutine(FadeOutBlackScreen(0.5f));
         Time.timeScale = 1;
+        foreach (GameObject uI in hudUi)
+        {
+            uI.SetActive(true);
+        }
+    }
+
+    public void NoIntro()
+    {
         foreach (GameObject uI in hudUi)
         {
             uI.SetActive(true);

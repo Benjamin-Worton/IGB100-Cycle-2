@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -31,8 +32,6 @@ public class AudioManager : MonoBehaviour
         }
         
     }
-
-    
 
     //play specific audio clip
     public void PlaySFX(AudioClip clip)
@@ -67,6 +66,4 @@ public class AudioManager : MonoBehaviour
         if (clip != null)
             PlayMusic(clip);
     }
-
-
 }

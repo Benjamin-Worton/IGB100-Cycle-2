@@ -25,6 +25,12 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private TutorialManager tutorialManager;
 
+    void Awake()
+    {
+        Time.timeScale = 0;
+        Debug.Log(Time.timeScale);
+    }
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -33,6 +39,15 @@ public class Spawner : MonoBehaviour
             playerScript = player.GetComponent<Player>();
         }
 
+        if (SettingsMenu.IsTutorialEnabled())
+        {
+            StartCoroutine(tutorialManager.TutorialTip());
+        }
+        else
+        {
+            tutorialManager.NoIntro();
+        }
+        
         StartCoroutine(SpawnEnemies());
         StartCoroutine(SpawnCrates());
         StartCoroutine(IncreaseSpawnAmountOverTime()); // Start rate increase coroutine
@@ -44,8 +59,6 @@ public class Spawner : MonoBehaviour
         {
             spawnedEnemies = 0;
             enemiesRemaining = numberRandomPositions;
-
-            StartCoroutine(tutorialManager.TutorialTip());
 
             while (spawnedEnemies < numberRandomPositions)
             {
