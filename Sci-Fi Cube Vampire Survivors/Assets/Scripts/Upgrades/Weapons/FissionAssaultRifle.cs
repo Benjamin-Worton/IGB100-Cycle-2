@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FisionAssaultRifle : WeaponAbstract, IOrbiting
+public class FissionAssaultRifle : WeaponAbstract, IOrbiting
 {
     // Game Objects 
     private GameObject bulletPrefab;

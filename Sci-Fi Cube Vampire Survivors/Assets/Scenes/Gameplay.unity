@@ -591,6 +591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UiManager
       objectReference: {fileID: 0}
+    - target: {fileID: 973073381750015980, guid: 088b8ff06a72b5e4ea6918989725b109, type: 3}
+      propertyPath: m_Name
+      value: Fission Assault Rifle  Description
+      objectReference: {fileID: 0}
     - target: {fileID: 1898657812198335222, guid: 088b8ff06a72b5e4ea6918989725b109, type: 3}
       propertyPath: player
       value: 
@@ -599,6 +603,20 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1247405315}
+    - target: {fileID: 2717486554864069904, guid: 088b8ff06a72b5e4ea6918989725b109, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3322550186669555586, guid: 088b8ff06a72b5e4ea6918989725b109, type: 3}
+      propertyPath: m_text
+      value: 'Fission Assault Rifle
+
+        20'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786239041238044492, guid: 088b8ff06a72b5e4ea6918989725b109, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: FissionAssaultRifle
+      objectReference: {fileID: 0}
     - target: {fileID: 4272632806794499175, guid: 088b8ff06a72b5e4ea6918989725b109, type: 3}
       propertyPath: player
       value: 
@@ -658,6 +676,14 @@ PrefabInstance:
     - target: {fileID: 7802884414221914912, guid: 088b8ff06a72b5e4ea6918989725b109, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039121773687089584, guid: 088b8ff06a72b5e4ea6918989725b109, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391274764243307488, guid: 088b8ff06a72b5e4ea6918989725b109, type: 3}
+      propertyPath: m_Name
+      value: Fission Assault Rifle Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

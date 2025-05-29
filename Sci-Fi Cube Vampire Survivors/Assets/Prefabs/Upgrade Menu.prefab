@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nano Drill Shotgun
+  m_text: Nano Drill Shotgun 30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -201,7 +201,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Shoulder
 
-    Lasers'
+    Lasers
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -307,7 +309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 213, y: -36}
+  m_AnchoredPosition: {x: -434, y: -36}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3236992484321755219
@@ -404,6 +406,18 @@ MonoBehaviour:
           m_StringArgument: FisionAssaultRifle
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2214789605372934184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,7 +468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 212.6, y: 149.6}
+  m_AnchoredPosition: {x: 431.5, y: -36.2}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3509293022417310107
@@ -551,6 +565,18 @@ MonoBehaviour:
           m_StringArgument: MK5Plates
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4083128954335825084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,7 +655,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Emergency Health Pack
+  m_text: 'Emergency Health Pack
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -763,7 +791,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Deconstructor
+  m_text: 'Deconstructor
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -897,7 +927,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hornet Drones
+  m_text: 'Hornet Drones
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -1003,7 +1035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: -215, y: -29}
+  m_AnchoredPosition: {x: 431, y: -37}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2966723154158542594
@@ -1100,6 +1132,18 @@ MonoBehaviour:
           m_StringArgument: Fabricator
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7694339828840719946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,7 +1194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 7, y: -211}
+  m_AnchoredPosition: {x: -427, y: -34}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7775771107890661145
@@ -1247,6 +1291,18 @@ MonoBehaviour:
           m_StringArgument: CriticalOverload
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6238812246234695163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,7 +1353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 431, y: -38}
+  m_AnchoredPosition: {x: -210, y: -38}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6727739535594565810
@@ -1394,6 +1450,18 @@ MonoBehaviour:
           m_StringArgument: DoubleBarrelShotgun
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4527526896432496603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,7 +1540,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shotgun
+  m_text: 'Shotgun
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -1606,7 +1676,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SFDM
+  m_text: 'SFDM
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -1709,7 +1781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.3927002, y: -2.2999897}
+  m_AnchoredPosition: {x: -3.3927002, y: 1.6}
   m_SizeDelta: {x: -0.09790039, y: 0.22399902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &759115076279762357
@@ -1740,7 +1812,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ion Battery
+  m_text: 'Ion Battery
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -1846,7 +1920,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 4, y: -211}
+  m_AnchoredPosition: {x: -430, y: -211}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4371160351394441450
@@ -1943,6 +2017,18 @@ MonoBehaviour:
           m_StringArgument: NuclearRifle
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8987132298143463220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2021,7 +2107,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Portable A35B
+  m_text: 'Portable A35B
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -2358,6 +2446,18 @@ MonoBehaviour:
           m_StringArgument: PlasmaSprayer
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3204046517088611561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2408,7 +2508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 9, y: 141.91557}
+  m_AnchoredPosition: {x: -209, y: -33}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6145713355298232697
@@ -2505,6 +2605,18 @@ MonoBehaviour:
           m_StringArgument: VoidCollector
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 15
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7682328796932934423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,7 +2648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2118173886329850966
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2618,7 +2730,6 @@ MonoBehaviour:
   upgradeMenuStart: {fileID: 8097944974634673812}
   player: {fileID: 0}
   hoverMessageController: {fileID: 5052476027502426653}
-  upgradeCost: 10
 --- !u!1 &1901734708620226373
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,7 +2795,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Nano \nMeds"
+  m_text: "Nano \nMeds\n30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -2818,7 +2929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hover Pad
+  m_text: Hover Pad 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -2924,7 +3035,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 216, y: -217.78448}
+  m_AnchoredPosition: {x: 216, y: -35}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5118821394270978901
@@ -3019,6 +3130,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: PlasmaShell
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1994889721689384987
@@ -3166,6 +3289,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: AssaultRifle
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1655627220294057090
@@ -3477,6 +3612,18 @@ MonoBehaviour:
           m_StringArgument: IncendiaryRounds
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9092668129865175173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3658,7 +3805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.9000015, y: 1.8999996}
+  m_AnchoredPosition: {x: -0.9000015, y: -0.3}
   m_SizeDelta: {x: -0.09790039, y: 0.22399902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5069668273834709650
@@ -3689,7 +3836,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ion Cannon
+  m_text: 'Ion Cannon
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -3795,7 +3944,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: -428, y: -29}
+  m_AnchoredPosition: {x: 218, y: 142}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5641206727371472324
@@ -3892,6 +4041,18 @@ MonoBehaviour:
           m_StringArgument: ExplosiveRounds
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2011640140923889461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3942,7 +4103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 4, y: 142}
+  m_AnchoredPosition: {x: -211, y: -215}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &470617407460030924
@@ -4039,6 +4200,18 @@ MonoBehaviour:
           m_StringArgument: NanoDrillShotgun
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2781286181027841620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4086,7 +4259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.7504883, y: -0.6168823}
+  m_AnchoredPosition: {x: 5, y: -3.3}
   m_SizeDelta: {x: -0.09790039, y: 0.22399902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &974735957374498588
@@ -4117,7 +4290,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fabricator
+  m_text: 'Fabricator
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -4454,6 +4629,18 @@ MonoBehaviour:
           m_StringArgument: AntiMatterBattery
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4621054884033476878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4532,7 +4719,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Merciless Programming
+  m_text: 'Merciless Programming
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -4635,7 +4824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.30065918, y: 1.8169098}
+  m_AnchoredPosition: {x: -0.30065918, y: -1.8}
   m_SizeDelta: {x: -0.09790039, y: 0.22399902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4176657927531611629
@@ -4666,7 +4855,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nuclear Engine
+  m_text: 'Nuclear Engine
+
+    30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -4801,6 +4992,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Anti-Matter
+
+    10
 
 '
   m_isRightToLeft: 0
@@ -5139,6 +5332,18 @@ MonoBehaviour:
           m_StringArgument: SlipperyPlates
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5569497781437022136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5186,7 +5391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.4006805, y: -1.6999664}
+  m_AnchoredPosition: {x: -2, y: -1.6999664}
   m_SizeDelta: {x: -0.09790039, y: 0.22399902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3652757808368557116
@@ -5217,7 +5422,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Critical Ammunition
+  m_text: 'Critical Ammunition
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -5591,7 +5798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: -212.34964, y: 141.91557}
+  m_AnchoredPosition: {x: 8, y: 141.91557}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8480024633114926723
@@ -5688,6 +5895,18 @@ MonoBehaviour:
           m_StringArgument: EMP1Mines
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6703550509360791430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5738,7 +5957,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: -211, y: -211}
+  m_AnchoredPosition: {x: -211, y: 143}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7035207965452634069
@@ -5833,6 +6052,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Deconstructor
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2195725153049305946
@@ -6184,6 +6415,18 @@ MonoBehaviour:
           m_StringArgument: IonCannon
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7096262374635171826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6368,7 +6611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.497, y: 0.55700004}
-  m_AnchoredPosition: {x: -210.34964, y: -31.084454}
+  m_AnchoredPosition: {x: 12, y: -35}
   m_SizeDelta: {x: 160.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8308525528710928275
@@ -6463,6 +6706,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ShoulderLaser
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1141203308863345989
@@ -6591,7 +6846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 5, y: -211.00002}
+  m_AnchoredPosition: {x: 215, y: -33}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1610278450121987293
@@ -6688,6 +6943,18 @@ MonoBehaviour:
           m_StringArgument: EmergencyHealthDrones
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7438778921403272373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6738,7 +7005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: -428, y: 141.91557}
+  m_AnchoredPosition: {x: 6, y: 141.91557}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &624547308484191353
@@ -6835,6 +7102,18 @@ MonoBehaviour:
           m_StringArgument: RoboticTracks
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4767896190848895129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6913,7 +7192,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Incendiary Rounds
+  m_text: 'Incendiary Rounds
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -7016,7 +7297,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.64953613, y: -1.6968784}
+  m_AnchoredPosition: {x: -0.64953613, y: -1}
   m_SizeDelta: {x: -0.09790039, y: 0.22399902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3936752741463413388
@@ -7047,7 +7328,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exposive Rounds
+  m_text: 'Exposive Rounds
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -7181,7 +7464,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MK10 Plates
+  m_text: 'MK10 Plates
+
+    30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -7287,7 +7572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: -429.04962, y: -34.484455}
+  m_AnchoredPosition: {x: -212, y: 142}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8415267549650952747
@@ -7384,6 +7669,18 @@ MonoBehaviour:
           m_StringArgument: Shotgun
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2716712790062989832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7462,7 +7759,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MK1 Plates
+  m_text: 'MK1 Plates
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -7596,7 +7895,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Slippery Plates
+  m_text: 'Slippery Plates
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -7835,7 +8136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: -211, y: 141.91557}
+  m_AnchoredPosition: {x: -211, y: -215}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1695404687988837669
@@ -7930,6 +8231,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: SteelEaters
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1964521120047545090
@@ -8115,7 +8428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 435.49268, y: -29}
+  m_AnchoredPosition: {x: 435.49268, y: 141}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7186879709321882346
@@ -8212,6 +8525,18 @@ MonoBehaviour:
           m_StringArgument: IonBattery
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7139057473799986762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8290,7 +8615,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Phase Plates
+  m_text: 'Phase Plates
+
+    20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -8396,7 +8723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 213.6, y: 141.91557}
+  m_AnchoredPosition: {x: 7, y: -211}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4438246460489240298
@@ -8493,6 +8820,18 @@ MonoBehaviour:
           m_StringArgument: NuclearEngine
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1131821145193674217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8571,7 +8910,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Robotic Tracks
+  m_text: 'Robotic Tracks
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -8774,6 +9115,18 @@ MonoBehaviour:
           m_StringArgument: HornetDrones
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1074258288982050458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8824,7 +9177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 431.49268, y: -37.104034}
+  m_AnchoredPosition: {x: 216, y: 149}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6770476377333707333
@@ -8921,6 +9274,18 @@ MonoBehaviour:
           m_StringArgument: EmergencyHealthPack
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2359342821556347957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8999,7 +9364,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Double Barrel
+  m_text: 'Double Barrel
+
+    20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -9133,7 +9500,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Repulse Deacon
+  m_text: 'Repulse Deacon
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -9304,7 +9673,6 @@ MonoBehaviour:
   upgradeMenuStart: {fileID: 8097944974634673812}
   player: {fileID: 0}
   hoverMessageController: {fileID: 5052476027502426653}
-  upgradeCost: 10
 --- !u!1 &6340922225783810960
 GameObject:
   m_ObjectHideFlags: 0
@@ -9503,7 +9871,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nuclear Rifle
+  m_text: 'Nuclear Rifle
+
+    30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -9770,7 +10140,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Plasma Shell
+  m_text: 'Plasma Shell
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -9876,7 +10248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 6, y: 140.29985}
+  m_AnchoredPosition: {x: 432.6, y: 140.29985}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3938919843801746333
@@ -9973,6 +10345,18 @@ MonoBehaviour:
           m_StringArgument: MK1Plates
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8385967532083669497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10051,7 +10435,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fision Assault Rifle
+  m_text: 'Fision Assault Rifle
+
+    20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -10078,8 +10464,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10185,7 +10571,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MK5 Plates
+  m_text: 'MK5 Plates
+
+    20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -10388,6 +10776,18 @@ MonoBehaviour:
           m_StringArgument: RepulseBeacon
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6984220913584512073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10438,7 +10838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: -213, y: -211}
+  m_AnchoredPosition: {x: 428, y: -28}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1123845583658937290
@@ -10535,6 +10935,18 @@ MonoBehaviour:
           m_StringArgument: PortableA35B
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4726214318420380941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10585,7 +10997,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 213, y: -36.5}
+  m_AnchoredPosition: {x: 4, y: 139}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8924112765189963795
@@ -10682,6 +11094,18 @@ MonoBehaviour:
           m_StringArgument: NanoMeds
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3650965873449061483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10732,7 +11156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 435.49268, y: 147.1}
+  m_AnchoredPosition: {x: 217, y: -219}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1126719541844760040
@@ -10827,6 +11251,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: MercilessProgramming
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &6224901033728041891
@@ -11040,7 +11476,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Critical Overload
+  m_text: 'Critical Overload
+
+    20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -11243,6 +11681,18 @@ MonoBehaviour:
           m_StringArgument: SFDM
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5081663725971902697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11321,7 +11771,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Octagonal Lasers
+  m_text: 'Octagonal Lasers
+
+    30'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -11427,7 +11879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 4, y: -30}
+  m_AnchoredPosition: {x: 4, y: -213}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6497737267065461276
@@ -11524,6 +11976,18 @@ MonoBehaviour:
           m_StringArgument: OctagonalLasers
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7843826775320854225}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5434092102027906971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11574,7 +12038,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 4, y: -29}
+  m_AnchoredPosition: {x: 4, y: -36}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4376672744073668640
@@ -11669,6 +12133,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: HoverPad
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &4954065750511330924
@@ -11854,7 +12330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 223, y: -211}
+  m_AnchoredPosition: {x: -430, y: 146}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5044952586273317472
@@ -11949,6 +12425,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: CriticalAmmunition
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5604955386059868224}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1515094021420021882
@@ -12098,6 +12586,18 @@ MonoBehaviour:
           m_StringArgument: PhasePlates
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 20
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2685323264060702314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12145,7 +12645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.2496338, y: 0.46237183}
+  m_AnchoredPosition: {x: -2.2496338, y: -1.5}
   m_SizeDelta: {x: -0.09790039, y: 0.22399902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7423977587785871798
@@ -12176,7 +12676,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Steel Eater
+  m_text: 'Steel Eater
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -12310,7 +12812,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Void Collector
+  m_text: 'Void Collector
+
+    15'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -12413,7 +12917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2, y: 1.8}
+  m_AnchoredPosition: {x: 2, y: -0.39999962}
   m_SizeDelta: {x: -0.09790039, y: 0.22399902}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6194116924615544884
@@ -12444,7 +12948,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Plasma Sprayer
+  m_text: Plasma Sprayer 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -12616,7 +13120,6 @@ MonoBehaviour:
   upgradeMenuStart: {fileID: 8097944974634673812}
   player: {fileID: 0}
   hoverMessageController: {fileID: 5052476027502426653}
-  upgradeCost: 10
 --- !u!1 &8097944974634673812
 GameObject:
   m_ObjectHideFlags: 0
@@ -12642,7 +13145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8097944974634673812}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -264.60022, y: 120.14819, z: -0.037604135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12731,7 +13234,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Emergency Health Drones
+  m_text: 'Emergency Health Drones
+
+    20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -12865,7 +13370,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Assault \nRifle"
+  m_text: "Assault \nRifle\n10"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -13001,7 +13506,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'EMP.1
 
-    Mines'
+    Mines
+
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
   m_sharedMaterial: {fileID: 6291995518655096272, guid: b68ebe7c3f495554f916a061ded042d6, type: 2}
@@ -13107,7 +13614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.497, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.55700004}
-  m_AnchoredPosition: {x: 433.6, y: 144.1}
+  m_AnchoredPosition: {x: 433.6, y: -212}
   m_SizeDelta: {x: 156.49915, y: -9.568878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4850736918822760606
@@ -13204,6 +13711,18 @@ MonoBehaviour:
           m_StringArgument: MK10Plates
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7702190686919024632}
+        m_TargetAssemblyTypeName: DefensiveMenu, Assembly-CSharp
+        m_MethodName: UpgradePrice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4974343794173761325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13282,7 +13801,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &3101624952957142510
 MonoBehaviour:
@@ -13404,11 +13923,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7896944279868274489, guid: f6673d035168ae548831f0ced0aa3e3e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 104.32556
+      value: -104.2
       objectReference: {fileID: 0}
     - target: {fileID: 7896944279868274489, guid: f6673d035168ae548831f0ced0aa3e3e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7.192993
+      value: 8.3
       objectReference: {fileID: 0}
     - target: {fileID: 7896944279868274489, guid: f6673d035168ae548831f0ced0aa3e3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13511,7 +14030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1061050440206153207, guid: beafe3c41ad148e4690e2a8f12b2d993, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 108.32556
+      value: -320.4
       objectReference: {fileID: 0}
     - target: {fileID: 1061050440206153207, guid: beafe3c41ad148e4690e2a8f12b2d993, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -13628,7 +14147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2881567669791626547, guid: f46a594ba64d39c4bb8c183d8250fc8c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -97.47456
+      value: 103.3
       objectReference: {fileID: 0}
     - target: {fileID: 2881567669791626547, guid: f46a594ba64d39c4bb8c183d8250fc8c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -13871,7 +14390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6200822768428995676, guid: b3704406a5740ed4fa5260fbfc1774dd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -159.193
+      value: 192.9
       objectReference: {fileID: 0}
     - target: {fileID: 6200822768428995676, guid: b3704406a5740ed4fa5260fbfc1774dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13974,11 +14493,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 560724658375364469, guid: 1668ac283d2c030429eecee15d1b1406, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 108.32556
+      value: -109
       objectReference: {fileID: 0}
     - target: {fileID: 560724658375364469, guid: 1668ac283d2c030429eecee15d1b1406, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -159.193
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 560724658375364469, guid: 1668ac283d2c030429eecee15d1b1406, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14090,11 +14609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1862004102387179151, guid: 6413cc2e5d8aaf9498501b2dea8d90a8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -103
+      value: -329
       objectReference: {fileID: 0}
     - target: {fileID: 1862004102387179151, guid: 6413cc2e5d8aaf9498501b2dea8d90a8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -168
+      value: 197.6
       objectReference: {fileID: 0}
     - target: {fileID: 1862004102387179151, guid: 6413cc2e5d8aaf9498501b2dea8d90a8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14216,11 +14735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6991893275064112969, guid: 0bceff0c09ab17a4f88d5c7be23190bd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -99.7
+      value: 106.9
       objectReference: {fileID: 0}
     - target: {fileID: 6991893275064112969, guid: 0bceff0c09ab17a4f88d5c7be23190bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -159.193
+      value: 15.4
       objectReference: {fileID: 0}
     - target: {fileID: 6991893275064112969, guid: 0bceff0c09ab17a4f88d5c7be23190bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14338,7 +14857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7941054773803991499, guid: ceb318fa7f1756e4dba2b726d85ebdc2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 11.807007
+      value: -166
       objectReference: {fileID: 0}
     - target: {fileID: 7941054773803991499, guid: ceb318fa7f1756e4dba2b726d85ebdc2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14448,11 +14967,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2933257675640734810, guid: fadc9b31e5f8e1643a204b5756d436bd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -334.17456
+      value: 108.1
       objectReference: {fileID: 0}
     - target: {fileID: 2933257675640734810, guid: fadc9b31e5f8e1643a204b5756d436bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.70703
+      value: 190.2
       objectReference: {fileID: 0}
     - target: {fileID: 2933257675640734810, guid: fadc9b31e5f8e1643a204b5756d436bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14559,7 +15078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3636380630202095186, guid: f618eaaad851bca4690b25d5a2685650, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 187.807
+      value: -167.2
       objectReference: {fileID: 0}
     - target: {fileID: 3636380630202095186, guid: f618eaaad851bca4690b25d5a2685650, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14918,11 +15437,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5387754066646717402, guid: 6c6dbf68116a75f40a384e281243f18a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 126.32556
+      value: 327.1
       objectReference: {fileID: 0}
     - target: {fileID: 5387754066646717402, guid: 6c6dbf68116a75f40a384e281243f18a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.70703
+      value: 15.6
       objectReference: {fileID: 0}
     - target: {fileID: 5387754066646717402, guid: 6c6dbf68116a75f40a384e281243f18a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15146,11 +15665,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6379089553918207486, guid: b6148bcabdee5ce4b9a4b3c9718081df, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -322.67456
+      value: 330.1
       objectReference: {fileID: 0}
     - target: {fileID: 6379089553918207486, guid: b6148bcabdee5ce4b9a4b3c9718081df, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.8070068
+      value: 190.9
       objectReference: {fileID: 0}
     - target: {fileID: 6379089553918207486, guid: b6148bcabdee5ce4b9a4b3c9718081df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15376,7 +15895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7607588403335981759, guid: 105ff7978c271bb4aacf4689958aa427, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7.192993
+      value: 193.6
       objectReference: {fileID: 0}
     - target: {fileID: 7607588403335981759, guid: 105ff7978c271bb4aacf4689958aa427, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15494,7 +16013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2691604346274827046, guid: 207898f1f50428f4784bd5dee4f276b9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -98.67456
+      value: 99.2
       objectReference: {fileID: 0}
     - target: {fileID: 2691604346274827046, guid: 207898f1f50428f4784bd5dee4f276b9, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -15723,11 +16242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5436142154185187308, guid: 951fad0d3a39820408b1b1e542cb59a5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 104
+      value: -105.5
       objectReference: {fileID: 0}
     - target: {fileID: 5436142154185187308, guid: 951fad0d3a39820408b1b1e542cb59a5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 186
+      value: 15.3
       objectReference: {fileID: 0}
     - target: {fileID: 5436142154185187308, guid: 951fad0d3a39820408b1b1e542cb59a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15826,11 +16345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1535894915743266105, guid: 7794571a8ffe42044b70b29747fb4906, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -98.67456
+      value: 106.9
       objectReference: {fileID: 0}
     - target: {fileID: 1535894915743266105, guid: 7794571a8ffe42044b70b29747fb4906, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 16.807007
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1535894915743266105, guid: 7794571a8ffe42044b70b29747fb4906, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15949,11 +16468,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7690111370292155653, guid: f127f8218e5ef064284e8d32eef2c6da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 104.32556
+      value: -109
       objectReference: {fileID: 0}
     - target: {fileID: 7690111370292155653, guid: f127f8218e5ef064284e8d32eef2c6da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7.192993
+      value: 197
       objectReference: {fileID: 0}
     - target: {fileID: 7690111370292155653, guid: f127f8218e5ef064284e8d32eef2c6da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16056,7 +16575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 18649847273906453, guid: cab8c34d440916c4aa35da2340d830e7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -110.67456
+      value: -106.8
       objectReference: {fileID: 0}
     - target: {fileID: 18649847273906453, guid: cab8c34d440916c4aa35da2340d830e7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -16178,11 +16697,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5262768384360811272, guid: 676a797c793e43243ac239407f883677, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 108.32556
+      value: -104.1
       objectReference: {fileID: 0}
     - target: {fileID: 5262768384360811272, guid: 676a797c793e43243ac239407f883677, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.70703
+      value: -159
       objectReference: {fileID: 0}
     - target: {fileID: 5262768384360811272, guid: 676a797c793e43243ac239407f883677, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16418,7 +16937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7579528902927541447, guid: f2a653c03e071f443902077bf3471d18, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.70703
+      value: -159
       objectReference: {fileID: 0}
     - target: {fileID: 7579528902927541447, guid: f2a653c03e071f443902077bf3471d18, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16634,11 +17153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 818377491738458181, guid: 5dbed0229c7a4de4287945a23abc4c2f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -322.67456
+      value: -99.6
       objectReference: {fileID: 0}
     - target: {fileID: 818377491738458181, guid: 5dbed0229c7a4de4287945a23abc4c2f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.8070068
+      value: 195.8
       objectReference: {fileID: 0}
     - target: {fileID: 818377491738458181, guid: 5dbed0229c7a4de4287945a23abc4c2f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16761,11 +17280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8736899508482656693, guid: abe5cc7206019e04882304dcd950354c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -103.67456
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 8736899508482656693, guid: abe5cc7206019e04882304dcd950354c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 187.807
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8736899508482656693, guid: abe5cc7206019e04882304dcd950354c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16868,11 +17387,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 871709796451976191, guid: 75d55b0930a8e2649ad5b12a78c227db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 108.32556
+      value: -325.2
       objectReference: {fileID: 0}
     - target: {fileID: 871709796451976191, guid: 75d55b0930a8e2649ad5b12a78c227db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -159.193
+      value: 16.4
       objectReference: {fileID: 0}
     - target: {fileID: 871709796451976191, guid: 75d55b0930a8e2649ad5b12a78c227db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16983,11 +17502,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4382962812668654279, guid: c856bf712e0c4f24599f35e5f0d32490, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -97.47456
+      value: 110.1
       objectReference: {fileID: 0}
     - target: {fileID: 4382962812668654279, guid: c856bf712e0c4f24599f35e5f0d32490, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 205.70703
+      value: -164.8
       objectReference: {fileID: 0}
     - target: {fileID: 4382962812668654279, guid: c856bf712e0c4f24599f35e5f0d32490, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17214,7 +17733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 465594847359199338, guid: 7c999a69ecacb9241b1d1a4e3208f9fe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -110.67456
+      value: -322.1
       objectReference: {fileID: 0}
     - target: {fileID: 465594847359199338, guid: 7c999a69ecacb9241b1d1a4e3208f9fe, type: 3}
       propertyPath: m_AnchoredPosition.y

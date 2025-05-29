@@ -3393,10 +3393,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1944043310992215793, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1944043310992215793, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1898657812198335222}
@@ -3405,19 +3401,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1944043310992215793, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1944043310992215793, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: UpgradePrice
       objectReference: {fileID: 0}
     - target: {fileID: 1944043310992215793, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: DefensiveMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1944043310992215793, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
       value: DefensiveMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1944043310992215793, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
@@ -3917,20 +3905,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4655073340142797817, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1898657812198335222}
-    - target: {fileID: 4655073340142797817, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1898657812198335222}
     - target: {fileID: 4655073340142797817, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4655073340142797817, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EnableScript
       objectReference: {fileID: 0}
     - target: {fileID: 4655073340142797817, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -3943,10 +3923,6 @@ PrefabInstance:
     - target: {fileID: 4655073340142797817, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4655073340142797817, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: AssaultRifle
       objectReference: {fileID: 0}
     - target: {fileID: 4655073340142797817, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4030,16 +4006,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 5253921601531174255, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
-      propertyPath: m_text
-      value: '-30% damage from ranged attacks.
-
-        -----------------------------
-
-        An
-        improved version of armoured plates providing medium protection to mechanized
-        units.'
-      objectReference: {fileID: 0}
     - target: {fileID: 5351177146329413859, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.3
@@ -4096,10 +4062,6 @@ PrefabInstance:
 
         10'
       objectReference: {fileID: 0}
-    - target: {fileID: 5548572733780660783, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 8e6fc11a31f2fc24285f708f7ad259b9, type: 3}
     - target: {fileID: 5601276975606505351, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -210
@@ -4175,10 +4137,6 @@ PrefabInstance:
     - target: {fileID: 5809603974647230165, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -34
-      objectReference: {fileID: 0}
-    - target: {fileID: 5995925266075676983, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6084682521753848000, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4619,10 +4577,6 @@ PrefabInstance:
     - target: {fileID: 7999393762612439188, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 8.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077890452432946195, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8084623769342168524, guid: e3383cb1fcde5654a89da1d6e164e5c4, type: 3}
       propertyPath: m_AnchoredPosition.y
