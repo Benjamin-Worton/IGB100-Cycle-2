@@ -51,7 +51,7 @@ public class BasicEnemy : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (canMove)
+        if (canMove && Time.timeScale != 0)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
             transform.position = new Vector3(transform.position.x, transform.position.y, -0.5f);

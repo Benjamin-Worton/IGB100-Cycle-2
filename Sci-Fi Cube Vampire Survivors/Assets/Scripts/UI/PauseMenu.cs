@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     bool paused = false;
+    public GameObject settingsMenu;
     public GameObject pauseMenu;
     public string MenuScene = "Main Menu";
 
@@ -39,6 +40,29 @@ public class PauseMenu : MonoBehaviour
 		}
 	}
 
+    bool toggleScreen()
+	{
+		if(Time.timeScale == 0f)
+		{
+            settingsMenu.SetActive(true);
+            pauseMenu.SetActive(false);
+			return(false);
+		}
+		else
+		{
+			Time.timeScale = 0f;
+            settingsMenu.SetActive(false);
+            pauseMenu.SetActive(true);
+			return(true);
+		}
+	}
+
+    public void Settings()
+    {
+        if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("buttonpress"); }
+        toggleScreen();
+    }
+
     public void ResumeGame()
     {
         if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("buttonpress"); }
@@ -49,13 +73,12 @@ public class PauseMenu : MonoBehaviour
     {
         if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("buttonpress"); }
         Time.timeScale = 1f;  // Unpause the game
-        SceneManager.LoadScene(MenuScene);  // Load the Main Menu scene
+        SceneManager.LoadScene("Main Menu");  // Load the Main Menu scene
     }
 
     public void RestartGame()
     {
         if (AudioManager.Instance != null) { AudioManager.Instance.PlaySFX("buttonpress"); }
-        Time.timeScale = 1f;  // Unpause the game
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);  // Reload the current scene
     }
 }

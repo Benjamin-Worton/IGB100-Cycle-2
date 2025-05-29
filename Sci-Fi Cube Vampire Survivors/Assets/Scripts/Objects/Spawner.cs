@@ -25,6 +25,12 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private TutorialManager tutorialManager;
 
+    void Awake()
+    {
+        Time.timeScale = 0;
+        Debug.Log(Time.timeScale);
+    }
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -33,20 +39,26 @@ public class Spawner : MonoBehaviour
             playerScript = player.GetComponent<Player>();
         }
 
-        StartCoroutine(tutorialManager.TutorialTip());
+        if (SettingsMenu.IsTutorialEnabled())
+        {
+            StartCoroutine(tutorialManager.TutorialTip());
+        }
+        else
+        {
+            tutorialManager.NoIntro();
+        }
+        
         StartCoroutine(SpawnEnemies());
+        StartCoroutine(SpawnCrates());
         StartCoroutine(IncreaseSpawnAmountOverTime()); // Start rate increase coroutine
     }
 
     IEnumerator SpawnEnemies()
     {
-        
         while (true)
         {
             spawnedEnemies = 0;
             enemiesRemaining = numberRandomPositions;
-
-            
 
             while (spawnedEnemies < numberRandomPositions)
             {
@@ -57,7 +69,7 @@ public class Spawner : MonoBehaviour
                 GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
                 enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y, -0.5f);
 
-                if (spawnedEnemies == 0 && round == 1)
+                if (spawnedEnemies == 0 && round == 1 )
                 {
                     enemy.AddComponent<Target>();
                 }
@@ -78,31 +90,40 @@ public class Spawner : MonoBehaviour
                 spawnedEnemies++;
                 enemiesRemaining--;
 
-                // Spawn crates randomly alongside enemies
-                if (Random.Range(0f, 1f) <= 0.1f) // Adjust probability (e.g., 10% chance of spawning a crate)
-                {
-
-                    Vector2 crateSpawnPos = RandomPointInCircle(circleCollider);  // Random spawn position for crate
-                    Instantiate(cratePrefab, crateSpawnPos, Quaternion.identity);
-
-                    if (spawnedCrates == 0)
-                    {
-                        cratePrefab.AddComponent<GoodTarget>();
-                        spawnedCrates++;
-                    }
-                }
-                
+                yield return new WaitForSeconds(spawnInterval);
             }
-            yield return new WaitForSeconds(spawnInterval);
+            
         }
     }
+    
+    IEnumerator SpawnCrates()
+    {
+        while (true)
+        {
+            while (spawnedCrates < numberRandomPositions)
+            {
+                Vector2 spawnPos = RandomPointInCircle(circleCollider);
+
+                if (Random.Range(0f, 1f) <= 0.1f)
+                {
+                    Vector2 crateSpawnPos = RandomPointInCircle(circleCollider);
+                    GameObject crate = Instantiate(cratePrefab, crateSpawnPos, Quaternion.identity);
+                    crate.AddComponent<GoodTarget>();
+                    spawnedCrates++;
+                }
+
+                yield return new WaitForSeconds(spawnInterval);
+            }
+        }
+    }
+
 
     IEnumerator IncreaseSpawnAmountOverTime()
     {
         while (true)
         {
             yield return new WaitForSeconds(20f); // Wait 20 seconds
-            numberRandomPositions = (int)Mathf.Ceil(numberRandomPositions * 1.2f);
+            numberRandomPositions = (int)Mathf.Ceil(numberRandomPositions * 2f);
             if (numberRandomPositions > maximumSpawnAmount)
                 numberRandomPositions = maximumSpawnAmount;
 
