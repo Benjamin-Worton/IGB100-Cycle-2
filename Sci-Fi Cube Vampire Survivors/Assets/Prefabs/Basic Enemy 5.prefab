@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
-  speed: 0.75
+  speed: 2
   points: 100
   normalSprite: {fileID: 3411031603774904089}
   flashDuration: 0.5

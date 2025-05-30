@@ -47,13 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d843ec06c33845b4fa4a8df2ceec027f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
-  speed: 0.5
+  maxHealth: 10
+  speed: 0.25
   points: 300
   normalSprite: {fileID: 8516570198558038672}
   flashDuration: 0.5
   pushBackForce: 600
-  damage: 15
+  damage: 25
   ScrapPrefab: {fileID: 4060324187705972658, guid: d95fd98062ed240279858ae2c010bff6, type: 3}
   expPrefab: {fileID: 6531682024602135149, guid: 3aca21de714982f46929a46c224e34e7, type: 3}
   isDead: 0

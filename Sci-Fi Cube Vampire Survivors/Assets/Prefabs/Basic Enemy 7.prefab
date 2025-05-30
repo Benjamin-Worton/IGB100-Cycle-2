@@ -159,7 +159,7 @@ MonoBehaviour:
   normalSprite: {fileID: 5115489409153063361}
   flashDuration: 0.5
   pushBackForce: 600
-  damage: 15
+  damage: 10
   ScrapPrefab: {fileID: 4060324187705972658, guid: d95fd98062ed240279858ae2c010bff6, type: 3}
   expPrefab: {fileID: 6531682024602135149, guid: 3aca21de714982f46929a46c224e34e7, type: 3}
   isDead: 0

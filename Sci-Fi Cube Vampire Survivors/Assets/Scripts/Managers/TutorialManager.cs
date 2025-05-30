@@ -31,7 +31,6 @@ public class TutorialManager : MonoBehaviour
     public IEnumerator TutorialTip()
     {
         Time.timeScale = 0;
-        Debug.Log(Time.timeScale);
         blackScreen.SetActive(true);
 
         foreach (GameObject display in tutorialDisplays)

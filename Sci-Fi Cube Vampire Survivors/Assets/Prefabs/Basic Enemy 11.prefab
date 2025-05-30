@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d843ec06c33845b4fa4a8df2ceec027f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 1
   speed: 0.5
   points: 300
   normalSprite: {fileID: 3262741941658455028}

@@ -130,6 +130,7 @@ public class Player : MonoBehaviour
 
         HandleExp();
     }
+    
     private void HandleSpeed()
     {
         speed = 1f;
