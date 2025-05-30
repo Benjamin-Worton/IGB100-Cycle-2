@@ -6,14 +6,14 @@ using UnityEngine;
 public class RepulseBeacon : WeaponAbstract
 {
     private GameObject repulsePrefab;
-    [SerializeField] private float range = 4f;
+    [SerializeField] private float range = 3f;
 
     
 
     void Awake()
     {
-        //repulsePrefab = Resources.Load<GameObject>("Prefabs/Laser");
-        fireRate = 8f;
+        repulsePrefab = Resources.Load<GameObject>("Prefabs/Repulse");
+        fireRate = 5f;
     }
 
     public override void Remove()
@@ -24,7 +24,8 @@ public class RepulseBeacon : WeaponAbstract
     #region Attack Functions
     protected override void Attack()
     {
-        //GameObject RepulseEffect = Instantiate(repulsePrefab, transform.position, Quaternion.identity);
+        GameObject RepulseEffect = Instantiate(repulsePrefab, transform.position, Quaternion.identity);
+        Destroy(RepulseEffect, 0.5f);
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         if (allEnemies.Length == 0) { return; }
         foreach (GameObject enemy in allEnemies)
@@ -41,10 +42,10 @@ public class RepulseBeacon : WeaponAbstract
         Vector2 startPosition = enemyTransform.position;
         float elapsed = 0f;
 
-        while (elapsed < 1f)
+        while (elapsed < 0.5f)
         {
             elapsed += Time.deltaTime;
-            float t = elapsed;
+            float t = elapsed * 2f;
             enemyTransform.position = Vector3.Lerp(startPosition, targetPosition, t);
             yield return null;
         }

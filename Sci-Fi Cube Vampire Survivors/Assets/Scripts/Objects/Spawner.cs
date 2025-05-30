@@ -25,12 +25,6 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private TutorialManager tutorialManager;
 
-    void Awake()
-    {
-        Time.timeScale = 0;
-        Debug.Log(Time.timeScale);
-    }
-
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -69,7 +63,7 @@ public class Spawner : MonoBehaviour
                 GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
                 enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y, -0.5f);
 
-                if (spawnedEnemies == 0 && round == 1 )
+                if (spawnedEnemies == 0 && round == 1 && enemy.GetComponent<Target>() == null)
                 {
                     enemy.AddComponent<Target>();
                 }
@@ -108,7 +102,7 @@ public class Spawner : MonoBehaviour
                 {
                     Vector2 crateSpawnPos = RandomPointInCircle(circleCollider);
                     GameObject crate = Instantiate(cratePrefab, crateSpawnPos, Quaternion.identity);
-                    crate.AddComponent<GoodTarget>();
+                    if (crate.GetComponent<GoodTarget>() == null) { crate.AddComponent<GoodTarget>(); }
                     spawnedCrates++;
                 }
 

@@ -10,7 +10,7 @@ public class TutorialManager : MonoBehaviour
 
     public GameObject[] hudUi;
 
-    public float animationDuration = 0.5f;
+    public float animationDuration = 0.3f;
     public Vector3 startScale = new Vector3(0.5f, 0.5f, 0.5f);
     public Vector3 endScale = Vector3.one;
 
@@ -31,11 +31,11 @@ public class TutorialManager : MonoBehaviour
     public IEnumerator TutorialTip()
     {
         Time.timeScale = 0;
-        Debug.Log(Time.timeScale);
         blackScreen.SetActive(true);
 
         foreach (GameObject display in tutorialDisplays)
         {
+            Time.timeScale = 0;
             display.SetActive(true);
             yield return StartCoroutine(AnimatePopup(display));
 
@@ -81,10 +81,10 @@ public class TutorialManager : MonoBehaviour
         rect.localPosition = startPosition;
         rect.localScale = startScale;
 
-        float elapsed = 0f;
+        float elapsed = 0.05f;
         while (elapsed < animationDuration)
         {
-            float t = elapsed / animationDuration;
+            float t = (elapsed / animationDuration);
             rect.localPosition = Vector3.Lerp(startPosition, targetPosition, EaseOutBack(t));
             rect.localScale = Vector3.Lerp(startScale, endScale, EaseOutBack(t));
 
@@ -102,7 +102,7 @@ public class TutorialManager : MonoBehaviour
         Vector3 startPosition = centerPosition;
         Vector3 endPosition = centerPosition + exitOffset;
 
-        float elapsed = 0f;
+        float elapsed = 0.05f;
         while (elapsed < animationDuration)
         {
             float t = elapsed / animationDuration;
@@ -137,7 +137,7 @@ public class TutorialManager : MonoBehaviour
 
     private IEnumerator WaitForInput()
     {
-        while (!Input.anyKeyDown && !Input.GetMouseButtonDown(0))
+        while (!Input.anyKey && !Input.GetMouseButton(0))
         {
             yield return null;
         }

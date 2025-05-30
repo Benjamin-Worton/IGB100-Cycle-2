@@ -12,7 +12,7 @@ public class GoodTarget : MonoBehaviour
 
     private float initialYOffset;
 
-    void Awake()
+    void Start()
     {
         // Set up target prefab
         GoodtargetPrefab = Resources.Load<GameObject>("Prefabs/greenArrowPrefab");

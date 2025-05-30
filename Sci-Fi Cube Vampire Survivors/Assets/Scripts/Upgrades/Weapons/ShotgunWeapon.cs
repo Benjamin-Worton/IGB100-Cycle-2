@@ -19,11 +19,11 @@ public class Shotgun : WeaponAbstract, IOrbiting
 
     protected override void Start()
     {
-        fireRate = 2f;  // Default fire rate
+        fireRate = 1f;  // Default fire rate
 
         // Set up weapon prefabs
         ShotgunPrefab = Resources.Load<GameObject>("Prefabs/Shotgun");
-        bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
+        bulletPrefab = Resources.Load<GameObject>("Prefabs/Shotgun Pellet");
 
         // Create Shotgun Object above player's head
         weapon = Instantiate(ShotgunPrefab, transform.position, Quaternion.identity);

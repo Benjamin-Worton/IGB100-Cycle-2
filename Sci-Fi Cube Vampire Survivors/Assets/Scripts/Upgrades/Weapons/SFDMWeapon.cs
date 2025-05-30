@@ -7,7 +7,7 @@ public class SFDM : WeaponAbstract
 {
     private GameObject SFDMObjectPrefab;
     private GameObject SFDMObject;
-    [SerializeField] private float range = 4f;
+    private float range = 3f;
     [SerializeField] private float damage = 5f;
 
 
@@ -18,15 +18,15 @@ public class SFDM : WeaponAbstract
         fireRate = 1f;  // Default fire rate
 
         // Set up weapon prefabs
-        //SFDMObjectPrefab = Resources.Load<GameObject>("Prefabs/AssaultRifle");
+        SFDMObjectPrefab = Resources.Load<GameObject>("Prefabs/SFDM Field");
 
         // Create SFDM Object above player's head
-        //SFDMObject = Instantiate(SFDMObjectPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        SFDMObject = Instantiate(SFDMObjectPrefab, transform.position, Quaternion.identity);
     }
     void Update()
     {
-        // Keep assault rifle locked to player
-        //SFDMObject.transform.position = transform.position + Vector3.forward * 0.1f;
+        //Keep field locked to player
+        SFDMObject.transform.position = transform.position;
     }
 
     public override void Remove()
@@ -41,7 +41,7 @@ public class SFDM : WeaponAbstract
         if (allEnemies.Length == 0) { return; }
         foreach (GameObject enemy in allEnemies)
         {
-            if (Vector2.Distance(this.transform.position, enemy.transform.position) < range) // Move all nearby enemies further away
+            if (Vector2.Distance(this.transform.position, enemy.transform.position) < range) // Damage All nearby enemies
             {
                 DamageEnemy(enemy);
             }

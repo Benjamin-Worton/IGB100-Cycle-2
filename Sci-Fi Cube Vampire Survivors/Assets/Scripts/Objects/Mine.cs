@@ -11,7 +11,7 @@ public class Mine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // ExplosionPrefab = Resources.Load<GameObject>("Prefabs/Explosion"); Implement when explosion created
+        ExplosionPrefab = Resources.Load<GameObject>("Prefabs/Explosion");
         StartCoroutine(Explode());
     }
 
@@ -37,7 +37,8 @@ public class Mine : MonoBehaviour
                 }
             }
         }
-
+        GameObject Explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
+        Destroy(Explosion, 1f);
         Destroy(gameObject);
     }
 }

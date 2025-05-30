@@ -6,7 +6,7 @@ public class IonCannon : WeaponAbstract
 {
     private GameObject ionLaserPrefab;
     [SerializeField] private float damage = 50f;
-    [SerializeField] private float secondsActive = 0.1f;
+    [SerializeField] private float secondsActive = 0.5f;
 
     protected override void Attack()
     {

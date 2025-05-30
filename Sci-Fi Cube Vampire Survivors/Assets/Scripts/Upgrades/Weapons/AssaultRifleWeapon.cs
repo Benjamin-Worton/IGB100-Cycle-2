@@ -19,7 +19,7 @@ public class AssaultRifle : WeaponAbstract, IOrbiting
 
         // Set up weapon prefabs
         AssaultRiflePrefab = Resources.Load<GameObject>("Prefabs/Assault Rifle");
-        bulletPrefab = Resources.Load<GameObject>("Prefabs/Bullet");
+        bulletPrefab = Resources.Load<GameObject>("Prefabs/Rifle Bullet");
 
         // Add weapon to weapon manager
         weapon = Instantiate(AssaultRiflePrefab, transform.position, Quaternion.identity);

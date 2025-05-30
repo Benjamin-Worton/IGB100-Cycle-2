@@ -7,18 +7,20 @@ public class Oil : MonoBehaviour
 {
     [HideInInspector] public float burnTime = 5f;
     [HideInInspector] public float burnDistance = 1.5f;
+    private GameObject BurningOilPrefab;
     private bool isIgnited = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Weapon")) { return; }
-        Ignite();
+        StartCoroutine(Ignite());
     }
 
 
     private void Awake()
     {
         StartCoroutine(DieAfter10Seconds());
+        BurningOilPrefab = Resources.Load<GameObject>("Prefabs/Burning Oil");
     }
 
     private IEnumerator DieAfter10Seconds()
@@ -26,14 +28,24 @@ public class Oil : MonoBehaviour
         yield return new WaitForSeconds(10);
         Destroy(this);
     }
-    public void Ignite()
+
+    public void IgniteFunction()
+    {
+        StartCoroutine(Ignite());
+    }
+    private IEnumerator Ignite()
     {
         // Check if already ignited, if not, ignite
-        if (isIgnited) { return; }
-        isIgnited = true;
-        IgniteNearbyOil();
-        IgniteNearbyEnemies();
-        Destroy(gameObject);
+        yield return new WaitForFixedUpdate();
+        if (!isIgnited) {
+            isIgnited = true;
+            IgniteNearbyOil();
+            IgniteNearbyEnemies();
+            GameObject BurningOil = Instantiate(BurningOilPrefab, transform.position, Quaternion.identity);
+            Destroy(BurningOil, 0.5f);
+            Destroy(gameObject);
+        }
+        
     }
 
     private void IgniteNearbyOil()
@@ -44,8 +56,9 @@ public class Oil : MonoBehaviour
 
         foreach (GameObject oil in allOil)
         {
+            if (oil == null) { continue; }
             if (Vector2.Distance(oil.transform.position, transform.position) >= burnDistance || oil == gameObject) { continue; }
-            oil.GetComponent<Oil>().Ignite();
+            oil.GetComponent<Oil>().IgniteFunction();
         }
     }
 
