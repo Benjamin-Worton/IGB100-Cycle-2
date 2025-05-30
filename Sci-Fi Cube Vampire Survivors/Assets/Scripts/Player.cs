@@ -68,11 +68,6 @@ public class Player : MonoBehaviour
     public int maxInventorySpace = 1;
     public int currentInventorySpace = 1;
 
-
-
-
-
-
     // Outside objects
     [Header("Outside Objects")]
     [SerializeField] private Bar healthBar;
@@ -81,6 +76,7 @@ public class Player : MonoBehaviour
     [SerializeField] private TrailRenderer bashTrail;
     [SerializeField] private Sprite[] sprites;
     [SerializeField] private HurtEffect hurtEffect;
+    public float flashDuration = 0.5f;
 
     void Start()
     {
@@ -234,10 +230,20 @@ public class Player : MonoBehaviour
         {
             return 0;
         }
+
         StartCoroutine(hurtEffect.HurtFlash());
+        StartCoroutine(DamageFlash());
         return damage * (1f - armour);
 
     }
+
+    private IEnumerator DamageFlash()
+    {
+        GetComponentInChildren<SpriteRenderer>().color = Color.black;
+        yield return new WaitForSeconds(flashDuration);
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
+    }
+
     private void HandleExp()
     {
         GameObject[] allExp = GameObject.FindGameObjectsWithTag("EXP");

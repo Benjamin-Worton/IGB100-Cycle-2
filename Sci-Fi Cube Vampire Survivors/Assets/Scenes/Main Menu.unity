@@ -555,6 +555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaabfa425652fe44ca9fb017110b5782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ControlScene: Controls
+  GamePlayScene: Gameplay
 --- !u!4 &614049326
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,7 +1003,6 @@ GameObject:
   - component: {fileID: 1431448028}
   - component: {fileID: 1431448027}
   - component: {fileID: 1431448026}
-  - component: {fileID: 1431448029}
   m_Layer: 5
   m_Name: Controls Button
   m_TagString: Untagged
@@ -1073,10 +1074,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1431448029}
+      - m_Target: {fileID: 614049325}
         m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: SettingsScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1123,18 +1124,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431448024}
   m_CullTransparentMesh: 1
---- !u!114 &1431448029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431448024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaabfa425652fe44ca9fb017110b5782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1519003480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,7 +1768,6 @@ GameObject:
   - component: {fileID: 2120959113}
   - component: {fileID: 2120959112}
   - component: {fileID: 2120959111}
-  - component: {fileID: 2120959114}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -1851,10 +1839,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2120959114}
+      - m_Target: {fileID: 614049325}
         m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: GameScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1901,18 +1889,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120959109}
   m_CullTransparentMesh: 1
---- !u!114 &2120959114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120959109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaabfa425652fe44ca9fb017110b5782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &56597097586355417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1957,7 +1933,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6685278449178869861}
+      - m_Target: {fileID: 614049325}
         m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
         m_MethodName: QuitApplication
         m_Mode: 1
@@ -2156,7 +2132,6 @@ GameObject:
   - component: {fileID: 2155831975087624834}
   - component: {fileID: 6685278449178869860}
   - component: {fileID: 56597097586355417}
-  - component: {fileID: 6685278449178869861}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -2263,18 +2238,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6685278449178869861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3658613816545592547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaabfa425652fe44ca9fb017110b5782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!223 &7966891862756195870
 Canvas:
   m_ObjectHideFlags: 0
