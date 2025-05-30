@@ -58,7 +58,15 @@ public class Oil : MonoBehaviour
         {
             if (oil == null) { continue; }
             if (Vector2.Distance(oil.transform.position, transform.position) >= burnDistance || oil == gameObject) { continue; }
-            oil.GetComponent<Oil>().IgniteFunction();
+            try
+            {
+                oil.GetComponent<Oil>().IgniteFunction();
+            }
+            catch
+            {
+                if (oil != null) { Destroy(oil, 1f); }
+            }
+            
         }
     }
 

@@ -20,6 +20,7 @@ public class SettingsMenu : MonoBehaviour
 
         if (volumeSlider != null)
         {
+            volumeSlider.value = AudioManager.Instance.sfxSource.volume * 100f;
             volumeSlider.onValueChanged.AddListener(VolumeControl);
             VolumeControl(volumeSlider.value); // Set initial volume from slider
         }
@@ -70,7 +71,7 @@ public class SettingsMenu : MonoBehaviour
         if (tutorialToggle != null)
         {
             bool skipTutorial = tutorialToggle.isOn;
-            PlayerPrefs.SetInt(tutorialPrefKey, skipTutorial ? 0 : 1);
+            PlayerPrefs.SetInt(tutorialPrefKey, skipTutorial ? 1 : 0);
             PlayerPrefs.Save();
         }
     }

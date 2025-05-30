@@ -22,15 +22,15 @@ public class TutorialManager : MonoBehaviour
     private void Start()
     {
         centerPosition = Vector3.zero;
-        foreach (GameObject uI in hudUi)
-        {
-            uI.SetActive(false);
-        }
     }
 
     public IEnumerator TutorialTip()
     {
         Time.timeScale = 0;
+        foreach (GameObject uI in hudUi)
+        {
+            uI.SetActive(false);
+        }
         blackScreen.SetActive(true);
 
         foreach (GameObject display in tutorialDisplays)

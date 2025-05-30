@@ -24,9 +24,19 @@ public class HurtEffect : MonoBehaviour
         // Flash each UI display in random order
         foreach (GameObject display in shuffledDisplays)
         {
-            display.SetActive(true);
+            if (display == null) continue;
+
+            // Disable only if not already disabled (defensive)
+            if (!display.activeSelf)
+            {
+                display.SetActive(true);
+            }
             yield return new WaitForSeconds(flashDuration);
-            display.SetActive(false);
+
+            if (display.activeSelf)
+            {
+                display.SetActive(false);
+            }
         }
     }
 }

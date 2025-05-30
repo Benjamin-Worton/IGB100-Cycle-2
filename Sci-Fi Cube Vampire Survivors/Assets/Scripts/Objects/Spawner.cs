@@ -9,9 +9,9 @@ public class Spawner : MonoBehaviour
     private int round = 1;  // Starting round
     private int spawnedEnemies = 0;
     private int spawnedCrates = 0;
-    public float spawnInterval = 10f;
-    public int maximumSpawnAmount = 60;
-    public int numberRandomPositions = 2; // Total number of enemies to spawn in a round
+    private float spawnInterval = 2f;
+    private int maximumSpawnAmount = 60;
+    private float numberRandomPositions = 1; // Total number of enemies to spawn in a round
     private int enemiesRemaining; 
     private int scoreCounter;
 
@@ -24,6 +24,7 @@ public class Spawner : MonoBehaviour
     private Player playerScript;
 
     [SerializeField] private TutorialManager tutorialManager;
+    private const string tutorialPrefKey = "ShowTutorial";
 
     void Start()
     {
@@ -33,7 +34,7 @@ public class Spawner : MonoBehaviour
             playerScript = player.GetComponent<Player>();
         }
 
-        if (SettingsMenu.IsTutorialEnabled())
+        if (PlayerPrefs.GetInt(tutorialPrefKey, 1) == 1)
         {
             StartCoroutine(tutorialManager.TutorialTip());
         }
@@ -52,9 +53,8 @@ public class Spawner : MonoBehaviour
         while (true)
         {
             spawnedEnemies = 0;
-            enemiesRemaining = numberRandomPositions;
 
-            while (spawnedEnemies < numberRandomPositions)
+            while (spawnedEnemies < Mathf.Floor(numberRandomPositions))
             {
                 Vector2 spawnPos = RandomPointInCircle(circleCollider);
 
@@ -82,11 +82,8 @@ public class Spawner : MonoBehaviour
                 }
 
                 spawnedEnemies++;
-                enemiesRemaining--;
-
-                yield return new WaitForSeconds(spawnInterval);
             }
-            
+            yield return new WaitForSeconds(spawnInterval);
         }
     }
     
@@ -116,8 +113,8 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(20f); // Wait 20 seconds
-            numberRandomPositions = (int)Mathf.Ceil(numberRandomPositions * 2f);
+            yield return new WaitForSeconds(10f); // Wait 20 seconds
+            numberRandomPositions += 0.5f;
             if (numberRandomPositions > maximumSpawnAmount)
                 numberRandomPositions = maximumSpawnAmount;
 
