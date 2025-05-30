@@ -11,8 +11,7 @@ public class BasicEnemy : MonoBehaviour
     public int points = 100;
 
     public GameObject normalSprite;
-    public GameObject whiteSprite;
-    public float flashDuration = 2f;
+    public float flashDuration = 0.5f;
 
     public float pushBackForce = 1000f;
     public float damage = 10f;
@@ -39,7 +38,6 @@ public class BasicEnemy : MonoBehaviour
         CurrentHealth = maxHealth;
 
         normalSprite.SetActive(true);
-        whiteSprite.SetActive(false);
 
         StartCoroutine(StopMovementAfterDelay(0.01f));
     }
@@ -178,13 +176,9 @@ public class BasicEnemy : MonoBehaviour
 
     private IEnumerator DamageFlash()
     {
-        normalSprite.SetActive(false);
-        whiteSprite.SetActive(true);
-
+        GetComponentInChildren<SpriteRenderer>().color = Color.black;
         yield return new WaitForSeconds(flashDuration);
-
-        normalSprite.SetActive(true);
-        whiteSprite.SetActive(false);
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
     }
 
     private IEnumerator RandomScrap()
