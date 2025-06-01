@@ -25,12 +25,9 @@ public class UpgradeMenuStart : MonoBehaviour
         buffs_MobilityMenu?.SetActive(false);
     }
 
-    void Update()
+    public void OnLevelUp()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            paused = TogglePause();
-        }
+        paused = TogglePause();
     }
 
     bool TogglePause()
