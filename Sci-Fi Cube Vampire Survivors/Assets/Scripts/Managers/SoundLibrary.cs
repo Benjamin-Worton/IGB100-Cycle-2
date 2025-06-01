@@ -46,7 +46,6 @@ public class SoundLibrary : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Sound '" + name + "' not found in SoundLibrary!");
             return null;
         }
     }

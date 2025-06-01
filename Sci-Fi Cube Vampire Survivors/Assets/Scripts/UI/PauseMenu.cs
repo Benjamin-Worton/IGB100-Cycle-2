@@ -20,7 +20,6 @@ public class PauseMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("Working");
             paused = togglePause();
         }
     }
@@ -45,14 +44,12 @@ public class PauseMenu : MonoBehaviour
 	{
 		if(Time.timeScale == 0f)
 		{
-            Debug.Log("AAAAAAAA");
             settingsMenu.SetActive(true);
             pauseMenu.SetActive(false);
 			return(false);
 		}
 		else
 		{
-            Debug.Log("BBBBBBBBBBB");
             Time.timeScale = 0f;
             settingsMenu.SetActive(false);
             pauseMenu.SetActive(true);
