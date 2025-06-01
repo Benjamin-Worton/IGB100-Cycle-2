@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
     [SerializeField] private TrailRenderer bashTrail;
     [SerializeField] private Sprite[] sprites;
     [SerializeField] private HurtEffect hurtEffect;
+    [SerializeField] private UpgradeMenuStart UpgradeMenu;
     public float flashDuration = 0.5f;
 
     void Start()
@@ -196,8 +197,10 @@ public class Player : MonoBehaviour
         expNeeded = expNeeded * 2;
         EXP = 0;
         expBar.SetMax(expNeeded);
-        regen = regen * 2;
-        speed = speed * 1.5f;
+        regen += 1f;
+        speed += 0.3f;
+
+        UpgradeMenu.OnLevelUp();
     }
 
     public void GiveMerciless()
